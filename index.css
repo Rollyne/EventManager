@@ -1,0 +1,103 @@
+@font-face {
+    font-family: myriadPro;
+    src: url(MyriadPro-Regular.otf);
+}
+
+/* Background Style */
+body {
+    font-family: myriadPro;
+
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: blur(1px);
+}
+.bgwidth {width: 100%;}
+.bgheight {height: 100%;}
+
+/* Header Style */
+#mainHeader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#headerMenu li {
+    display: inline-block;
+}
+
+.buttonHeader a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    font-size: 1.2em;
+    margin: -2px;
+}
+
+#selectedHeaderButton a, .buttonHeader a:hover {
+    background-color: #6DE50A;
+    color: black;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Main Style */
+#mainCenterText {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#mainCenterText span {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 3px 3px 5px black;
+}
+
+#logoText {
+    font-size: 5em;
+}
+
+#motivText {
+    font-size: 3em;
+}
+
+#logoUnderline {
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin: 5px 0 5px 25%;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px black;
+}
+
+/* Footer Style */
+#footerText {
+    color: rgba(255, 255, 255, 0.4)
+}
+
+#mainFooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+/* MaxWidth Media Properties */
+@media all and (max-width: 800px) {
+    .buttonHeader a {
+        font-size: 2em;
+    }
+}
+
