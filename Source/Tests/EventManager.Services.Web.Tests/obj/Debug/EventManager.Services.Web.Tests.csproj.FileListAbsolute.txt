@@ -1,0 +1,9 @@
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\MvcTemplate.Services.Web.Tests.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\MvcTemplate.Services.Web.Tests.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\MvcTemplate.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\MvcTemplate.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\obj\Debug\MvcTemplate.Services.Web.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\obj\Debug\MvcTemplate.Services.Web.Tests.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Tests\MvcTemplate.Services.Web.Tests\obj\Debug\MvcTemplate.Services.Web.Tests.pdb

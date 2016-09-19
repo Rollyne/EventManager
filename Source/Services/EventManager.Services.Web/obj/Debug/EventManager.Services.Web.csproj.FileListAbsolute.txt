@@ -1,0 +1,10 @@
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Services\MvcTemplate.Services.Web\bin\Debug\MvcTemplate.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Services\MvcTemplate.Services.Web\bin\Debug\MvcTemplate.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Services\MvcTemplate.Services.Web\obj\Debug\MvcTemplate.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Services\MvcTemplate.Services.Web\obj\Debug\MvcTemplate.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Services\MvcTemplate.Services.Web\obj\Debug\MvcTemplate.Services.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb

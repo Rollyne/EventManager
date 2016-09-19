@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Manager</title>
+    @Styles.Render("~/Content/indexStyle")
+</head>
+
+<body>
+    <img src="~/Images/background1.jpg" alt="" id="bg">
+    <header id="mainHeader">
+        <ul id="headerMenu">
+            <li class = "buttonHeader", id = "selectedHeaderButton" ><a href="#">Home</a>@*@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)*@</li>
+            <li class="buttonHeader">@Html.ActionLink("Login", "Login", "Account", routeValues: new { area = string.Empty }, htmlAttributes: null)</li>
+            <li class="buttonHeader">@Html.ActionLink("Register", "Register", "Account", routeValues: new { area = string.Empty }, htmlAttributes: null)</li>
+        </ul>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer id="mainFooter">
+        <span id="footerText">(c) Copyright Nqkviglupostichueck Mnogoailqk</span>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
+    @Scripts.Render("~/bundles/indexScript")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\MvcTemplate.Common\bin\Debug\MvcTemplate.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\MvcTemplate.Common\bin\Debug\MvcTemplate.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\MvcTemplate.Common\obj\Debug\MvcTemplate.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\MvcTemplate.Common\obj\Debug\MvcTemplate.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\MvcTemplate.Common\obj\Debug\MvcTemplate.Common.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\obj\Debug\EventManager.Common.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\obj\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\obj\Debug\EventManager.Common.pdb
