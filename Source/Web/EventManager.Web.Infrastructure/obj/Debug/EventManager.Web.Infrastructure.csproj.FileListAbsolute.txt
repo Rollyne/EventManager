@@ -12,3 +12,10 @@ C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Web\EventManager.Web.Infrastructure\bin\Debug\EventManager.Web.Infrastructure.pdb
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.dll
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\bin\Debug\EventManager.Web.Infrastructure.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\bin\Debug\EventManager.Web.Infrastructure.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\bin\Debug\AutoMapper.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\bin\Debug\AutoMapper.xml
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.pdb

@@ -8,3 +8,8 @@ C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\bin\Debug\EventManager.Common.pdb
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\obj\Debug\EventManager.Common.dll
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\EventManager.Common\obj\Debug\EventManager.Common.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\EventManager.Common\bin\Debug\EventManager.Common.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\EventManager.Common\bin\Debug\EventManager.Common.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\EventManager.Common\obj\Debug\EventManager.Common.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\EventManager.Common\obj\Debug\EventManager.Common.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\EventManager.Common\obj\Debug\EventManager.Common.pdb

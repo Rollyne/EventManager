@@ -26,3 +26,17 @@ C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data.Common\bin\Debug\EventManager.Data.Common.pdb
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.dll
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EventManager.Data.Common.dll.config
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EventManager.Data.Common.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EntityFramework.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EntityFramework.xml
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.pdb

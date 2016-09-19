@@ -236,7 +236,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomStyles\global.css" />
     <Content Include="Content\CustomStyles\index.css" />
+    <Content Include="Content\CustomStyles\userPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -251,6 +253,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\MyriadPro-Regular.otf" />
+    <Content Include="Content\MyriadPro-Regular.otf" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Images\background0.jpg" />
     <Content Include="Images\background1.jpg" />

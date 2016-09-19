@@ -8,3 +8,8 @@ C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
 C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
+C:\Users\princ\Desktop\Apps\git\EventManager\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb
