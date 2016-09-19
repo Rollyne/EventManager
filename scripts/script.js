@@ -5,10 +5,10 @@
 //Changing Background Images( too heavy )
 /*    $(function ($) {
         var images = [
-                'background0.jpg',
-                'background1.jpg',
-                'background2.jpg',
-                'background3.jpg'
+                '../images/background0.jpg',
+                '../images/background1.jpg',
+                '../images/background2.jpg',
+                '../images/background3.jpg'
             ],
             amountOfImages = images.length,
             tempR = 0,

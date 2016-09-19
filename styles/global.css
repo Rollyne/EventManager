@@ -1,0 +1,59 @@
+
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: myriadPro;
+    src: url(../MyriadPro-Regular.otf);
+}
+
+/* Background Style */
+body {
+    font-family: myriadPro;
+    border: 0;
+}
+
+/* Header */
+#mainHeader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.buttonHeader a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    font-size: 1.2em;
+    margin: -2px;
+}
+
+#headerMenu li {
+    display: inline-block;
+}
+
+#selectedHeaderButton a, .buttonHeader a:hover, #searchButton:hover {
+    background-color: #6DE50A;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+}
+
+/* Footer Style */
+#footerText {
+    color: rgba(255, 255, 255, 0.4)
+}
+
+#mainFooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0 10px 0;
+    text-align: center;
+}

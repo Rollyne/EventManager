@@ -1,0 +1,51 @@
+
+/* Header Styles */
+
+#headerMenu {
+    padding: 0 0 14px 0;
+}
+
+#searchButton {
+    background-color: rgba(0, 0 , 0, 0.4);
+}
+
+#buttonSearchIcon {
+    position: relative;
+    top: 10px;
+    color: #FFFFFF;
+
+}
+
+#buttonSearchIcon {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#userDetailsProfilePicture {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+
+#UserDetailsWrapper {
+    position: fixed;
+    top: 0;
+    right: 30px;
+}
+
+#UserDetailsWrapper a {
+    position: relative;
+    top: -14px;
+}
+
+#UserDetailsWrapper a:hover{
+    color: white;
+}
+
+#userDetailsProfilePicture {
+    position: relative;
+    top: 15px;
+    right: 5px;
+    border: 2px solid white;
+    box-shadow: -1px 1px 12px rgba(0,0,0,0.4);
+}
