@@ -32,7 +32,7 @@
     });*/
 
 //Background Shrink Properties
-$(window).load(function () {
+$(window).on("load" , function () {
     let theWindow = $(window),
         $bg = $("#bg"),
         aspectRatio = $bg.width() / $bg.height();
@@ -49,3 +49,28 @@ $(window).load(function () {
 
     theWindow.resize(resizeBg).trigger("resize");
 });
+
+
+//Dropdown settings
+function Dropdowner() {
+    let $userDrop = $('#userDropdown'),
+        $userWrapper = $('#UserDetailsWrapper'),
+        $dropdownMenu = $('#dropdownMenu');
+
+    if($('.dropdownToggle').length == 0) {
+        $userDrop.show('slow', function () {
+            $dropdownMenu.animate({opacity:1}, 300);
+            $dropdownMenu.show('slow');
+        });
+        $userWrapper.attr('class', 'buttonHeader selectedHeaderButton');
+        $userDrop.attr('class' , 'dropdownToggle' );
+
+    } else {
+        $dropdownMenu.animate({opacity: 0}, 300, function() {
+            $userDrop.hide('slow');
+        });
+        $userDrop.removeAttr('class', 'dropdownToggle');
+        $userWrapper.removeAttr('class', 'selectedHeaderButton');
+        $userWrapper.attr('class', 'buttonHeader');
+    }
+}

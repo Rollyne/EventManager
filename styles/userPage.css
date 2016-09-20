@@ -30,12 +30,14 @@
 #UserDetailsWrapper {
     position: fixed;
     top: 0;
-    right: 30px;
+    right: 80px;
 }
 
 #UserDetailsWrapper a {
     position: relative;
     top: -14px;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 #UserDetailsWrapper a:hover{
@@ -48,4 +50,46 @@
     right: 5px;
     border: 2px solid white;
     box-shadow: -1px 1px 12px rgba(0,0,0,0.4);
+}
+
+
+/* Dropdown Properties */
+
+#userDropdown {
+    position: fixed;
+    right: 78px;
+    background-color: #469007;
+    padding: 10px 0 10px 0;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    display:none;
+}
+
+#userDropdown ul li {
+    display: block;
+
+}
+
+#userDropdown ul a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    padding: 15px 75px 15px 35px;
+    display: block;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+#userDropdown ul a:hover {
+    background-color: #6DE50A;
+}
+
+.dropdownUnderline {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    border-radius: 30%;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    margin: 10px;
+}
+
+#dropdownMenu{
+    opacity: 0;
 }

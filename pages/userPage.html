@@ -3,22 +3,55 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Event Manager</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
 </head>
+<style>.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/Preloader_3.gif) center no-repeat #fff;
+}</style>
+<script>
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    }); //TODO: Make the loader code, not gif
+</script>
 <body>
 <header id="mainHeader">
     <ul id="headerMenu">
-        <li class="buttonHeader" ><a href="index.html" id="searchButton" ><img src="../icons/search-128.png" id="buttonSearchIcon"></a></li>
-        <li class="buttonHeader" id="UserDetailsWrapper" >
-                <a href="#">
+        <li class="buttonHeader" >
+            <a href="#" id="searchButton" >
+                <img src="../icons/search-128.png" id="buttonSearchIcon">
+            </a>
+        </li>
+        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner()" >
+                <a href="#" >
                     <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
                     <span id="username">Username</span>
                 </a>
         </li>
     </ul>
+    <div id="userDropdown">
+        <div class="dropdownUnderline"></div>
+        <ul id="dropdownMenu">
+            <li><a href="index.html" class="dropdownButton" id="dropdownHome">Home</a></li>
+            <li><a href="#" class="dropdownButton" id="dropdownMyProfile">My Profile</a></li>
+            <li><a href="#" class="dropdownButton" id="dropdownEvent<">Event</a></li>
+            <li><a href="#" class="dropdownButton" id="dropdownCreateEvent">Create Event</a></li>
+            <li><a href="#" class="dropdownButton" id="dropdownContact<">Contact</a></li>
+            <li><a href="#" class="dropdownButton" id="dropdownLogout">Logout</a></li>
+        </ul>
+        <div class="dropdownUnderline"></div>
+    </div>
 </header>
 
 

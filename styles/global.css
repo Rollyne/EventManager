@@ -36,10 +36,10 @@ body {
     display: inline-block;
 }
 
-#selectedHeaderButton a, .buttonHeader a:hover, #searchButton:hover {
+.selectedHeaderButton a, .buttonHeader a:hover, #searchButton:hover {
     background-color: #6DE50A;
     color: black;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 
 }
 
