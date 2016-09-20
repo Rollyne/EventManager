@@ -8,8 +8,17 @@
     <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
 </head>
-<style>.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+<style>.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
 .se-pre-con {
     position: fixed;
     left: 0px;
@@ -20,7 +29,7 @@
     background: url(../images/Preloader_3.gif) center no-repeat #fff;
 }</style>
 <script>
-    $(window).load(function() {
+    $(window).load(function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     }); //TODO: Make the loader code, not gif
@@ -28,16 +37,16 @@
 <body>
 <header id="mainHeader">
     <ul id="headerMenu">
-        <li class="buttonHeader" >
-            <a href="#" id="searchButton" >
+        <li class="buttonHeader">
+            <a href="#" id="searchButton">
                 <img src="../icons/search-128.png" id="buttonSearchIcon">
             </a>
         </li>
-        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner()" >
-                <a href="#" >
-                    <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
-                    <span id="username">Username</span>
-                </a>
+        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner()">
+            <a href="#">
+                <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
+                <span id="username">Username</span>
+            </a>
         </li>
     </ul>
     <div id="userDropdown">

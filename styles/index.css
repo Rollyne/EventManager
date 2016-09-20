@@ -28,7 +28,7 @@
 #mainCenterText span {
     display: block;
     color: rgba(255, 255, 255, 0.7);
-    text-shadow: 3px 3px 5px black;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
 }
 
 #logoText {
@@ -45,7 +45,86 @@
     width: 50%;
     margin: 5px 0 5px 25%;
     border-radius: 50%;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
+
+/* Login Form Styles */
+#loginForm, #registerForm {
+    display: none;
+    background-color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+    position: relative;
+    top: 10em;
+    width: 40%;
+    margin: auto;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    display: block;
+    padding: 10px 0 10px 0;
+    margin: 25px 150px 25px 0;
+    text-align: center;
+    background-color: transparent; !important;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    transition: all 1s;
+    border-radius: 5px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #6DE50A;
+    background: rgba(0,0,0,0.5); !important;
+}
+
+button[type="submit"] {
+    display: block;
+    border: 1px solid #6DE50A;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+button[type="submit"]:active {
+    outline: none;
+    background-color:#6DE50A;
+}
+
+/* Custom CheckBox Style */
+
+
+#forgotPassword, #haveAccount {
+    color: rgba(255,255,255,0.7);
+    margin-top: 20px;
+    text-align: center;
+}
+
+#forgotPassword a, #haveAccount a {
+    text-decoration: none;
+    color: rgba(109, 229, 10,0.7);
+    transition: all 0.2s;
+}
+#forgotPassword a:hover, #haveAccount a:hover {
+    color: white;
 }
 
 /* MaxWidth Media Properties */

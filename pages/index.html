@@ -7,8 +7,17 @@
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
 </head>
-<style>.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+<style>.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
 .se-pre-con {
     position: fixed;
     left: 0px;
@@ -19,7 +28,7 @@
     background: url(../images/Preloader_3.gif) center no-repeat #fff;
 }</style>
 <script>
-    $(window).load(function() {
+    $(window).load(function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
@@ -27,27 +36,54 @@
 <body>
 <div class="se-pre-con"></div>
 <img src="../images/background1.jpg" alt="" id="bg">
-    <header id="mainHeader">
-        <ul id="headerMenu">
-            <li class="buttonHeader" id="selectedHeaderButton"><a href="#">Home</a></li>
-            <li class="buttonHeader"><a href="userPage.html">Login</a></li>
-            <li class="buttonHeader"><a href="#">Register</a></li>
-        </ul>
-    </header>
+<header id="mainHeader">
+    <ul id="headerMenu">
+        <li class="buttonHeader selectedHeaderButton" id="homeButton" ><a href="#" onclick = "homeView()">Home</a></li>
+        <li class="buttonHeader"  id="loginButton"><a href="#" onclick = "loginFormView()">Login</a></li>
+        <li class="buttonHeader" id="registerButton"><a href="#" onclick = "registerFormView()">Register</a></li>
+    </ul>
+</header>
 
-    <main>
-        <div id="mainCenterText">
+<main>
+    <div id="mainCenterText">
         <span id="logoText">
             Event Manager
-            <div id="logoUnderline"></div>
         </span>
-            <span id="motivText">We are all going to die</span>
-        </div>
-    </main>
+        <div id="logoUnderline"></div>
+        <span id="motivText">We are all going to die</span>
+    </div>
+</main>
+<div id="loginForm">
+    <form id="loginFormContent" action="#">
+        <input type="text" placeholder="Email" name="email" required>
 
-    <footer id="mainFooter">
-        <span id="footerText">(c) Copyright Nqkviglupostichueck Mnogoailqk</span>
-    </footer>
+        <input type="password" placeholder="Password" name="password" required>
+
+        <button type="submit">Login</button>
+        <!--  <div id="rememberMe">
+              <input type="checkbox" checked="checked"><label>Remember me</label>
+           </div> -->
+            <div id="forgotPassword">Forgot <a href="#">password?</a></div>
+    </form>
+</div>
+
+<div id="registerForm">
+    <form id="registerFormContent" action="#">
+        <input type="text" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+
+        <button type="submit">Register</button>
+        <!--  <div id="rememberMe">
+              <input type="checkbox" checked="checked"><label>Remember me</label>
+           </div> -->
+        <div id="haveAccount"><a href="#">Already have an account ?</a></div>
+    </form>
+</div>
+
+<footer id="mainFooter">
+    <span id="footerText">(c) Copyright Nqkviglupostichueck Mnogoailqk</span>
+</footer>
 
 </body>
 
