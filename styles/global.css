@@ -13,6 +13,7 @@
 body {
     font-family: myriadPro;
     border: 0;
+    overflow: auto;
 }
 
 /* Header */
@@ -22,6 +23,7 @@ body {
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
 }
 
 .buttonHeader a {
@@ -49,8 +51,8 @@ body {
 }
 
 #mainFooter {
-    position: absolute;
-    left: 0;
+    position: fixed;
+    right: 0;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);

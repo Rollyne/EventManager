@@ -21,8 +21,8 @@
 
 .se-pre-con {
     position: fixed;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 9999;
@@ -37,18 +37,21 @@
 <body>
 <header id="mainHeader">
     <ul id="headerMenu">
-        <li class="buttonHeader">
-            <a href="#" id="searchButton">
+        <li class="buttonHeader" id="searchLi">
+            <a href="#" id="searchButton" onclick="Dropdowner('searchButton', 'searchWrapper', 'searchContent')">
                 <img src="../icons/search-128.png" id="buttonSearchIcon">
             </a>
         </li>
-        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner()">
+        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner('UserDetailsWrapper', 'userDropdown', 'dropdownMenu')">
             <a href="#">
                 <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
                 <span id="username">Username</span>
             </a>
         </li>
     </ul>
+    <div id="searchWrapper">
+        <input type="search" placeholder="Search.." id="searchContent">
+    </div>
     <div id="userDropdown">
         <div class="dropdownUnderline"></div>
         <ul id="dropdownMenu">

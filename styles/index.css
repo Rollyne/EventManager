@@ -1,3 +1,4 @@
+
 #bg {
     position: fixed;
     top: 0;
@@ -10,6 +11,16 @@
 
 #headerMenu {
     padding: 14px 14px 14px 40px;
+}
+
+#mainHeader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; !important;
+    height: auto; !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
 }
 
 /* Auth Header Styles */
@@ -57,9 +68,9 @@
     border-radius: 20px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
     position: relative;
-    top: 10em;
+    top: 7em;
     width: 40%;
-    margin: auto;
+    margin: auto auto 3em auto;
 }
 
 input[type="text"], input[type="password"] {
@@ -78,12 +89,14 @@ input[type="text"], input[type="password"] {
     transition: all 1s;
     border-radius: 5px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    color: rgba(255,255,255,0.7);
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
-    border: 1px solid #6DE50A;
+    border: 1px solid #A3FF56;
     background: rgba(0,0,0,0.5); !important;
+    color: rgba(255,255,255,0.7);
 }
 
 button[type="submit"] {
@@ -104,9 +117,35 @@ button[type="submit"] {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-button[type="submit"]:active {
+.loginFacebookButton {
+    display: block;
+    border: 1px solid #3b5998;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: 30px auto auto auto;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     outline: none;
+}
+
+.loginFacebookButton:hover {
+    background-color:#3b5998;
+}
+
+button[type="submit"]:hover {
     background-color:#6DE50A;
+}
+button[type="submit"]:active, .loginFacebookButton:active {
+    outline: none;
+    box-shadow: inset 2px 2px 20px 5px rgba(0,0,0,0.3);
 }
 
 /* Custom CheckBox Style */

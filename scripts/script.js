@@ -52,14 +52,14 @@ $(window).on("load", function () {
 
 
 //Dropdown settings
-function Dropdowner() {
-    let $userDrop = $('#userDropdown'),
-        $userWrapper = $('#UserDetailsWrapper'),
-        $dropdownMenu = $('#dropdownMenu');
+function Dropdowner(idOfWrapper, idOfDropdowner, idOfContent) {
+    let $userDrop = $('#' + idOfDropdowner),
+        $userWrapper = $('#' + idOfWrapper),
+        $dropdownMenu = $('#' + idOfContent);
 
     if ($('.dropdownToggle').length == 0) {
         $userDrop.show('slow', function () {
-            $dropdownMenu.animate({opacity: 1}, 300);
+            $dropdownMenu.animate({opacity: 1}, 200);
             $dropdownMenu.show('slow');
         });
         $userWrapper.attr('class', 'buttonHeader selectedHeaderButton');
