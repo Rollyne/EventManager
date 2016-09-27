@@ -1,0 +1,135 @@
+/* Header Styles */
+
+#headerMenu {
+    padding: 0 0 14px 0;
+}
+
+
+#searchButton {
+    background-color: rgba(0, 0 , 0, 0.4);
+}
+
+#buttonSearchIcon {
+    position: relative;
+    top: 10px;
+    color: #FFFFFF;
+
+}
+
+#buttonSearchIcon {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#userDetailsProfilePicture {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+
+#UserDetailsWrapper {
+    position: fixed;
+    top: 0;
+    right: 80px;
+}
+
+#UserDetailsWrapper a {
+    position: relative;
+    top: -14px;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+#UserDetailsWrapper a:hover{
+    color: white;
+}
+
+#userDetailsProfilePicture {
+    position: relative;
+    top: 15px;
+    right: 5px;
+    border: 2px solid white;
+    box-shadow: -1px 1px 12px rgba(0,0,0,0.4);
+}
+
+
+/* Dropdown Properties */
+
+#userDropdown {
+    position: fixed;
+    right: 78px;
+    background-color: #6DE50A;
+    padding: 10px 0 10px 0;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    display:none;
+    z-index: -1;
+}
+
+#userDropdown ul li {
+    display: block;
+
+}
+
+#userDropdown ul a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    padding: 15px 75px 15px 35px;
+    display: block;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+#userDropdown ul a:hover {
+    background-color: #469007;
+    box-shadow: inset 1px 1px 20px 1px rgba(0,0,0,0.2);
+}
+
+.dropdownUnderline {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    border-radius: 30%;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    margin: 10px;
+}
+
+#dropdownMenu{
+    opacity: 0;
+}
+
+/* Search Settings */
+#searchWrapper {
+    display: none;
+    position: fixed;
+    top:54px;
+    padding: 8px;
+    margin: -5px -1px 0 0;
+    width: 40%;
+    background-color: #6DE50A;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+input[type="search"] {
+    width: 100%;
+    display: block;
+    padding: 5px 0 5px 20px;
+    background-color: #469007; !important;
+    border: 1px solid transparent;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    transition: all 1s;
+    border-radius: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    z-index: -20;
+}
+
+#searchContent {
+    opacity: 0;
+}
+
+
+
+input[type="search"]:focus {
+    outline: none;
+    border: 1px solid #6DE50A;
+    background: rgba(0,0,0,0.5); !important;
+}

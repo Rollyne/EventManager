@@ -4,15 +4,64 @@
     padding: 0 0 14px 0;
 }
 
+#mainHeader {
+    max-width: 300px;
+    overflow: hidden;
 
-#searchButton {
-    background-color: rgba(0, 0 , 0, 0.4);
+}
+
+/* Sidebar Settings */
+
+#sideBarMenu {
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+
+.menuButton {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    margin: -3px 0 -3px 0;
+}
+
+.menuButton a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    padding: 15px 0 15px 15px;
+    font-size: 1.2em;
+    width: 100%;
+    display: block;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.menuButton a:hover, .selectedMenuButton {
+    background-color: #6DE50A;
+}
+
+.menuUnderlineContent {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 90%;
+    border-radius: 30%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+
+/* Search Settings */
+
+#searchWrapper {
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-bottom: 10px;
 }
 
 #buttonSearchIcon {
-    position: relative;
-    top: 10px;
+    position: absolute;
     color: #FFFFFF;
+    top: 40px;
+    left: 15px;
 
 }
 
@@ -21,115 +70,77 @@
     max-height: 30px;
 }
 
+input[type="search"] {
+    margin: 30px 0 0 10px;
+    width: 95%;
+    display: block;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background-color: transparent;
+!important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    transition: all 1s;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border-bottom: 1px solid #6DE50A;
+}
+
+/*User Details Settings */
 #userDetailsProfilePicture {
     max-width: 40px;
     max-height: 40px;
     border-radius: 50%;
-}
-
-#UserDetailsWrapper {
-    position: fixed;
-    top: 0;
-    right: 80px;
-}
-
-#UserDetailsWrapper a {
-    position: relative;
-    top: -14px;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-
-#UserDetailsWrapper a:hover{
-    color: white;
-}
-
-#userDetailsProfilePicture {
-    position: relative;
-    top: 15px;
-    right: 5px;
+    position: absolute;
+    bottom: 3px;
+    left: 8px;
     border: 2px solid white;
-    box-shadow: -1px 1px 12px rgba(0,0,0,0.4);
+    box-shadow: -1px 1px 12px rgba(0, 0, 0, 0.4);
 }
 
-
-/* Dropdown Properties */
-
-#userDropdown {
-    position: fixed;
-    right: 78px;
-    background-color: #6DE50A;
-    padding: 10px 0 10px 0;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
-    display:none;
-    z-index: -1;
-}
-
-#userDropdown ul li {
-    display: block;
-
-}
-
-#userDropdown ul a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2em;
-    padding: 15px 75px 15px 35px;
-    display: block;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-#userDropdown ul a:hover {
-    background-color: #469007;
-    box-shadow: inset 1px 1px 20px 1px rgba(0,0,0,0.2);
-}
-
-.dropdownUnderline {
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 90%;
-    border-radius: 30%;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-    margin: 10px;
-}
-
-#dropdownMenu{
-    opacity: 0;
-}
-
-/* Search Settings */
-#searchWrapper {
-    display: none;
-    position: fixed;
-    top:54px;
-    padding: 8px;
-    margin: -5px -1px 0 0;
-    width: 40%;
-    background-color: #6DE50A;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-}
-
-input[type="search"] {
+#sideBarFooter {
     width: 100%;
     display: block;
-    padding: 5px 0 5px 20px;
-    background-color: #469007; !important;
-    border: 1px solid transparent;
-    font-size: 1.2em;
-    font-family: myriadPro;
-    transition: all 1s;
-    border-radius: 20px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-    z-index: -20;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-#searchContent {
-    opacity: 0;
+#userDetails {
+    opacity: 0.5;
+    padding: 30px 30px 30px 50px;
+    text-decoration: none;
+    transition: all 0.5s;
+
+}
+
+#username {
+    position: relative;
+    bottom: 12px;
+    left: 10px;
+    color: white;
+    font-size: 1em;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#userDetails:hover {
+    box-shadow: inset 2px 2px 20px 5px rgba(0, 0, 0, 0.3);
+    background-color: #6DE50A;
+    opacity: 1;
+}
+
+#mainFooter {
+    display: none;
+    width: 80%;
+!important;
 }
 
 
-
-input[type="search"]:focus {
-    outline: none;
-    border: 1px solid #6DE50A;
-    background: rgba(0,0,0,0.5); !important;
-}

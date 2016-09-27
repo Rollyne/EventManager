@@ -5,8 +5,8 @@
     <title>Event Manager</title>
     <script type="text/javascript" src="../scripts/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
 </head>
 <style>.no-js #loader {
     display: none;
@@ -35,35 +35,30 @@
     }); //TODO: Make the loader code, not gif
 </script>
 <body>
+
 <header id="mainHeader">
-    <ul id="headerMenu">
-        <li class="buttonHeader" id="searchLi">
-            <a href="#" id="searchButton" onclick="Dropdowner('searchButton', 'searchWrapper', 'searchContent')">
-                <img src="../icons/search-128.png" id="buttonSearchIcon">
-            </a>
-        </li>
-        <li class="buttonHeader" id="UserDetailsWrapper" onclick="Dropdowner('UserDetailsWrapper', 'userDropdown', 'dropdownMenu')">
-            <a href="#">
-                <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
-                <span id="username">Username</span>
-            </a>
-        </li>
-    </ul>
     <div id="searchWrapper">
+        <img src="../icons/search-128.png" id="buttonSearchIcon">
         <input type="search" placeholder="Search.." id="searchContent">
     </div>
-    <div id="userDropdown">
-        <div class="dropdownUnderline"></div>
-        <ul id="dropdownMenu">
-            <li><a href="index.html" class="dropdownButton" id="dropdownHome">Home</a></li>
-            <li><a href="#" class="dropdownButton" id="dropdownMyProfile">My Profile</a></li>
-            <li><a href="#" class="dropdownButton" id="dropdownEvent<">Event</a></li>
-            <li><a href="#" class="dropdownButton" id="dropdownCreateEvent">Create Event</a></li>
-            <li><a href="#" class="dropdownButton" id="dropdownContact<">Contact</a></li>
-            <li><a href="#" class="dropdownButton" id="dropdownLogout">Logout</a></li>
-        </ul>
-        <div class="dropdownUnderline"></div>
-    </div>
+    <ul id="sideBarMenu">
+        <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuMyEvents">My Events</a></li>
+        <li class="menuButton"><a href="#" id="menuCreateEvent">Create Event</a></li>
+        <li class="menuButton"><a href="#" id="menuEvents">Events</a></li>
+        <li class="menuUnderline">
+            <div class="menuUnderlineContent"></div>
+        </li>
+        <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
+        <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
+        <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
+        <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+    </ul>
+    <footer id="sideBarFooter">
+            <a href="#" id="userDetails">
+                <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
+                <span id="username">Dimitar</span>
+            </a>
+    </footer>
 </header>
 
 
