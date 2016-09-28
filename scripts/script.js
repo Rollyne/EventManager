@@ -31,10 +31,12 @@
  setInterval(fader, 5000);
  });*/
 
+var theWindow = $(window),
+    windowSizeBig = theWindow.width() >= 600;
+
 //Background Shrink Properties
 $(window).on("load", function () {
-    let theWindow = $(window),
-        $bg = $("#bg"),
+    let $bg = $("#bg"),
         aspectRatio = $bg.width() / $bg.height();
 
     function resizeBg() {
@@ -52,26 +54,45 @@ $(window).on("load", function () {
 
 
 //Dropdown settings
+$(function() {
+    if(windowSizeBig){
+        $('#mainHeader').show();
+        $('main').css({"margin-left": "300px"});
+    } else {
+        $('#mainHeader').hide();
+        $('#sidebarToggler').attr('class', 'dropdownToggle');
+    }
+});
+//TODO: Make the media queries depending on the toggler
+//TODO: Make animation on the main show/hide
+
 function Dropdowner(idOfWrapper, idOfDropdowner, idOfContent) {
     let $userDrop = $('#' + idOfDropdowner),
         $userWrapper = $('#' + idOfWrapper),
         $dropdownMenu = $('#' + idOfContent);
 
     if ($('.dropdownToggle').length == 0) {
-        $userDrop.show('slow', function () {
-            $dropdownMenu.animate({opacity: 1}, 200);
-            $dropdownMenu.show('slow');
-        });
-        $userWrapper.attr('class', 'buttonHeader selectedHeaderButton');
-        $userDrop.attr('class', 'dropdownToggle');
-
-    } else {
+        if (windowSizeBig) {
+            $('main').css({"margin-left": "auto"});
+        } else {
+            $('main').fadeIn('fast');
+        }
         $dropdownMenu.animate({opacity: 0}, 300, function () {
             $userDrop.hide('slow');
         });
-        $userDrop.removeAttr('class', 'dropdownToggle');
-        $userWrapper.removeAttr('class', 'selectedHeaderButton');
-        $userWrapper.attr('class', 'buttonHeader');
+        $userWrapper.attr('class', 'dropdownToggle');
+
+    } else {
+        if (windowSizeBig) {
+            $('main').css({"margin-left": "300px"});
+        } else {
+            $('main').fadeOut('fast');
+        }
+        $userDrop.show(function () {
+            $dropdownMenu.animate({opacity: 1}, 200);
+            $dropdownMenu.show('slow');
+        });
+        $userWrapper.removeAttr('class', 'dropdownToggle');
     }
 }
 
@@ -84,13 +105,13 @@ function loginFormView() {
         $registerBtn = $('#registerButton'),
         $loginForm = $('#loginForm'),
         $registerForm = $('#registerForm');
-    if($homeBtn.hasClass('selectedHeaderButton')) {
+    if ($homeBtn.hasClass('selectedHeaderButton')) {
         $homeBtn.removeAttr('class', 'selectedHeaderButton');
         $homeBtn.attr('class', 'buttonHeader');
         $loginBtn.attr('class', 'selectedHeaderButton buttonHeader');
         $('#mainCenterText').hide('slow');
         $loginForm.show('slow');
-    } else if($registerBtn.hasClass('selectedHeaderButton')) {
+    } else if ($registerBtn.hasClass('selectedHeaderButton')) {
         $registerBtn.removeAttr('class', 'selectedHeaderButton');
         $registerBtn.attr('class', 'buttonHeader');
         $loginBtn.attr('class', 'selectedHeaderButton buttonHeader');
@@ -110,13 +131,13 @@ function registerFormView() {
         $registerBtn = $('#registerButton'),
         $loginForm = $('#loginForm'),
         $registerForm = $('#registerForm');
-    if($homeBtn.hasClass('selectedHeaderButton')) {
+    if ($homeBtn.hasClass('selectedHeaderButton')) {
         $homeBtn.removeAttr('class', 'selectedHeaderButton');
         $homeBtn.attr('class', 'buttonHeader');
         $registerBtn.attr('class', 'selectedHeaderButton buttonHeader');
         $('#mainCenterText').hide('slow');
         $registerForm.show('slow');
-    } else if($loginBtn.hasClass('selectedHeaderButton')) {
+    } else if ($loginBtn.hasClass('selectedHeaderButton')) {
         $loginBtn.removeAttr('class', 'selectedHeaderButton');
         $loginBtn.attr('class', 'buttonHeader');
         $registerBtn.attr('class', 'selectedHeaderButton buttonHeader');

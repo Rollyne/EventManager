@@ -1,22 +1,52 @@
 /* Header Styles */
 
+main {
+    margin-left: auto;
+}
+
 #headerMenu {
     padding: 0 0 14px 0;
 }
 
 #mainHeader {
-    max-width: 300px;
+    max-width: 100%;
     overflow: hidden;
-
+    background-color: rgb(102,102,102);
+    display:none;
 }
 
-/* Sidebar Settings */
+/* Sidebar Toggler Settings */
+#sidebarToggler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+    z-index: 1000;
+    transition: all 0.5s;
+}
+
+.dropdownToggle:hover {
+    transform: scale(1.5,1.5);
+    padding: 30px;
+    border-radius: 0 50% 50% 50%;
+}
+
+/* Sidebar Settings */ /* TODO: Make it responsive on mobile widescreen */
+
+#headerContent{
+    margin-top: 63px;
+}
 
 #sideBarMenu {
     margin-top: 10px;
     overflow: hidden;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 
 }
+
 
 .menuButton {
     display: inline-block;
@@ -60,7 +90,7 @@
 #buttonSearchIcon {
     position: absolute;
     color: #FFFFFF;
-    top: 40px;
+    top: 70px;
     left: 15px;
 
 }
@@ -95,7 +125,7 @@ input[type="search"]:focus {
 }
 
 /*User Details Settings */
-#userDetailsProfilePicture {
+#footerUserDetailsProfilePicture {
     max-width: 40px;
     max-height: 40px;
     border-radius: 50%;
@@ -114,7 +144,7 @@ input[type="search"]:focus {
     left: 0;
 }
 
-#userDetails {
+#footerUserDetails {
     opacity: 0.5;
     padding: 30px 30px 30px 50px;
     text-decoration: none;
@@ -122,7 +152,7 @@ input[type="search"]:focus {
 
 }
 
-#username {
+#footerUsername {
     position: relative;
     bottom: 12px;
     left: 10px;
@@ -131,11 +161,80 @@ input[type="search"]:focus {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
-#userDetails:hover {
+#footerUserDetails:hover {
     box-shadow: inset 2px 2px 20px 5px rgba(0, 0, 0, 0.3);
     background-color: #6DE50A;
     opacity: 1;
 }
+
+/* Main Properties */
+
+
+#userDetails {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 30px auto auto auto;
+    background-color: #DDD;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+
+#identity {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    vertical-align: top;
+    padding: 0 10px;
+    transition: all 0.5s;
+}
+
+#detailsUsername {
+    background-color: #A3FF56;
+    margin: 5px 5px 5px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+#profilePicture {
+    text-align: center;
+
+}
+
+#profilePicture img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid #BBB;
+}
+
+#detailsAboutUser{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin: 20px 0 0 10px;
+
+}
+#detailsAboutUser div{
+    overflow: hidden;
+    flex-shrink: 1;
+    margin: 10px 10px 0 10px;
+}
+#detailsAboutUser p {
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+
+/* Footer options */
 
 #mainFooter {
     display: none;
@@ -143,4 +242,45 @@ input[type="search"]:focus {
 !important;
 }
 
+
+@media all and (min-width: 600px) {
+    /* We invert order of first sidebar and main
+     * And tell the main element to take twice as much width as the other two sidebars
+     */
+    #detailsAboutUser {
+        max-height: 170px;
+        flex-direction: row;
+    }
+    #detailsAboutUser p {
+        -webkit-line-clamp: 6;
+    }
+    #mainHeader {
+        max-width: 300px;
+    }
+}
+@media all and (min-width: 800px) {
+    /* We invert order of first sidebar and main
+     * And tell the main element to take twice as much width as the other two sidebars
+     */
+    #userDetails {
+        flex-direction: row;
+    }
+    #detailsAboutUser {
+        max-height: 240px;
+    }
+    #detailsAboutUser p {
+        -webkit-line-clamp: 11;
+    }
+    #profilePicture img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #detailsUsername {
+        width: 190px;
+    }
+    #identity {
+        width: 200px;
+        transition: all 0.5s;
+    }
+}
 

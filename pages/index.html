@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Event Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
@@ -38,9 +40,9 @@
 <img src="../images/background1.jpg" alt="" id="bg">
 <header id="mainHeader">
     <ul id="headerMenu">
-        <li class="buttonHeader selectedHeaderButton" id="homeButton" ><a href="#" onclick = "homeView()">Home</a></li>
-        <li class="buttonHeader"  id="loginButton"><a href="#" onclick = "loginFormView()">Login</a></li>
-        <li class="buttonHeader" id="registerButton"><a href="#" onclick = "registerFormView()">Register</a></li>
+        <li class="buttonHeader selectedHeaderButton" id="homeButton"><a href="#" onclick="homeView()">Home</a></li>
+        <li class="buttonHeader" id="loginButton"><a href="#" onclick="loginFormView()">Login</a></li>
+        <li class="buttonHeader" id="registerButton"><a href="#" onclick="registerFormView()">Register</a></li>
     </ul>
 </header>
 
@@ -49,38 +51,41 @@
         <span id="logoText">
             Event Manager
         </span>
+
         <div id="logoUnderline"></div>
-        <span id="motivText">We are all going to die</span>
+        <span id="motivText">Don't wait for things to happen</span>
     </div>
 </main>
 <div id="loginForm">
-    <form id="loginFormContent" action="#">
-        <input type="text" placeholder="Email" name="email" required>
+    <div id="loginFormContent">
+        <form action="#">
+            <input type="text" placeholder="Email" name="email" required>
 
-        <input type="password" placeholder="Password" name="password" required>
-        <!--  <div id="rememberMe">
-                      <input type="checkbox" checked="checked"><label>Remember me</label>
-                   </div> -->
-        <button type="submit">Login</button>
-        <button type="button" class="loginFacebookButton">Login with Facebook</button>
-
-            <div id="forgotPassword">Forgot <a href="#">password?</a></div>
-    </form>
+            <input type="password" placeholder="Password" name="password" required>
+            <!--  <div id="rememberMe">
+                          <input type="checkbox" checked="checked"><label>Remember me</label>
+                       </div> -->
+            <button type="submit" class="formSubmitButton">Login</button>
+        </form>
+        <button type="submit" class="loginFacebookButton">Login with Facebook</button>
+        <div id="forgotPassword">Forgot <a href="#">password?</a></div>
+    </div>
 </div>
 
 <div id="registerForm">
-    <form id="registerFormContent" action="#">
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Password" name="password" required>
-        <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
-        <!--  <div id="rememberMe">
-              <input type="checkbox" checked="checked"><label>Remember me</label>
-           </div> -->
-        <button type="submit">Register</button>
-        <button type="button" class="loginFacebookButton">Login with Facebook</button>
-
+    <div id="registerFormContent">
+        <form action="#">
+            <input type="text" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+            <!--  <div id="rememberMe">
+                  <input type="checkbox" checked="checked"><label>Remember me</label>
+               </div> -->
+            <button type="submit" class="formSubmitButton">Register</button>
+        </form>
+        <button type="submit" class="loginFacebookButton">Login with Facebook</button>
         <div id="haveAccount"><a href="#">Already have an account ?</a></div>
-    </form>
+    </div>
 </div>
 
 <footer id="mainFooter">

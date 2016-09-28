@@ -43,11 +43,13 @@
 }
 
 #logoText {
-    font-size: 5em;
+    font-size: 11vw;
+    transition: all 0.2s;
 }
 
 #motivText {
-    font-size: 3em;
+    font-size: 6vw;
+    transition: all 0.2s;
 }
 
 #logoUnderline {
@@ -69,7 +71,7 @@
     box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
     position: relative;
     top: 7em;
-    width: 40%;
+    width: 60%;
     margin: auto auto 3em auto;
 }
 
@@ -99,7 +101,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     color: rgba(255,255,255,0.7);
 }
 
-button[type="submit"] {
+.formSubmitButton {
     display: block;
     border: 1px solid #6DE50A;
     background-color: transparent;
@@ -123,7 +125,7 @@ button[type="submit"] {
     background-color: transparent;
     border-radius: 5px;
     color: rgba(255,255,255,0.7);
-    padding: 10px 50px 10px 50px;
+    padding: 10px 2% 10px 2%;
     text-align: center;
     margin: 30px auto auto auto;
     width: 100%;
@@ -134,16 +136,17 @@ button[type="submit"] {
     transition: all 0.5s;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     outline: none;
+    word-wrap: break-word;
 }
 
 .loginFacebookButton:hover {
     background-color:#3b5998;
 }
 
-button[type="submit"]:hover {
+.formSubmitButton:hover {
     background-color:#6DE50A;
 }
-button[type="submit"]:active, .loginFacebookButton:active {
+.formSubmitButton:active, .loginFacebookButton:active {
     outline: none;
     box-shadow: inset 2px 2px 20px 5px rgba(0,0,0,0.3);
 }
@@ -167,5 +170,19 @@ button[type="submit"]:active, .loginFacebookButton:active {
 }
 
 /* MaxWidth Media Properties */
+@media all and (min-width: 800px) {
+    #loginForm, #registerForm {
+        width: 40%;
+}
+@media all and (min-width: 600px) {
+    #logoText {
+        font-size: 7vw;
+        transition: all 0.2s;
+    }
 
+    #motivText {
+        font-size: 4vw;
+        transition: all 0.2s;
+    }
+}
 
