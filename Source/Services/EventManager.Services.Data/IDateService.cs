@@ -9,9 +9,9 @@ namespace EventManager.Services.Data
 {
     public interface IDateService
     {
-        void AddDate(int eventId, DateTime date);
+        void AddDate(int eventId, DateTime startDate, DateTime endDate);
 
-        void EditDate(int dateId, DateTime date);
+        void EditDate(int dateId, DateTime startDate, DateTime endDate);
 
         void DeleteDate(EventDate date);
 

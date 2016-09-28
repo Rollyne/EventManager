@@ -23,6 +23,7 @@
         {
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.css", "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/indexStyle").Include("~/Content/CustomStyles/index.css"));
+            bundles.Add(new StyleBundle("~/Content/globalStyle").Include("~/Content/CustomStyles/global.css", new CssRewriteUrlTransform()));
         }
     }
 }

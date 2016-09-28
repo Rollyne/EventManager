@@ -1,0 +1,9 @@
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\HelperClasses\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\HelperClasses\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.pdb

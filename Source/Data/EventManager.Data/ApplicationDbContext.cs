@@ -17,10 +17,6 @@
         {
         }
 
-        public IDbSet<Joke> Jokes { get; set; }
-
-        public IDbSet<JokeCategory> JokesCategories { get; set; }
-
         public IDbSet<Event> Events { get; set; }
 
         public IDbSet<EventDate> EventDates { get; set; }

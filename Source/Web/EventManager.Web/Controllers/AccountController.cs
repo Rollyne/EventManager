@@ -12,6 +12,7 @@
     using EventManager.Data.Models;
     using EventManager.Web.ViewModels.Account;
     using Data.Common.Models;
+    using Facebook;
 
     [Authorize]
     public class AccountController : BaseController
@@ -66,7 +67,9 @@
         public ActionResult Login(string returnUrl)
         {
             this.ViewBag.ReturnUrl = returnUrl;
-            return this.View();
+
+
+            return this.View("~/Views/Home/Index.cshtml");
         }
 
         // POST: /Account/Login
@@ -77,7 +80,7 @@
         {
             if (!this.ModelState.IsValid)
             {
-                return this.View(model);
+                return this.View("~/Views/Home/Index.cshtml", model);
             }
 
             // This doesn't count login failures towards account lockout
@@ -363,12 +366,47 @@
                 case SignInStatus.Failure:
                 default:
 
+                    var identity = this.AuthenticationManager.GetExternalIdentity(DefaultAuthenticationTypes.ExternalCookie);
+                    var accessToken = identity.FindFirstValue("FacebookAccessToken");
+                    var fb = new FacebookClient(accessToken);
+                    dynamic myInfo = fb.Get("/me?fields=email,first_name,last_name,gender");
                     // If the user does not have an account, then prompt the user to create an account
                     this.ViewBag.ReturnUrl = returnUrl;
                     this.ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return this.View(
-                        "ExternalLoginConfirmation",
-                        new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    //return this.View(
+                    //    "ExternalLoginConfirmation",
+                    //    new ExternalLoginConfirmationViewModel { Email = myInfo.email });
+                    if (this.User.Identity.IsAuthenticated)
+                    {
+                        return this.RedirectToAction("Index", "Manage");
+                    }
+
+                    if (this.ModelState.IsValid)
+                    {
+                        // Get the information about the user from the external login provider
+                        var info = await this.AuthenticationManager.GetExternalLoginInfoAsync();
+                        if (info == null)
+                        {
+                            return this.View("ExternalLoginFailure");
+                        }
+
+                        var user = new ApplicationUser { UserName = string.Format("{0} {1}", myInfo.first_name, myInfo.last_name), Email = myInfo.email };
+                        var result2 = await this.UserManager.CreateAsync(user);
+                        if (result2.Succeeded)
+                        {
+                            result2 = await this.UserManager.AddLoginAsync(user.Id, info.Login);
+                            if (result2.Succeeded)
+                            {
+                                await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                                return this.View("~/Views/Home/Index.cshtml");
+                            }
+                        }
+
+                        this.AddErrors(result2);
+                    }
+
+                    this.ViewBag.ReturnUrl = returnUrl;
+                    return this.View(new ExternalLoginConfirmationViewModel { Email = myInfo.email });
             }
         }
 

@@ -1,50 +1,29 @@
-@font-face {
-    font-family: myriadPro;
-    src: url(MyriadPro-Regular.otf);
-}
-
-/* Background Style */
-body {
-    font-family: myriadPro;
-
-}
-
 #bg {
     position: fixed;
     top: 0;
     left: 0;
-    filter: blur(1px);
 }
 .bgwidth {width: 100%;}
 .bgheight {height: 100%;}
 
 /* Header Style */
+
+#headerMenu {
+    padding: 14px 14px 14px 40px;
+}
+
 #mainHeader {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100%; !important;
+    height: auto; !important;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
 }
 
-#headerMenu li {
-    display: inline-block;
-}
+/* Auth Header Styles */
 
-.buttonHeader a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    font-size: 1.2em;
-    margin: -2px;
-}
-
-#selectedHeaderButton a, .buttonHeader a:hover {
-    background-color: #6DE50A;
-    color: black;
-    text-shadow: 1px 1px 1px black;
-    box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
-}
 
 /* Main Style */
 #mainCenterText {
@@ -59,15 +38,17 @@ body {
 #mainCenterText span {
     display: block;
     color: rgba(255, 255, 255, 0.7);
-    text-shadow: 3px 3px 5px black;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
 }
 
 #logoText {
-    font-size: 5em;
+    font-size: 11vw;
+    transition: all 0.2s;
 }
 
 #motivText {
-    font-size: 3em;
+    font-size: 6vw;
+    transition: all 0.2s;
 }
 
 #logoUnderline {
@@ -76,28 +57,130 @@ body {
     width: 50%;
     margin: 5px 0 5px 25%;
     border-radius: 50%;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
 
-/* Footer Style */
-#footerText {
-    color: rgba(255, 255, 255, 0.4)
+/* Login Form Styles */
+#loginForm, #registerForm {
+    display: none;
+    background-color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+    position: relative;
+    top: 7em;
+    width: 60%;
+    margin: auto auto 3em auto;
 }
 
-#mainFooter {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+input[type="text"], input[type="password"] {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
     padding: 10px 0 10px 0;
+    margin: 25px 150px 25px 0;
+    text-align: center;
+    background-color: transparent; !important;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    transition: all 1s;
+    border-radius: 5px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    color: rgba(255,255,255,0.7);
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #A3FF56;
+    background: rgba(0,0,0,0.5); !important;
+    color: rgba(255,255,255,0.7);
+}
+
+.formSubmitButton {
+    display: block;
+    border: 1px solid #6DE50A;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.loginFacebookButton {
+    display: block;
+    border: 1px solid #3b5998;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 2% 10px 2%;
+    text-align: center;
+    margin: 30px auto auto auto;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    outline: none;
+    word-wrap: break-word;
+}
+
+.loginFacebookButton:hover {
+    background-color:#3b5998;
+}
+
+.formSubmitButton:hover {
+    background-color:#6DE50A;
+}
+.formSubmitButton:active, .loginFacebookButton:active {
+    outline: none;
+    box-shadow: inset 2px 2px 20px 5px rgba(0,0,0,0.3);
+}
+
+/* Custom CheckBox Style */
+
+
+#forgotPassword, #haveAccount {
+    color: rgba(255,255,255,0.7);
+    margin-top: 20px;
     text-align: center;
 }
 
-/* MaxWidth Media Properties */
-@media all and (max-width: 800px) {
-    .buttonHeader a {
-        font-size: 2em;
-    }
+#forgotPassword a, #haveAccount a {
+    text-decoration: none;
+    color: rgba(109, 229, 10,0.7);
+    transition: all 0.2s;
+}
+#forgotPassword a:hover, #haveAccount a:hover {
+    color: white;
 }
 
+/* MaxWidth Media Properties */
+@media all and (min-width: 800px) {
+    #loginForm, #registerForm {
+        width: 40%;
+}
+@media all and (min-width: 600px) {
+    #logoText {
+        font-size: 7vw;
+        transition: all 0.2s;
+    }
+
+    #motivText {
+        font-size: 4vw;
+        transition: all 0.2s;
+    }
+}

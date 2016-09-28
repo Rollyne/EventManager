@@ -34,5 +34,7 @@ namespace EventManager.Services.Data
 
         void RemoveUser(int eventId, ApplicationUser user);
 
+        void CalculateEventTime(int eventId);
+
     }
 }

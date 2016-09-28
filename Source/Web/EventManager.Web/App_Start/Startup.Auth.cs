@@ -11,6 +11,8 @@
     using EventManager.Data.Models;
 
     using Owin;
+    using Microsoft.Owin.Security.Facebook;
+    using System.Threading.Tasks;
 
     public partial class Startup
     {
@@ -48,9 +50,24 @@
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // app.UseFacebookAuthentication(
-            // appId: "",
-            // appSecret: "");
+            //app.UseFacebookAuthentication(
+            //appId: "192034014540193",
+            //appSecret: "3844d1b2c1405a96b9d37788590b2095");
+
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions
+            {
+                AppId = "192034014540193",
+                AppSecret = "3844d1b2c1405a96b9d37788590b2095",
+                Scope = { "email" },
+                Provider = new FacebookAuthenticationProvider
+                {
+                    OnAuthenticated = context =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken));
+                        return Task.FromResult(true);
+                    }
+                }
+            });
         }
     }
 }

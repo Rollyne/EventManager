@@ -35,6 +35,10 @@ namespace EventManager.Data.Models
 
         public virtual ICollection<EventDate> Dates { get; set; }
 
+        public virtual DateTime StartEventDate { get; set; }
+
+        public virtual DateTime EndEventDate { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

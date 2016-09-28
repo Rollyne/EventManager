@@ -24,16 +24,17 @@ namespace EventManager.Services.Data
             this.users = users;
         }
 
-        public void AddDate(int eventId, DateTime date)
+        public void AddDate(int eventId, DateTime startDate, DateTime endDate)
         {
             var _event = this.events.GetById(eventId);
 
             var eventDate = new EventDate
-            {
-                Date = date,
-                Event = _event,
-                Creator = this.users.GetCurrentUser()
-            };
+                        {
+                            StartDate = startDate,
+                            EndDate = endDate,
+                            Event = _event,
+                            Creator = this.users.GetCurrentUser()
+                        };
 
             this.dates.Add(eventDate);
             this.dates.Save();
@@ -53,12 +54,13 @@ namespace EventManager.Services.Data
             this.dates.Save();
         }
 
-        public void EditDate(int dateId, DateTime date)
+        public void EditDate(int dateId, DateTime startDate, DateTime endDate)
         {
             var eventDate = new EventDate
             {
                 Id = dateId,
-                Date = date
+                StartDate = startDate,
+                EndDate = endDate
             };
 
             this.dates.Edit(eventDate);

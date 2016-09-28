@@ -60,29 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201602100916387_InitialCreate.cs" />
-    <Compile Include="Migrations\201602100916387_InitialCreate.Designer.cs">
-      <DependentUpon>201602100916387_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602100922285_JokesAndJokesCategories.cs" />
-    <Compile Include="Migrations\201602100922285_JokesAndJokesCategories.Designer.cs">
-      <DependentUpon>201602100922285_JokesAndJokesCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609051243221_OrganiserModelsCreated.cs" />
-    <Compile Include="Migrations\201609051243221_OrganiserModelsCreated.Designer.cs">
-      <DependentUpon>201609051243221_OrganiserModelsCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609071110371_FriendsCreated.cs" />
-    <Compile Include="Migrations\201609071110371_FriendsCreated.Designer.cs">
-      <DependentUpon>201609071110371_FriendsCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609130909366_ImagesAdded.cs" />
-    <Compile Include="Migrations\201609130909366_ImagesAdded.Designer.cs">
-      <DependentUpon>201609130909366_ImagesAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609131410248_ImagesChanged.cs" />
-    <Compile Include="Migrations\201609131410248_ImagesChanged.Designer.cs">
-      <DependentUpon>201609131410248_ImagesChanged.cs</DependentUpon>
+    <Compile Include="Migrations\201609281448357_InitialCreate.cs" />
+    <Compile Include="Migrations\201609281448357_InitialCreate.Designer.cs">
+      <DependentUpon>201609281448357_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,26 +86,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602100916387_InitialCreate.resx">
-      <DependentUpon>201602100916387_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602100922285_JokesAndJokesCategories.resx">
-      <DependentUpon>201602100922285_JokesAndJokesCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609051243221_OrganiserModelsCreated.resx">
-      <DependentUpon>201609051243221_OrganiserModelsCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609071110371_FriendsCreated.resx">
-      <DependentUpon>201609071110371_FriendsCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609130909366_ImagesAdded.resx">
-      <DependentUpon>201609130909366_ImagesAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609131410248_ImagesChanged.resx">
-      <DependentUpon>201609131410248_ImagesChanged.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
@@ -134,6 +94,11 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609281448357_InitialCreate.resx">
+      <DependentUpon>201609281448357_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

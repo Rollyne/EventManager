@@ -7,6 +7,7 @@ using EventManager.Data.Models;
 using EventManager.Data.Common;
 using System.Web;
 using System.IO;
+using EventManager.Tools.Helpers;
 
 namespace EventManager.Services.Data
 {
@@ -14,13 +15,16 @@ namespace EventManager.Services.Data
     {
         private readonly IDbRepository<Event> events;
         private readonly IUserRepository<ApplicationUser> users;
+        private readonly IDateService dates;
 
         public EventService(
             IDbRepository<Event> events,
-            IUserRepository<ApplicationUser> users)
+            IUserRepository<ApplicationUser> users,
+            IDateService dates)
         {
             this.events = events;
             this.users = users;
+            this.dates = dates;
         }
 
         public void AddImage(int eventId, HttpPostedFileBase image)
@@ -51,6 +55,55 @@ namespace EventManager.Services.Data
             var allEvents = this.users.GetCurrentUser().Events.ToList();
 
             return allEvents;
+        }
+
+        public void CalculateEventTime(int eventId)
+        {
+            var eventDates = this.dates.DatesForThisEvent(eventId);
+            List<FreePeople> peopleCount = new List<FreePeople>();
+
+            foreach (var eventDate in eventDates)
+            {
+                var days = eventDate.EndDate - eventDate.StartDate;
+                
+                for (int i = 0; i <= days.Days; i++)
+                {
+                    if (peopleCount.Where(x => x.Date == eventDate.StartDate.AddDays(i)).Any())
+                    {
+                        var index = peopleCount.FindIndex(x => x.Date == eventDate.StartDate.AddDays(i));
+                        peopleCount[index].FreePeopleCount++;
+                    }
+                    else
+                    {
+                        peopleCount.Add(new FreePeople
+                        {
+                            Date = eventDate.StartDate.AddDays(i),
+                            DaysCount = 1,
+                            FreePeopleCount = 1
+                        });
+                    }
+                }
+            }
+            peopleCount = peopleCount.OrderByDescending(x => x.FreePeopleCount).ThenBy(x => x.Date).ToList();
+
+            var startDate = peopleCount[0].Date;
+            DateTime endDate;
+
+            int j = 0;
+            do
+            {
+                endDate = peopleCount[j].Date;
+                j++;
+            }
+            while (peopleCount[j - 1].Date.AddDays(1) == peopleCount[j].Date && peopleCount[0].FreePeopleCount == peopleCount[j].FreePeopleCount);
+
+            var _event = this.events.GetById(eventId);
+
+            _event.StartEventDate = startDate;
+            _event.EndEventDate = endDate;
+
+            this.events.Edit(_event);
+            this.events.Save();
         }
 
         public void CreateEvent(string destination)
