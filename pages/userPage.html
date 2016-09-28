@@ -2,24 +2,113 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Event Manager</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
 </head>
+<style>.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/Preloader_3.gif) center no-repeat #fff;
+}</style>
+<script>
+    $(window).load(function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+</script>
 <body>
+<div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <ul id="headerMenu">
-        <li class="buttonHeader" ><a href="index.html" id="searchButton" ><img src="../icons/search-128.png" id="buttonSearchIcon"></a></li>
-        <li class="buttonHeader" id="UserDetailsWrapper" >
-                <a href="#">
-                    <img src="../images/profilePicture.jpg" id="userDetailsProfilePicture">
-                    <span id="username">Username</span>
-                </a>
-        </li>
-    </ul>
+    <div id="headerContent">
+        <div id="searchWrapper">
+            <img src="../icons/search-128.png" id="buttonSearchIcon">
+            <input type="search" placeholder="Search.." id="searchContent">
+        </div>
+        <ul id="sideBarMenu">
+            <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="#" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="#" id="menuEvents">Events</a></li>
+            <li class="menuUnderline">
+                <div class="menuUnderlineContent"></div>
+            </li>
+            <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
+            <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
+            <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+        </ul>
+        <footer id="sideBarFooter">
+            <a href="#" id="footerUserDetails">
+                <img src="../images/profilePicture.jpg" id="footerUserDetailsProfilePicture">
+                <span id="footerUsername">Dimitar</span>
+            </a>
+        </footer>
+    </div>
 </header>
+
+<main>
+    <section id="userDetails">
+        <aside id="identity">
+            <div id="detailsUsername">Dimitar Tonchev</div>
+            <div id="profilePicture">
+                <img src="../images/profilePicture.jpg">
+            </div>
+        </aside>
+        <section id="detailsAboutUser">
+            <div>About
+                <p>Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs
+                    burgdoggen meatball t-bone shank pork ribeye capicola. Bresaola tri-tip ham pancetta. Turducken
+                    frankfurter doner shank leberkas spare ribs. Doner turkey sirloin pig landjaeger chuck, pork chop
+                    hamburger pork belly chicken tail ham hock ball tip capicola. Sirloin corned beef tenderloin, t-bone
+                    chicken filet mignon jerky boudin short ribs frankfurter. Short loin andouille fatback short ribs
+                    cupim frankfurter alcatra jerky. Shoulder biltong pig strip steak beef ribs burgdoggen landjaeger
+                    spare ribs chuck tenderloin sirloin rump fatback meatball kevin.
+
+                    Jerky pancetta pork cupim pork chop salami. Sausage short ribs pig salami brisket capicola spare
+                    ribs drumstick. Pancetta landjaeger alcatra pork chop, cow swine sausage corned beef biltong
+                    meatloaf spare ribs ball tip rump tongue leberkas. Salami boudin shankle doner sirloin biltong.
+                    Sausage pork tongue tri-tip short ribs venison ribeye meatloaf kevin tenderloin flank landjaeger
+                    tail. Venison short ribs sausage biltong andouille doner frankfurter shoulder short loin shank
+                    pancetta boudin.</p>
+            </div>
+            <div>Details
+                <p>Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs
+                    burgdoggen meatball t-bone shank pork ribeye capicola. Bresaola tri-tip ham pancetta. Turducken
+                    frankfurter doner shank leberkas spare ribs. Doner turkey sirloin pig landjaeger chuck, pork chop
+                    hamburger pork belly chicken tail ham hock ball tip capicola. Sirloin corned beef tenderloin, t-bone
+                    chicken filet mignon jerky boudin short ribs frankfurter. Short loin andouille fatback short ribs
+                    cupim frankfurter alcatra jerky. Shoulder biltong pig strip steak beef ribs burgdoggen landjaeger
+                    spare ribs chuck tenderloin sirloin rump fatback meatball kevin.
+
+                    Jerky pancetta pork cupim pork chop salami. Sausage short ribs pig salami brisket capicola spare
+                    ribs drumstick. Pancetta landjaeger alcatra pork chop, cow swine sausage corned beef biltong
+                    meatloaf spare ribs ball tip rump tongue leberkas. Salami boudin shankle doner sirloin biltong.
+                    Sausage pork tongue tri-tip short ribs venison ribeye meatloaf kevin tenderloin flank landjaeger
+                    tail. Venison short ribs sausage biltong andouille doner frankfurter shoulder short loin shank
+                    pancetta boudin.</p>
+            </div>
+        </section>
+    </section>
+</main>
 
 
 <footer id="mainFooter">

@@ -13,15 +13,18 @@
 body {
     font-family: myriadPro;
     border: 0;
+    overflow: auto;
 }
 
 /* Header */
 #mainHeader {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
 }
 
 .buttonHeader a {
@@ -36,10 +39,10 @@ body {
     display: inline-block;
 }
 
-#selectedHeaderButton a, .buttonHeader a:hover, #searchButton:hover {
+.selectedHeaderButton a, .buttonHeader a:hover, #searchButton:hover {
     background-color: #6DE50A;
     color: black;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 
 }
 
@@ -49,8 +52,8 @@ body {
 }
 
 #mainFooter {
-    position: absolute;
-    left: 0;
+    position: fixed;
+    right: 0;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
