@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
     <link rel="stylesheet" type="text/css" href="../styles/eventPage.css">
+
+    <link rel="stylesheet" type="text/css" href="../styles/imageAccordion.css"/>
+    <script type="text/javascript" src="../scripts/imageAccordion.js"></script>
 </head>
 <style>
     .no-js #loader {
@@ -41,6 +44,7 @@
     });
 </script>
 <body>
+
 
 <div class="se-pre-con"></div>
 <header id="mainHeader">
@@ -74,12 +78,37 @@
     <div id="bannerWrapper"><img id="eventBanner" src="../images/eventBanner.jpg"></div>
     <div id="eventName">Хижа Балкански рози</div>
     <section id="event">
-        <ul id="sm" class="sm">
-            <li class="imgAccWrapper"><img src="../images/eventImage1.jpg"></li>
-            <li class="imgAccWrapper"><img src="../images/imgAcc1.jpg"></li>
-            <li class="imgAccWrapper"><img src="../images/imgAcc2.jpg"></li>
-            <li class="imgAccWrapper"><img src="../images/imgAcc3.jpg"></li>
-        </ul>
+        <!--TODO: It will break if the first image has more height than the others-->
+            <div class="ia-container">
+                <figure>
+                    <img src="../images/imgAcc3.jpg"/>
+                    <input type="radio" name="radio-set" checked="checked"/>
+                    <figcaption><span>Пръскалото</span></figcaption>
+
+                    <figure>
+                        <img src="../images/imgAcc2.jpg"/>
+                        <input type="radio" name="radio-set"/>
+                        <figcaption><span>Стара Река</span></figcaption>
+
+                        <figure>
+                            <img src="../images/imgAcc1.jpg"/>
+                            <input type="radio" name="radio-set"/>
+                            <figcaption><span>Огнище на хижата</span></figcaption>
+
+                            <figure>
+                                <img src="../images/eventImage1.jpg"/>
+                                <input id="ia-selector-last" type="radio" name="radio-set"/>
+                                <figcaption><span>Балкански Рози</span></figcaption>
+                            </figure>
+
+                        </figure>
+
+                    </figure>
+
+                </figure>
+
+            </div>
+            <!-- ia-container -->
         <div id="eventDetails">
             <span>About</span>
 
