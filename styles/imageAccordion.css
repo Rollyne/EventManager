@@ -1,4 +1,5 @@
 .ia-container {
+	display: block;
 	max-width: 635px;
 	margin: 20px auto;
 	overflow: hidden;
@@ -134,28 +135,8 @@
     z-index: 1;
 }
 
-/*@media screen and (max-width: 920px) {*/
-	/*.ia-container {*/
-		/*width: 380px;*/
-	/*}*/
 
-	/*.ia-container figure {*/
-		/*left: 40px;*/
-		/*width: 260px;*/
-	/*}*/
 
-	/*.ia-container input {*/
-		/*width: 40px;*/
-	/*}*/
-
-	/*.ia-container input:checked ~ figure {*/
-		/*left: 260px;*/
-	/*}*/
-
-	/*.ia-container figcaption span {*/
-		/*font-size: 20px;*/
-	/*}*/
-/*}*/
 
 @media screen and (max-width: 1020px) {
 	.ia-container {
@@ -182,16 +163,16 @@
 
 @media screen and (max-width: 800px) {
     .ia-container { 
-		width: 270px;
+		width: 240px;
 	}
 	
 	.ia-container figure { 
-		left: 30px;
+		left: 20px;
 		width: 180px; 
 	}
 	
 	.ia-container input { 
-		width: 30px;
+		width: 20px;
 	}
 	
 	.ia-container input:checked ~ figure { 
@@ -201,8 +182,54 @@
 	.ia-container figcaption span { 
 		font-size: 12px; 
 		letter-spacing: 2px; 
-		padding: 10px; 
+		padding: 10px;
 		margin-top: -20px; 
-	} 
+	}
+}
+@media screen and (max-width: 598px) {
+	.ia-container {
+		width: 410px;
+	}
 
+	.ia-container figure {
+		left: 50px;
+		width: 260px;
+	}
+
+	.ia-container input {
+		width: 50px;
+	}
+
+	.ia-container input:checked ~ figure {
+		left: 260px;
+	}
+
+	.ia-container figcaption span {
+		font-size: 18px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.ia-container {
+		width: 270px;
+	}
+
+	.ia-container figure {
+		left: 30px;
+		width: 180px;
+	}
+
+	.ia-container input {
+		width: 30px;
+	}
+
+	.ia-container input:checked ~ figure {
+		left: 180px;
+	}
+
+	.ia-container figcaption span {
+		font-size: 12px;
+		letter-spacing: 2px;
+		padding: 10px;
+		margin-top: -20px;
+	}
 }

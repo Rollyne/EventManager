@@ -47,10 +47,11 @@
 
 
 <div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
     <div id="headerContent">
         <div id="searchWrapper">
-            <img src="../icons/search-128.png" id="buttonSearchIcon">
+            <div id="buttonSearchIcon"></div>
             <input type="search" placeholder="Search.." id="searchContent">
         </div>
         <ul id="sideBarMenu">
@@ -61,13 +62,13 @@
                 <div class="menuUnderlineContent"></div>
             </li>
             <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
-            <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="userPage.html" id="menuMyProfile">My Profile</a></li>
             <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
             <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
         </ul>
         <footer id="sideBarFooter">
             <a href="#" id="footerUserDetails">
-                <img src="../images/profilePicture.jpg" id="footerUserDetailsProfilePicture">
+                <div id="footerUserDetailsProfilePicture"></div>
                 <span id="footerUsername">Dimitar</span>
             </a>
         </footer>
@@ -75,40 +76,41 @@
 </header>
 
 <main>
-    <div id="bannerWrapper"><img id="eventBanner" src="../images/eventBanner.jpg"></div>
+    <div id="bannerWrapper"></div>
     <div id="eventName">Хижа Балкански рози</div>
     <section id="event">
-        <!--TODO: It will break if the first image has more height than the others-->
-            <div class="ia-container">
+        <!--TODO: It will break if the first image has more height than the others
+            TODO: Make the images as div background-->
+        <div class="ia-container">
+            <figure>
+                <img src="../images/imgAcc3.jpg"/>
+                <input type="radio" name="radio-set" checked="checked"/>
+                <figcaption><span>Пръскалото</span></figcaption>
+
                 <figure>
-                    <img src="../images/imgAcc3.jpg"/>
-                    <input type="radio" name="radio-set" checked="checked"/>
-                    <figcaption><span>Пръскалото</span></figcaption>
+                    <img src="../images/imgAcc2.jpg"/>
+                    <input type="radio" name="radio-set"/>
+                    <figcaption><span>Стара Река</span></figcaption>
 
                     <figure>
-                        <img src="../images/imgAcc2.jpg"/>
+                        <img src="../images/imgAcc1.jpg"/>
                         <input type="radio" name="radio-set"/>
-                        <figcaption><span>Стара Река</span></figcaption>
+                        <figcaption><span>Огнище на хижата</span></figcaption>
 
                         <figure>
-                            <img src="../images/imgAcc1.jpg"/>
-                            <input type="radio" name="radio-set"/>
-                            <figcaption><span>Огнище на хижата</span></figcaption>
-
-                            <figure>
-                                <img src="../images/eventImage1.jpg"/>
-                                <input id="ia-selector-last" type="radio" name="radio-set"/>
-                                <figcaption><span>Балкански Рози</span></figcaption>
-                            </figure>
-
+                            <img src="../images/eventImage1.jpg"/>
+                            <input id="ia-selector-last" type="radio" name="radio-set"/>
+                            <figcaption><span>Балкански Рози</span></figcaption>
                         </figure>
 
                     </figure>
 
                 </figure>
 
-            </div>
-            <!-- ia-container -->
+            </figure>
+
+        </div>
+        <!-- ia-container -->
         <div id="eventDetails">
             <span>About</span>
 
@@ -127,7 +129,39 @@
     </section>
 
     <section id="comments">
+        <div id="postCommentSection">
+            <div id="writeComment">
+                <div id="writeCommentPicture"></div>
+                <textarea rows="3" name="comment" placeholder="Write comment here"></textarea>
+            </div>
+            <input type="submit" id="postCommentButton" value="Post">
+        </div>
 
+        <!--TODO: Make the images as img or editable script url-->
+        <div class="comment">
+            <div class="commentContent">
+                <div class="commentAuthorPicture"></div>
+                <p>
+                    <a href="#" class="authorName">Dimitar Tonchev</a>
+                    Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs
+                    burgdoggen meatball t-bone shank pork ribeye capicola. Bresaola tri-tip ham pancetta. Turducken
+                    frankfurter doner shank leberkas spare ribs. Doner turkey sirloin pig landjaeger chuck, pork
+                    chop
+                    hamburger pork belly chicken tail ham hock ball tip capicola.
+                </p>
+            </div>
+            <span class="commentDate">Posted on 26.10.2016 at 15:34</span>
+        </div>
+        <div class="comment">
+            <div class="commentContent">
+                <div class="commentAuthorPicture" id="commenter2"></div>
+                <p>
+                    <a href="#" class="authorName">Jivko Kirishev</a>
+                    Bacon ipsum dolor amet venison pancetta.
+                </p>
+            </div>
+            <span class="commentDate">Posted on 26.10.2016 at 15:34</span>
+        </div>
     </section>
 </main>
 

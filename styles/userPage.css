@@ -184,11 +184,6 @@
         margin-left: 10px;
     }
 }
-@media all and (min-width: 600px) {
-    #mainHeader {
-        max-width: 300px;
-    }
-}
 @media all and (min-width: 1000px) {
     /* We invert order of first sidebar and main
      * And tell the main element to take twice as much width as the other two sidebars

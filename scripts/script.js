@@ -1,35 +1,9 @@
 /**
- * Created by princ on 18.9.2016 г..
+ * Created by Dimitar Tonchev on 18.9.2016 г..
  */
 
-//Changing Background Images( too heavy )
-/*    $(function ($) {
- var images = [
- '../images/background0.jpg',
- '../images/background1.jpg',
- '../images/background2.jpg',
- '../images/background3.jpg'
- ],
- amountOfImages = images.length,
- tempR = 0,
- $bg = $('#bg');
 
- for (let i = 0; i < amountOfImages; i++) {
- var img = new Image(),src = images[i];
- }
-
- function fader(){
- let r = Math.floor(Math.random()*amountOfImages);
- $('#bg').fadeOut(500, function(){
- $bg.attr('src', images[r]); //TODO: Animate the transition
- $('#bg').fadeIn(500);
- tempR = r;
- })
- }
- fader();
-
- setInterval(fader, 5000);
- });*/
+//Auto Resizing Text Area
 
 var theWindow = $(window);
 
@@ -63,36 +37,52 @@ $(function () {
         $('#sidebarToggler').attr('class', 'dropdownToggle');
     }
 });
-//TODO: FIX: While the sidebar is full page and you resize the page the main content breaks
-//TODO: Make animation on the main show/hide
+//TODO: It has few bugs while resizing
+$(window).on("load", function () {
+    let $userDrop = $('#mainHeader'),
+        $userWrapper = $('#sidebarToggler'),
+        $dropdownMenu = $('#headerContent'),
+        windowSizeBig = theWindow.width() + 17 >= 600;
+    function windowToggle() {
+        console.log($userWrapper.hasClass('dropdownToggle'));
+        if(theWindow.width() >= 600){
+            $userDrop.show(function () {
+                $dropdownMenu.animate({opacity: 1}, 200);
+                $dropdownMenu.show('slow');
+            });
+            $('main').css({"margin-left": "300px"});
+            $userWrapper.css({"cursor": "default"});
+            if($userWrapper.hasClass('dropdownToggle')){
+                $userWrapper.removeAttr('class', 'dropdownToggle');
+            }
+        } else {
+            $('main').css({"margin-left": "auto"});
+            if($userWrapper.hasClass('dropdownToggle')){
+                $userWrapper.attr('class', 'dropdownToggle');
+            }
+        }
+    }
+    theWindow.resize(windowToggle).trigger("resize");
+});
 
 function Dropdowner(idOfWrapper, idOfDropdowner, idOfContent) {
     let $userDrop = $('#' + idOfDropdowner),
         $userWrapper = $('#' + idOfWrapper),
         $dropdownMenu = $('#' + idOfContent),
-        windowSizeBig = theWindow.width() + 17 >= 600;
-    console.log(windowSizeBig, theWindow.width());
-
-    if ($('.dropdownToggle').length == 0) {
-        if (windowSizeBig) {
-            $('main').css({"margin-left": "auto"});
+        windowSizeBig = theWindow.width() >= 600;
+    if (!windowSizeBig) {
+        if ($('.dropdownToggle').length == 0) {
+            $dropdownMenu.animate({opacity: 0}, 300, function () {
+                $userDrop.hide('slow');
+            });
+            $userWrapper.attr('class', 'dropdownToggle');
         } else {
-            $('main').fadeIn('fast');
+            $userDrop.show(function () {
+                $dropdownMenu.animate({opacity: 1}, 200);
+                $dropdownMenu.show('slow');
+            });
+            $userWrapper.removeAttr('class', 'dropdownToggle');
         }
-        $dropdownMenu.animate({opacity: 0}, 300, function () {
-            $userDrop.hide('slow');
-        });
-        $userWrapper.attr('class', 'dropdownToggle');
-
-    } else {
-        if (windowSizeBig) {
-            $('main').css({"margin-left": "300px"});
-        }
-        $userDrop.show(function () {
-            $dropdownMenu.animate({opacity: 1}, 200);
-            $dropdownMenu.show('slow');
-        });
-        $userWrapper.removeAttr('class', 'dropdownToggle');
     }
 }
 
@@ -219,8 +209,8 @@ jQuery(document).ready(function () {
             beforeShowDay: function (date) {
                 let highlight = $.inArray(date.getTime(), datesArray) >= 0,
                     elIndex = $.inArray(date.getTime(), datesArray);
-                if(elIndex >= 0){
-                percentAttenders = parseInt(dateDetails.Dates[elIndex].FreePeopleCount / allAttenders * 10);
+                if (elIndex >= 0) {
+                    percentAttenders = parseInt(dateDetails.Dates[elIndex].FreePeopleCount / allAttenders * 10);
                 }
                 if (highlight) {
                     switch (percentAttenders) {

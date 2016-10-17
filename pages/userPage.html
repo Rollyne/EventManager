@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
 </head>
-<style>.no-js #loader {
+<style>
+    .no-js #loader {
     display: none;
 }
 
@@ -29,7 +30,8 @@
     height: 100%;
     z-index: 9999;
     background: url(../images/Preloader_3.gif) center no-repeat #fff;
-}</style>
+}
+</style>
 <script>
     $(window).load(function () {
         // Animate loader off screen
@@ -48,7 +50,7 @@
         <ul id="sideBarMenu">
             <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuMyEvents">My Events</a></li>
             <li class="menuButton"><a href="#" id="menuCreateEvent">Create Event</a></li>
-            <li class="menuButton"><a href="#" id="menuEvents">Events</a></li>
+            <li class="menuButton"><a href="eventPage.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
@@ -59,7 +61,7 @@
         </ul>
         <footer id="sideBarFooter">
             <a href="#" id="footerUserDetails">
-                <img src="../images/profilePicture.jpg" id="footerUserDetailsProfilePicture">
+                <div id="footerUserDetailsProfilePicture"></div>
                 <span id="footerUsername">Dimitar</span>
             </a>
         </footer>
