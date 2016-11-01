@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Event Manager</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/imagePreviewer.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../styles/createEvent.css">
+    <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
+</head>
+<style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../images/Preloader_3.gif) center no-repeat #fff;
+    }</style>
+<script>
+    $(window).load(function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+</script>
+<body>
+<div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
+<header id="mainHeader">
+    <div id="headerContent">
+        <div id="searchWrapper">
+            <div id="buttonSearchIcon"></div>
+            <input type="search" placeholder="Search.." id="searchContent">
+        </div>
+        <ul id="sideBarMenu">
+            <li class="menuButton"><a href="#" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
+            <li class="menuUnderline">
+                <div class="menuUnderlineContent"></div>
+            </li>
+            <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
+            <li class="menuButton"><a href="userProfile.html" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
+            <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+        </ul>
+        <footer id="sideBarFooter">
+            <a href="#" id="footerUserDetails">
+                <div id="footerUserDetailsProfilePicture"></div>
+                <span id="footerUsername">Dimitar</span>
+            </a>
+        </footer>
+    </div>
+</header>
+
+<main>
+    <section id="createEventForm">
+        <div id="createEventText">Create a new event</div>
+
+
+        <form id="createEvent">
+            <label for="eventTitle">Event name</label>
+            <input type="text" id="eventTitle" placeholder="Think of a great title" required>
+            <label for="descriptionArea">Description</label>
+            <textarea rows="8" cols="60" name="description" id="descriptionArea" placeholder="Mention every detail.."></textarea>
+            <label>Event images</label>
+            <div id="imageInputWrapper">
+                <div id="image-preview0" class="imageInput">
+                    <label id="image-label0">Choose File</label>
+                    <input type="file" name="image" class="imageUpload" id="image-upload0"/>
+                </div>
+                <div id="image-preview1" class="imageInput">
+                    <label id="image-label1">Choose File</label>
+                    <input type="file" name="image" class="imageUpload" id="image-upload1"/>
+                </div>
+                <div id="image-preview2" class="imageInput">
+                    <label id="image-label2">Choose File</label>
+                    <input type="file" name="image" class="imageUpload" id="image-upload2"/>
+                </div>
+                <div id="image-preview3" class="imageInput">
+                    <label id="image-label3">Choose File</label>
+                    <input type="file" name="image" class="imageUpload" id="image-upload3"/>
+                </div>
+            </div>
+            <input type="submit" value="Create Event"/>
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $.uploadPreview({
+                    input_field: "#image-upload0",
+                    preview_box: "#image-preview0",
+                    label_field: "#image-label0"
+                });
+                $.uploadPreview({
+                    input_field: "#image-upload1",
+                    preview_box: "#image-preview1",
+                    label_field: "#image-label1"
+                });
+                $.uploadPreview({
+                    input_field: "#image-upload2",
+                    preview_box: "#image-preview2",
+                    label_field: "#image-label2"
+                });
+                $.uploadPreview({
+                    input_field: "#image-upload3",
+                    preview_box: "#image-preview3",
+                    label_field: "#image-label3"
+                });
+            });
+        </script>
+    </section>
+</main>
+
+</body>
+</html>

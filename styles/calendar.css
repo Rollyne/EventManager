@@ -276,3 +276,13 @@
     }
 
 }
+@media all and (max-width: 350px) {
+    .ui-datepicker-calendar td a, .ui-datepicker-calendar td span {
+        padding: 0;
+    }
+
+    .ui-datepicker {
+        font-size: 0.4em;
+    }
+
+}

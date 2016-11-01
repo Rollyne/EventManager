@@ -6,29 +6,31 @@
     <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/calendarSettings.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
 </head>
-<style>.no-js #loader {
-    display: none;
-}
+<style>
+    .no-js #loader {
+        display: none;
+    }
 
-.js #loader {
-    display: block;
-    position: absolute;
-    left: 100px;
-    top: 0;
-}
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
 
-.se-pre-con {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url(../images/Preloader_3.gif) center no-repeat #fff;
-}</style>
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../images/Preloader_3.gif) center no-repeat #fff;
+    }</style>
 <script>
     $(window).load(function () {
         // Animate loader off screen
@@ -43,7 +45,7 @@
         <li class="buttonHeader selectedHeaderButton" id="homeButton"><a href="#" onclick="homeView()">Home</a></li>
         <li class="buttonHeader" id="loginButton"><a href="#" onclick="loginFormView()">Login</a></li>
         <li class="buttonHeader" id="registerButton"><a href="#" onclick="registerFormView()">Register</a></li>
-        <li class="buttonHeader" id="eventsButton"><a href="eventPage.html">Events</a></li>
+        <li class="buttonHeader" id="eventsButton"><a href="events.html">Events</a></li>
     </ul>
 </header>
 
