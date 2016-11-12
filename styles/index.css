@@ -1,4 +1,10 @@
 
+body {
+    right: 0;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
 #bg {
     position: fixed;
     top: 0;
