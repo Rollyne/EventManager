@@ -12,9 +12,12 @@
 
 /* Background Style */
 body {
-    font-family: myriadPro;
     border: 0;
     overflow: auto;
+}
+
+* {
+    font-family: myriadPro;
 }
 
 /* Header */

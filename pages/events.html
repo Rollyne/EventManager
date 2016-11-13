@@ -6,6 +6,7 @@
     <title>Event Manager</title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>var pathToJson = "../json/Dates.json"</script>
     <script src="../scripts/jquery-ui-datepicker.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/calendarSettings.js"></script>
@@ -57,14 +58,14 @@
             <input type="search" placeholder="Search.." id="searchContent">
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="#" id="menuMyEvents">My Events</a></li>
-            <li class="menuButton"><a href="#" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="userProfile.html" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
             <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
             <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
-            <li class="menuButton"><a href="userProfile.html" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
             <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
             <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
         </ul>
@@ -79,6 +80,7 @@
 
 <main>
     <div id="bannerWrapper"></div>
+    <style>#bannerWrapper{background-image: url(../images/eventBanner.jpg);}</style>
     <div id="eventName">Хижа Балкански рози</div>
     <section id="event">
         <!--TODO: It will break if the first image has more height than the others
@@ -114,7 +116,7 @@
         </div>
         <!-- ia-container -->
         <div id="eventDetails">
-            <span>About</span>
+            <h3>About</h3>
 
             <p>
                 Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs

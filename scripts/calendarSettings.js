@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': "../json/Dates.json",
+                'url': pathToJson,
                 'dataType': "json",
                 'success': function (data) {
                     json = data;

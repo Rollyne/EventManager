@@ -6,12 +6,13 @@
     <title>Event Manager</title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../scripts/jquery-ui-datepicker.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
-    <script type="text/javascript" src="../scripts/imagePreviewer.min.js"></script>
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/createEvent.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
+    <link rel="stylesheet" type="text/css" href="../styles/calendar.css" media="screen">
 </head>
 <style>
     .no-js #loader {
@@ -33,12 +34,38 @@
         height: 100%;
         z-index: 9999;
         background: url(../images/Preloader_3.gif) center no-repeat #fff;
-    }</style>
+    }
+    #datepicker {
+        position: relative; z-index: 100000;
+    }
+    .ui-datepicker {
+        width: 250px;
+        font-size: 0.5em;
+        padding: 10px;
+    }
+    .ui-datepicker table{
+        width: 200px;
+    }
+    .ui-datepicker-calendar th, .ui-datepicker-calendar td {
+        padding-top: 5px;
+        padding-bottom: 3px;
+        line-height: 10px;
+    }
+    .ui-datepicker-calendar td a, .ui-datepicker-calendar td span {
+        padding: 5px;
+        transition: all ease 0.25s;
+    }
+
+</style>
 <script>
     $(window).load(function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
+    $( function() {
+        $( "#fromDate" ).datepicker();
+        $( "#toDate" ).datepicker();
+    } );
 </script>
 <body>
 <div class="se-pre-con"></div>
@@ -50,14 +77,14 @@
             <input type="search" placeholder="Search.." id="searchContent">
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="#" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="userProfile.html" id="menuMyEvents">My Events</a></li>
             <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuCreateEvent">Create Event</a></li>
             <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
             <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
-            <li class="menuButton"><a href="userProfile.html" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
             <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
             <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
         </ul>
@@ -72,59 +99,131 @@
 
 <main>
     <section id="createEventForm">
-        <div id="createEventText">Create a new event</div>
+        <h1>Create New Event</h1>
 
 
         <form id="createEvent">
-            <label for="eventTitle">Event name</label>
+
+            <div class="lbl"><label for="eventTitle">Event name</label></div>
             <input type="text" id="eventTitle" placeholder="Think of a great title" required>
-            <label for="descriptionArea">Description</label>
-            <textarea rows="8" cols="60" name="description" id="descriptionArea" placeholder="Mention every detail.."></textarea>
-            <label>Event images</label>
-            <div id="imageInputWrapper">
-                <div id="image-preview0" class="imageInput">
-                    <label id="image-label0">Choose File</label>
-                    <input type="file" name="image" class="imageUpload" id="image-upload0"/>
+
+            <div class="lbl"><label for="descriptionArea">Description</label></div>
+            <textarea rows="8" cols="60" name="description" id="descriptionArea"
+                      placeholder="Mention every detail.."></textarea>
+
+            <div class="lbl">Event Dates</div>
+            <div class="lbl smallLbl"><label for="eventLength">Event Length</label></div>
+            <input type="text" class="InputDates" id="eventLength" pattern="[0-9]*" placeholder="How much days ?">
+            <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
+            <input type="text" class="InputDates" id="fromDate" placeholder="From when">
+            <input type="text" class="InputDates" id="toDate" placeholder="To when">
+
+
+            <div class="setting" id="imageUplWrapper">
+                <div class="setting image_picker" id="image_picker0">
+                    <h2>Banner Image</h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target0">
+                            <div id="image_preview0" class="image_preview"></div>
+                            <input id="inputFile0" type="file"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <h3>This image will be displayed as banner</h3>
+                            <a data-action="remove_current_image0" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div id="image-preview1" class="imageInput">
-                    <label id="image-label1">Choose File</label>
-                    <input type="file" name="image" class="imageUpload" id="image-upload1"/>
+                <div class="setting image_picker" id="image_picker">
+                    <h2>Event Images</h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target">
+                            <div id="image_preview" class="image_preview"></div>
+                            <input id="inputFile" type="file"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title"></label>
+                                <input type="text" placeholder="Title"/>
+                            </div>
+                            <a data-action="remove_current_image" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div id="image-preview2" class="imageInput">
-                    <label id="image-label2">Choose File</label>
-                    <input type="file" name="image" class="imageUpload" id="image-upload2"/>
+                <div class="setting image_picker" id="image_picker1">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target1">
+                            <div id="image_preview1" class="image_preview"></div>
+                            <input id="inputFile1" type="file"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title1"></label>
+                                <input type="text" placeholder="Title"/>
+                            </div>
+                            <a data-action="remove_current_image1" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div id="image-preview3" class="imageInput">
-                    <label id="image-label3">Choose File</label>
-                    <input type="file" name="image" class="imageUpload" id="image-upload3"/>
+                <div class="setting image_picker" id="image_picker2">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target2">
+                            <div id="image_preview2" class="image_preview"></div>
+                            <input id="inputFile2" type="file"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title2"></label>
+                                <input type="text" placeholder="Title"/>
+                            </div>
+                            <a data-action="remove_current_image2" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <div class="setting image_picker" id="image_picker3">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target3">
+                            <div id="image_preview3" class="image_preview"></div>
+                            <input id="inputFile3" type="file"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title3"></label>
+                                <input type="text" placeholder="Title"/>
+                            </div>
+                            <a data-action="remove_current_image3" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" id="addImage" onclick="addImage()">+ Add Image</a>
             </div>
+            <script type="text/javascript" src="../scripts/imagePreview.js"></script>
+
             <input type="submit" value="Create Event"/>
         </form>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $.uploadPreview({
-                    input_field: "#image-upload0",
-                    preview_box: "#image-preview0",
-                    label_field: "#image-label0"
-                });
-                $.uploadPreview({
-                    input_field: "#image-upload1",
-                    preview_box: "#image-preview1",
-                    label_field: "#image-label1"
-                });
-                $.uploadPreview({
-                    input_field: "#image-upload2",
-                    preview_box: "#image-preview2",
-                    label_field: "#image-label2"
-                });
-                $.uploadPreview({
-                    input_field: "#image-upload3",
-                    preview_box: "#image-preview3",
-                    label_field: "#image-label3"
-                });
-            });
-        </script>
+
     </section>
 </main>
 

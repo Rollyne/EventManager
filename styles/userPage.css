@@ -348,6 +348,11 @@ body {
         width: 300px;
     }
 }
+@media screen and (max-width: 400px){
+    .eventHeader, .eventDetails footer, .eventDate {
+        width: 200px;
+    }
+}
 @media screen and (max-width: 800px){
     .eventHeader, .eventDetails footer, .eventDate {
         max-width: 300px;
