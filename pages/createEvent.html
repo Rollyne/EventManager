@@ -10,9 +10,9 @@
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../styles/calendar.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../styles/createEvent.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
-    <link rel="stylesheet" type="text/css" href="../styles/calendar.css" media="screen">
 </head>
 <style>
     .no-js #loader {
@@ -35,26 +35,6 @@
         z-index: 9999;
         background: url(../images/Preloader_3.gif) center no-repeat #fff;
     }
-    #datepicker {
-        position: relative; z-index: 100000;
-    }
-    .ui-datepicker {
-        width: 250px;
-        font-size: 0.5em;
-        padding: 10px;
-    }
-    .ui-datepicker table{
-        width: 200px;
-    }
-    .ui-datepicker-calendar th, .ui-datepicker-calendar td {
-        padding-top: 5px;
-        padding-bottom: 3px;
-        line-height: 10px;
-    }
-    .ui-datepicker-calendar td a, .ui-datepicker-calendar td span {
-        padding: 5px;
-        transition: all ease 0.25s;
-    }
 
 </style>
 <script>
@@ -69,22 +49,23 @@
 </script>
 <body>
 <div class="se-pre-con"></div>
-<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
+
 <header id="mainHeader">
+    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
     <div id="headerContent">
         <div id="searchWrapper">
             <div id="buttonSearchIcon"></div>
             <input type="search" placeholder="Search.." id="searchContent">
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="userProfile.html" id="menuMyEvents">My Events</a></li>
-            <li class="menuButton"><a href="#" class="selectedMenuButton" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="createEvent.html" class="selectedMenuButton" id="menuCreateEvent">Create Event</a></li>
             <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
             <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
-            <li class="menuButton"><a href="#" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="myProfile.html" id="menuMyProfile">My Profile</a></li>
             <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
             <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
         </ul>
@@ -220,6 +201,19 @@
                 <a href="#" id="addImage" onclick="addImage()">+ Add Image</a>
             </div>
             <script type="text/javascript" src="../scripts/imagePreview.js"></script>
+            <script>
+                var inputIds = [
+                ["#image_picker0","#drop_target0","#inputFile0", "#image_preview0", "#image_title0","remove_current_image0"],
+                ["#image_picker","#drop_target","#inputFile", "#image_preview", "#image_title","remove_current_image"],
+                ["#image_picker1","#drop_target1","#inputFile1", "#image_preview1", "#image_title1","remove_current_image1"],
+                ["#image_picker2","#drop_target2","#inputFile2", "#image_preview2", "#image_title2","remove_current_image2"],
+                ["#image_picker3","#drop_target3","#inputFile3", "#image_preview3", "#image_title3","remove_current_image3"]
+            ];
+
+            for (var i = 0; i < inputIds.length; i++) {
+                ImagePreview(inputIds[i][0], inputIds[i][1],inputIds[i][2],inputIds[i][3],inputIds[i][4],inputIds[i][5]);
+            }
+            </script>
 
             <input type="submit" value="Create Event"/>
         </form>

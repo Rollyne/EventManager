@@ -302,3 +302,25 @@
 #createEvent input[type="submit"]:active {
     outline: none;
 }
+
+/*CALENDAR PROPS*/
+.InputDates {
+    position: relative; z-index: 100000;
+}
+.ui-datepicker {
+    width: 250px;
+    font-size: 0.5em;
+    padding: 10px;
+}
+.ui-datepicker table{
+    width: 200px;
+}
+.ui-datepicker-calendar th, .ui-datepicker-calendar td {
+    padding-top: 5px;
+    padding-bottom: 3px;
+    line-height: 10px;
+}
+.ui-datepicker-calendar td a, .ui-datepicker-calendar td span {
+    padding: 5px;
+    transition: all ease 0.25s;
+}

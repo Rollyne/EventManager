@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Event Manager</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/sideBar.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../styles/myProfile.css">
+    <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
+</head>
+<style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../images/Preloader_3.gif) center no-repeat #fff;
+    }
+
+</style>
+<script>
+    $(window).load(function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+    function abToggler(id) {
+        let $inputBox = $('#' + id);
+        if ($inputBox.is(':disabled')) {
+            $inputBox.prop('disabled', false);
+            if (id != 'aboutUser') {
+                $inputBox.focus().select();
+            }
+        } else {
+            $inputBox.prop('disabled', true);
+        }
+    }
+</script>
+<body>
+<div class="se-pre-con"></div>
+<header id="mainHeader">
+    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
+    <div id="headerContent">
+        <div id="searchWrapper">
+            <div id="buttonSearchIcon"></div>
+            <input type="search" placeholder="Search.." id="searchContent">
+        </div>
+        <ul id="sideBarMenu">
+            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
+            <li class="menuUnderline">
+                <div class="menuUnderlineContent"></div>
+            </li>
+            <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
+            <li class="menuButton"><a href="myProfile.html" class="selectedMenuButton" id="menuMyProfile">My Profile</a>
+            </li>
+            <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
+            <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+        </ul>
+        <footer id="sideBarFooter">
+            <a href="#" id="footerUserDetails">
+                <div id="footerUserDetailsProfilePicture"></div>
+                <span id="footerUsername">Dimitar</span>
+            </a>
+        </footer>
+    </div>
+</header>
+
+<main id="mainContent">
+    <h1>My Profile</h1>
+
+
+    <form id="profileForm">
+        <div id="imageInputWrapper">
+            <div class="setting image_picker" id="profilePicPicker">
+                <h2>Profile Picture</h2>
+
+                <div class="settings_wrap">
+                    <label class="drop_target" id="profilePic_drop_target">
+                        <div id="profilePicPreview" class="image_preview"></div>
+                        <input id="profilePicInput" type="file"/>
+                    </label>
+                </div>
+                <a data-action="removeProfilePic">
+                    <i class="fa fa-ban"></i> Remove Current Image
+                </a>
+            </div>
+            <div class="setting image_picker" id="bannerPicPicker">
+                <h2>Banner Picture</h2>
+
+                <div class="settings_wrap">
+                    <label class="drop_target" id="bannerPic_drop_target">
+                        <div id="bannerPicPreview" class="image_preview"></div>
+                        <input id="bannerPicInput" type="file"/>
+                    </label>
+                </div>
+                <a data-action="removeBannerPic">
+                    <i class="fa fa-ban"></i> Remove Current Image
+                </a>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/imagePreview.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                $('#profilePicPreview').css('background-image', 'url(../images/profilePicture.jpg)');
+                $('#bannerPicPreview').css('background-image', 'url(../images/profileBackground.jpg)');
+            });
+            ImagePreview("#bannerPicPicker", "#bannerPic_drop_target", "#bannerPicInput", "#bannerPicPreview", "", "removeBannerPic");
+            ImagePreview("#profilePicPicker", "#profilePic_drop_target", "#profilePicInput", "#profilePicPreview", "", "removeProfilePic");
+        </script>
+        <h2>Personal information</h2>
+
+        <div class="lblInpGr">
+            <label for="username" id="usernamelbl">Username</label>
+
+            <div class="iconInpGr">
+                <a class="editContentIcon" onclick="abToggler('username')"></a>
+                <input type="text" id="username" class="inText" value="Dimitar Tonchev" disabled>
+            </div>
+        </div>
+        <div class="lblInpGr">
+            <label for="aboutUser" id="aboutlbl">About</label>
+
+            <div class="iconInpGr">
+                <a class="editContentIcon" id="textareaIcon" onclick="abToggler('aboutUser')"></a>
+                <textarea rows="10" cols="60" id="aboutUser" disabled>Bacon ipsum dolor amet landjaeger short ribs swine
+                    meatloaf andouille, shankle kielbasa burgdoggen leberkas pancetta. Drumstick tongue corned beef
+                    jerky ground round, meatball cupim pork chop turkey. Short ribs pig salami pork belly, chicken
+                    corned beef ball tip ham hock shank landjaeger picanha fatback meatloaf kielbasa. Pork loin cow
+                    bresaola shank hamburger ham, doner picanha brisket venison.
+                </textarea>
+            </div>
+        </div>
+        <div class="lblInpGr">
+            <label for="userEmail">Email Address</label>
+
+            <div class="iconInpGr">
+                <a class="editContentIcon" onclick="abToggler('userEmail')"></a>
+                <input type="email" id="userEmail" class="inText" value="rollyne@abv.bg" disabled>
+            </div>
+        </div>
+        <input type="submit" value="Apply Changes">
+    </form>
+    <form id="changePasswordForm">
+
+        <h2>Change Password</h2>
+
+        <div class="lblInpGr PassGr">
+            <label for="currentPass">Current password</label>
+            <input type="password" class="inText inTextPass" id="currentPass" required>
+        </div>
+        <div class="lblInpGr PassGr">
+            <label for="newPass">New password</label>
+            <input type="password" class="inText inTextPass" id="newPass" required>
+        </div>
+        <div class="lblInpGr PassGr">
+            <label for="confirmNewPass">Confirm password</label>
+            <input type="password" class="inText inTextPass" id="confirmNewPass" required>
+        </div>
+        <input type="submit" value="Change Password">
+    </form>
+</main>
+
+</body>
+</html>
