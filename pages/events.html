@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width">
     <title>Event Manager</title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="../scripts/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../scripts/node_modules/jquery.browser/dist/jquery.browser.js"></script>
     <script>var pathToJson = "../json/Dates.json"</script>
     <script src="../scripts/jquery-ui-datepicker.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
@@ -41,7 +43,7 @@
         background: url(../images/Preloader_3.gif) center no-repeat #fff;
     }</style>
 <script>
-    $(window).load(function () {
+    $(window).on('load', function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
@@ -50,9 +52,8 @@
 
 
 <div class="se-pre-con"></div>
-
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
     <div id="headerContent">
         <div id="searchWrapper">
             <div id="buttonSearchIcon"></div>
@@ -78,32 +79,39 @@
         </footer>
     </div>
 </header>
-
 <main>
-    <div id="bannerWrapper"></div>
-    <style>#bannerWrapper{background-image: url(../images/eventBanner.jpg);}</style>
+    <div style="background-image: url(../images/eventBanner.jpg);" id="bannerWrapper"></div>
     <div id="eventName">Хижа Балкански рози</div>
     <section id="event">
-        <!--TODO: It will break if the first image has more height than the others
-            TODO: Make the images as div background-->
+        <ul id="eventProps">
+            <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
+                <div class="inviteText">Invite</div>
+            </li>
+            <li>Attenders</li>
+            <li>Edit</li>
+        </ul>
+        <form class="inviteUser inviteUserDisabled">
+            <input type="text" placeholder="Username.."/>
+            <input type="submit" value="Invite"/>
+        </form>
         <div class="ia-container">
             <figure>
-                <img src="../images/imgAcc3.jpg"/>
+                <div class="accImage" style="background-image: url(../images/imgAcc3.jpg)"></div>
                 <input type="radio" name="radio-set" checked="checked"/>
                 <figcaption><span>Пръскалото</span></figcaption>
 
                 <figure>
-                    <img src="../images/imgAcc2.jpg"/>
+                    <div class="accImage" style="background-image: url(../images/imgAcc2.jpg)"></div>
                     <input type="radio" name="radio-set"/>
                     <figcaption><span>Стара Река</span></figcaption>
 
                     <figure>
-                        <img src="../images/imgAcc1.jpg"/>
+                        <div class="accImage" style="background-image: url(../images/imgAcc1.jpg)"></div>
                         <input type="radio" name="radio-set"/>
                         <figcaption><span>Огнище на хижата</span></figcaption>
 
                         <figure>
-                            <img src="../images/eventImage1.jpg"/>
+                            <div class="accImage" style="background-image: url(../images/eventImage1.jpg)"></div>
                             <input id="ia-selector-last" type="radio" name="radio-set"/>
                             <figcaption><span>Балкански Рози</span></figcaption>
                         </figure>
@@ -115,7 +123,25 @@
             </figure>
 
         </div>
-        <!-- ia-container -->
+        <div id="attenders">
+            <h3>Attenders <span id="attAm">2</span></h3>
+
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="attenderPic" id="mitko"></div>
+                        <div class="attenderName">Dimitar Tonchev</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="attenderPic" id="jivko"></div>
+                        <div class="attenderName">Jivko Kirishev</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div id="eventDetails">
             <h3>About</h3>
 
@@ -131,7 +157,9 @@
         </div>
         <!--TODO: Make the calendar styles-->
         <div id="calendar"></div>
+
     </section>
+
 
     <section id="comments">
         <div id="postCommentSection">

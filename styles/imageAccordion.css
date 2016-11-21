@@ -1,7 +1,7 @@
 .ia-container {
 	display: block;
 	max-width: 635px;
-	margin: 20px auto;
+	margin: 40px auto 20px auto;
 	overflow: hidden;
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 	border: 7px solid rgba(255,255,255,0.6);
@@ -25,9 +25,12 @@
 	left: 0 !important;
 }
 
-.ia-container img {
+.ia-container .accImage {
+	background-size: cover;
+	background-position: center;
 	display: block;
 	width: 100%;
+	height: 200px;
 }
 
 .ia-container input {
@@ -162,6 +165,9 @@
 }
 
 @media screen and (max-width: 800px) {
+	.ia-container .accImage {
+		height: 150px;
+	}
     .ia-container { 
 		width: 240px;
 	}

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Event Manager</title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../scripts/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../scripts/node_modules/jquery.browser/dist/jquery.browser.js"></script>
     <script src="../scripts/jquery-ui-datepicker.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
@@ -38,20 +39,31 @@
 
 </style>
 <script>
-    $(window).load(function () {
+    $(window).on('load',function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
-    $( function() {
-        $( "#fromDate" ).datepicker();
-        $( "#toDate" ).datepicker();
-    } );
+    $(function () {
+        $(".datepickerBox").datepicker();
+    });
+    $(function() {
+        var datePicker = $('.datepickerBox').datepicker();
+
+        $(window).scroll(function() {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+
+        $(window).resize(function() {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+    });
 </script>
 <body>
 <div class="se-pre-con"></div>
-
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
     <div id="headerContent">
         <div id="searchWrapper">
             <div id="buttonSearchIcon"></div>
@@ -59,7 +71,8 @@
         </div>
         <ul id="sideBarMenu">
             <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
-            <li class="menuButton"><a href="createEvent.html" class="selectedMenuButton" id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="createEvent.html" class="selectedMenuButton" id="menuCreateEvent">Create
+                Event</a></li>
             <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
@@ -91,13 +104,16 @@
             <div class="lbl"><label for="descriptionArea">Description</label></div>
             <textarea rows="8" cols="60" name="description" id="descriptionArea"
                       placeholder="Mention every detail.."></textarea>
-
             <div class="lbl">Event Dates</div>
             <div class="lbl smallLbl"><label for="eventLength">Event Length</label></div>
-            <input type="text" class="InputDates" id="eventLength" pattern="[0-9]*" placeholder="How much days ?">
+            <input type="text" class="inputDates" id="eventLength" pattern="[0-9]*" placeholder="How much days ?">
+            <div class="lbl smallLbl"><label for="eventLength">Event start hour</label></div>
+            <input type="text" class="inputDates inputHour" id="eventHour" maxlength="2" pattern="[0-9]*" placeholder="HH">
+            <input type="text" class="inputDates inputHour" maxlength="2" pattern="[0-9]*" placeholder="MM">
+
             <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
-            <input type="text" class="InputDates" id="fromDate" placeholder="From when">
-            <input type="text" class="InputDates" id="toDate" placeholder="To when">
+            <input type="text" class="inputDates datepickerBox" id="fromDate" placeholder="From when">
+            <input type="text" class="inputDates datepickerBox" id="toDate" placeholder="To when">
 
 
             <div class="setting" id="imageUplWrapper">
@@ -203,16 +219,16 @@
             <script type="text/javascript" src="../scripts/imagePreview.js"></script>
             <script>
                 var inputIds = [
-                ["#image_picker0","#drop_target0","#inputFile0", "#image_preview0", "#image_title0","remove_current_image0"],
-                ["#image_picker","#drop_target","#inputFile", "#image_preview", "#image_title","remove_current_image"],
-                ["#image_picker1","#drop_target1","#inputFile1", "#image_preview1", "#image_title1","remove_current_image1"],
-                ["#image_picker2","#drop_target2","#inputFile2", "#image_preview2", "#image_title2","remove_current_image2"],
-                ["#image_picker3","#drop_target3","#inputFile3", "#image_preview3", "#image_title3","remove_current_image3"]
-            ];
+                    ["#image_picker0", "#drop_target0", "#inputFile0", "#image_preview0", "#image_title0", "remove_current_image0"],
+                    ["#image_picker", "#drop_target", "#inputFile", "#image_preview", "#image_title", "remove_current_image"],
+                    ["#image_picker1", "#drop_target1", "#inputFile1", "#image_preview1", "#image_title1", "remove_current_image1"],
+                    ["#image_picker2", "#drop_target2", "#inputFile2", "#image_preview2", "#image_title2", "remove_current_image2"],
+                    ["#image_picker3", "#drop_target3", "#inputFile3", "#image_preview3", "#image_title3", "remove_current_image3"]
+                ];
 
-            for (var i = 0; i < inputIds.length; i++) {
-                ImagePreview(inputIds[i][0], inputIds[i][1],inputIds[i][2],inputIds[i][3],inputIds[i][4],inputIds[i][5]);
-            }
+                for (var i = 0; i < inputIds.length; i++) {
+                    ImagePreview(inputIds[i][0], inputIds[i][1], inputIds[i][2], inputIds[i][3], inputIds[i][4], inputIds[i][5]);
+                }
             </script>
 
             <input type="submit" value="Create Event"/>

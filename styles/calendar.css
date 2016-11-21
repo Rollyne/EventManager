@@ -37,7 +37,7 @@
     border-radius: 3px;
 
     box-shadow: 0px 1px 1px rgba(255, 255, 255, .1), inset 0px 1px 1px rgb(0, 0, 0);
-    transition: all ease 0.25s;
+    transition: font-size, padding ease 0.25s;
 }
 
 /* Calendar Header */
@@ -143,6 +143,7 @@
     text-align: center;
 }
 
+
 .ui-datepicker-calendar td {
     padding: 0;
     margin: 0;
@@ -182,6 +183,10 @@
 }
 
 /* Other Months Days*/
+
+.ui-state-disabled .ui-state-default {
+    color: #787878;
+}
 .ui-datepicker-other-month .ui-state-default {
     color: #565656;
 }

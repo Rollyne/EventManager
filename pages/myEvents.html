@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Event Manager</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../scripts/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../scripts/node_modules/jquery.browser/dist/jquery.browser.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
-    <link rel="stylesheet" type="text/css" href="../styles/userPage.css">
+    <link rel="stylesheet" type="text/css" href="../styles/myEvents.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
 </head>
 <style>
@@ -35,23 +36,23 @@
     }
 </style>
 <script>
-    $(window).load(function () {
+    $(window).on('load',function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
 </script>
 <body>
 <div class="se-pre-con"></div>
-
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
     <div id="headerContent">
         <div id="searchWrapper">
             <img src="../icons/search-128.png" id="buttonSearchIcon">
             <input type="search" placeholder="Search.." id="searchContent">
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents" class="selectedMenuButton">My Events</a></li>
+            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents" class="selectedMenuButton">My Events</a>
+            </li>
             <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
             <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
@@ -72,7 +73,7 @@
 </header>
 
 <main>
-    <div id="bannerWrapper"></div>
+    <div style="background-image: url(../images/profileBackground.jpg);" id="bannerWrapper"></div>
     <div id="profileHeader">
         <ul id="profileHeaderMenu">
             <li><a href="#">Events</a></li>

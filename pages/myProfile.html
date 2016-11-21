@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Event Manager</title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../scripts/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../scripts/node_modules/jquery.browser/dist/jquery.browser.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
@@ -36,7 +37,7 @@
 
 </style>
 <script>
-    $(window).load(function () {
+    $(window).on('load',function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
@@ -54,8 +55,8 @@
 </script>
 <body>
 <div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
     <div id="headerContent">
         <div id="searchWrapper">
             <div id="buttonSearchIcon"></div>

@@ -10,13 +10,13 @@ main {
 #mainHeader {
     max-width: 100%;
     overflow: auto;
-    background-color: rgb(102,102,102);
-    display:none;
+    background-color: rgb(102, 102, 102);
+    display: none;
 }
 
 /* Sidebar Toggler Settings */
 #sidebarToggler {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -29,15 +29,16 @@ main {
 }
 
 .dropdownToggle:hover {
-    transform: scale(1.5,1.5);
+    transform: scale(1.5, 1.5);
     padding: 30px;
     border-radius: 0 50% 50% 50%;
     cursor: pointer;
 }
 
-/* Sidebar Settings */ /* TODO: Make it responsive on mobile widescreen */
+/* Sidebar Settings */
+/* TODO: Make it responsive on mobile widescreen */
 
-#headerContent{
+#headerContent {
     margin-top: 63px;
 }
 
@@ -47,7 +48,6 @@ main {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 
 }
-
 
 .menuButton {
     display: inline-block;
@@ -173,7 +173,6 @@ input[type="search"]:focus {
     background-color: #6DE50A;
     opacity: 1;
 }
-
 
 @media all and (min-width: 600px) {
     #mainHeader {

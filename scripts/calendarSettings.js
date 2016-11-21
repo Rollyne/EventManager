@@ -20,6 +20,15 @@ jQuery(document).ready(function () {
         allAttenders = dateDetails.MaxPeople,
         $cal = $('#calendar');
 
+    function daysDifference(firstDate, secondDate) {
+        return Math.round((secondDate.getTime() - firstDate.getTime())/(24*60*60*1000)) ;
+    }
+    var today = new Date();
+    var dateAfter = new Date(2016,10,15+1);
+    var dateBefore = new Date(2016,11,24);
+    var minDate = daysDifference(today, dateAfter);
+    today.setHours(0,0,0,0);
+
     function datesFromJSONArray(json) {
         let array = [];
         $.each(json.Dates, function () {
@@ -80,6 +89,9 @@ jQuery(document).ready(function () {
                 } else {
                     return [true, '', ''];
                 }
-            }
+            },
+            minDate: minDate,
+            dateFormat: 'dd/mm/yy',
+            maxDate: dateBefore
         });
 });

@@ -25,6 +25,27 @@ $(window).on("load", function () {
     theWindow.resize(resizeBg).trigger("resize");
 });
 
+/*Function that focuses next input hour in Create Event*/
+$(function () {
+    $('.inputHour').keyup(function (e) {
+        if ($(this).val().length == $(this).attr('maxlength'))
+            $(this).next(':input').focus()
+    })
+});
+function InviteBox(button, form) {
+    if ($(form).hasClass('inviteUserDisabled')) {
+        $(button).addClass('inviteBtnAct');
+        $.when($(form).fadeIn('slow').css('display','flex')).done(function() {
+            $(form).removeClass('inviteUserDisabled')
+        });
+    } else {
+        $(button).removeClass('inviteBtnAct');
+        $.when($(form).fadeOut('slow')).done(function () {
+            $(form).addClass('inviteUserDisabled');
+        });
+    }
+}
+
 //Home Page Views
 // TODO: Shorten the code by making the views in functions and using "this" as a tool
 // TODO: Make escaping and add regular expressions

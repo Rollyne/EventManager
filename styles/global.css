@@ -56,7 +56,6 @@ html {
     overflow: auto;
 }
 body {
-    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -100,4 +99,13 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0 10px 0;
     text-align: center;
+}
+
+/*MESSAGES STYLING*/
+.Msg {
+    display: block;
+    padding: 5px;
+}
+.inputErrMsg {
+    color: rgba(185, 0, 0, 0.70);
 }
