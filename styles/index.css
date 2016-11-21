@@ -1,6 +1,6 @@
 
 body {
-    right: 0;
+    overflow: visible;
 }
 ::-webkit-scrollbar {
     width: 0;

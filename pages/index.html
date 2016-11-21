@@ -4,9 +4,9 @@
     <title>Event Manager</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/jquery.browser.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
-    <script type="text/javascript" src="../scripts/calendarSettings.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
 </head>
@@ -32,7 +32,7 @@
         background: url(../images/Preloader_3.gif) center no-repeat #fff;
     }</style>
 <script>
-    $(window).load(function () {
+    $(window).on('load',function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
