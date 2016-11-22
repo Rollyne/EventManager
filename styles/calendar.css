@@ -37,7 +37,7 @@
     border-radius: 3px;
 
     box-shadow: 0px 1px 1px rgba(255, 255, 255, .1), inset 0px 1px 1px rgb(0, 0, 0);
-    transition: font-size, padding ease 0.25s;
+    transition: font-size, padding ease,background-color 0.25s;
 }
 
 /* Calendar Header */
@@ -173,22 +173,25 @@
 
     text-decoration: none;
     color: #a8a8a8;
-
+    text-shadow: 1px 1px 3px rgba(0,0,0,1);
     border: 1px solid transparent;
 }
 
 /* Day Active State*/
 .ui-datepicker-calendar .ui-state-active {
     color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* Other Months Days*/
 
 .ui-state-disabled .ui-state-default {
     color: #787878;
+    text-shadow: none;
 }
 .ui-datepicker-other-month .ui-state-default {
     color: #565656;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /*Highlighter*/
@@ -235,8 +238,8 @@
 .calendarHighlight10 {
     background-color: rgba(109, 229, 10, 1);
 }
-.calendarHighlight10 a {
-    color: red; !important;
+.calendarHighlightSelected {
+    background-color: rgba(0, 115, 115, 0.10);
 }
 
 .calendarHighlight1 a {

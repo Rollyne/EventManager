@@ -36,7 +36,7 @@
 
 </style>
 <script>
-    $(window).on('load',function () {
+    $(window).on('load', function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
@@ -86,8 +86,7 @@
 <main id="mainContent">
     <h1>My Profile</h1>
 
-
-    <form id="profileForm">
+    <form id="imageForm">
         <div id="imageInputWrapper">
             <div class="setting image_picker" id="profilePicPicker">
                 <h2>Profile Picture</h2>
@@ -116,7 +115,10 @@
                 </a>
             </div>
         </div>
+        <input type="submit" value="Save Pictures" id="picturesButton">
+    </form>
 
+    <form id="profileForm">
         <script type="text/javascript" src="../scripts/imagePreview.js"></script>
         <script>
             jQuery(document).ready(function () {
@@ -149,6 +151,9 @@
                 </textarea>
             </div>
         </div>
+        <input type="submit" value="Save Changes">
+    </form>
+    <form id="changeEmail">
         <div class="lblInpGr">
             <label for="userEmail">Email Address</label>
 
@@ -157,7 +162,7 @@
                 <input type="email" id="userEmail" class="inText" value="rollyne@abv.bg" disabled>
             </div>
         </div>
-        <input type="submit" value="Apply Changes">
+        <input type="submit" value="Save Email">
     </form>
     <form id="changePasswordForm">
 

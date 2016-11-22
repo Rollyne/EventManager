@@ -3,7 +3,7 @@
  */
 //Calendar Settings
 jQuery(document).ready(function () {
-
+    $('td').addClass('dateCell');
     var dateDetails = (function () {
             let json = null;
             $.ajax({
@@ -18,16 +18,28 @@ jQuery(document).ready(function () {
             return json;
         }()),
         allAttenders = dateDetails.MaxPeople,
-        $cal = $('#calendar');
+        $cal = $('#calendar'),
+        dateAfter = new Date(dateDetails.DateAfter.Year,dateDetails.DateAfter.Month-1,dateDetails.DateAfter.Day),
+        dateBefore = new Date(dateDetails.DateBefore.Year,dateDetails.DateBefore.Month-1,dateDetails.DateBefore.Day),
+        eventLength = dateDetails.EventLength,
+        dateSelectTriggered = false;
 
-    function daysDifference(firstDate, secondDate) {
-        return Math.round((secondDate.getTime() - firstDate.getTime())/(24*60*60*1000)) ;
-    }
-    var today = new Date();
-    var dateAfter = new Date(2016,10,15+1);
-    var dateBefore = new Date(2016,11,24);
-    var minDate = daysDifference(today, dateAfter);
-    today.setHours(0,0,0,0);
+
+    $('.dateSetToggler').on('click', function() {
+        if(!dateSelectTriggered) {
+            $(this).addClass('selectToggActive');
+            $(this).text('Cancel');
+            $('#datesSubmit').css('opacity', '1');
+            $('.ui-datepicker').css('background-color', 'rgba(0,0,0,0.9)');
+            dateSelectTriggered = true;
+        } else {
+            $(this).removeClass('selectToggActive');
+            $(this).text('Set Dates');
+            $('.ui-datepicker').css('background-color', 'rgba(0,0,0,0.8)');
+            $('#datesSubmit').css('opacity', '0');
+            dateSelectTriggered = false;
+        }
+    });
 
     function datesFromJSONArray(json) {
         let array = [];
@@ -36,8 +48,8 @@ jQuery(document).ready(function () {
         });
         return array;
     }
-
-    var datesArray = datesFromJSONArray(dateDetails);
+    var datesArray = datesFromJSONArray(dateDetails),
+        selectedDates = [];
     $cal.datepicker(
         {
             inline: true,
@@ -46,11 +58,14 @@ jQuery(document).ready(function () {
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             beforeShowDay: function (date) {
                 let highlight = $.inArray(date.getTime(), datesArray) >= 0,
-                    elIndex = $.inArray(date.getTime(), datesArray);
+                    elIndex = $.inArray(date.getTime(), datesArray),
+                    selected = $.inArray(date.getTime(), selectedDates) >= 0;
                 if (elIndex >= 0) {
                     percentAttenders = parseInt(dateDetails.Dates[elIndex].FreePeopleCount / allAttenders * 10);
                 }
-                if (highlight) {
+                if(selected) {
+                    return [true, 'calendarHighlightSelected', ''];
+                } else if (highlight) {
                     switch (percentAttenders) {
                         case 1 :
                             return [true, "calendarHighlight1", ''];
@@ -86,12 +101,27 @@ jQuery(document).ready(function () {
                             return [true, 'calendarHighlight0', ''];
                             break;
                     }
-                } else {
+                } else{
                     return [true, '', ''];
                 }
             },
-            minDate: minDate,
             dateFormat: 'dd/mm/yy',
-            maxDate: dateBefore
+            minDate: dateAfter,
+            maxDate: dateBefore,
+            onSelect: function (date) {
+                if(dateSelectTriggered) {
+                    selectedDates = [];
+                    let dateArr = date.split('/'),
+                        startDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]),
+                        pushedDate = startDate;
+                    $('#dateStart').val(date);
+                    for (let i = 0; i < eventLength; i++) {
+                        pushedDate = startDate.getTime() + (1000 * 60 * 60 * 24) * i;
+                        selectedDates.push(pushedDate);
+                    }
+                    let endDate = new Date(pushedDate);
+                    $('#dateEnd').val(endDate.getDate() + '/' + (endDate.getMonth()+1) + '/' + endDate.getFullYear());
+                }
+            }
         });
 });

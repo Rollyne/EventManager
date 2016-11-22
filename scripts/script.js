@@ -32,19 +32,61 @@ $(function () {
             $(this).next(':input').focus()
     })
 });
+/*Invite box dropdown function*/
 function InviteBox(button, form) {
     if ($(form).hasClass('inviteUserDisabled')) {
         $(button).addClass('inviteBtnAct');
-        $.when($(form).fadeIn('slow').css('display','flex')).done(function() {
-            $(form).removeClass('inviteUserDisabled')
+        $.when($(form).css('display','flex')).done(function () {
+            $(form).css('opacity');
+            $(form).removeClass('inviteUserDisabled').css('opacity','1');
         });
     } else {
         $(button).removeClass('inviteBtnAct');
-        $.when($(form).fadeOut('slow')).done(function () {
+        $.when($(form).css('opacity','0')).done(function () {
             $(form).addClass('inviteUserDisabled');
         });
     }
 }
+/*List limit function*/
+$(function () {
+    var attendersAmount = $('#attendersList').children().length - 1,
+        moreAttenders = attendersAmount-4,
+        overflower = '<div class="attenderName">' + moreAttenders + ' more attenders</div>',
+        nthChildSafe = $('.listAttender:nth-child(5) a .attenderName'),
+        listed = false;
+    $('#attAm').text(attendersAmount);
+    if (attendersAmount > 5) {
+        $('.listAttender:lt(5)').show();
+        $('.listAttender:nth-child(5)').addClass('toggler');
+        $('.listAttender:nth-child(5) a .attenderPic').hide();
+        $('.listAttender:nth-child(5) a .attenderName').replaceWith(overflower);
+    } else {
+        $('.listAttender:last-child').hide();
+    }
+    $('.listAttender:nth-child(5) a').on('click' ,function() {
+        if(!listed) {
+
+            $('.listAttender:nth-child(5) a .attenderPic').fadeIn();
+            $('.listAttender:nth-child(5) a .attenderName').replaceWith(nthChildSafe);
+            $('.listAttender:lt(' + attendersAmount + ')').show('slow');
+            $('.listAttender:last-child').show('slow');
+            $('.listAttender:nth-child(5)').removeClass('toggler');
+            //$(liElement).appendTo('#attendersList');
+            listed=true;
+        }
+    });
+    $('#hider').on('click', function () {
+        let remove = moreAttenders+1;
+        if(listed) {
+            $('.listAttender:last-child').hide('slow');
+            $('.listAttender:gt('+ remove + ')').hide('slow');
+            $('.listAttender:nth-child(5) a .attenderPic').hide();
+            $('.listAttender:nth-child(5) a .attenderName').replaceWith(overflower);
+            $('.listAttender:nth-child(5)').addClass('toggler');
+            listed=false;
+        }
+    });
+});
 
 //Home Page Views
 // TODO: Shorten the code by making the views in functions and using "this" as a tool

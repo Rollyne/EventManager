@@ -158,12 +158,13 @@ h1 {
     flex-flow: column;
 }
 
-#profileForm, #changePasswordForm {
+#profileForm, #changePasswordForm, #changeEmail, #imageForm {
     display: flex;
     flex-flow: column;
     width: 85%;
-    margin: auto;
+    margin: 20px auto;
 }
+
 
 form h2 {
     margin-top: 10px;
@@ -286,18 +287,22 @@ textarea:disabled {
 main input[type="submit"] {
     display: block;
     padding: 10px;
-    margin: 50px auto;
+    margin: 30px auto;
     border: 2px solid #6DE50A;
     background-color: transparent;
     border-radius: 5px;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 50%;
+    width: 200px;
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
     transition: all 0.5s;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+#picturesButton {
+    margin: 20px 0;
 
 }
 
@@ -308,6 +313,9 @@ main input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 850px) {
+    #picturesButton {
+        margin: 20px auto;
+    }
     .lblInpGr {
         display: flex;
         flex-flow: column;

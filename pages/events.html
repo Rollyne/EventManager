@@ -121,41 +121,83 @@
             </figure>
 
         </div>
-        <div id="attenders">
-            <h3>Attenders <span id="attAm">2</span></h3>
+        <section id="eventInformation">
+            <div id="attenders">
+                <h3>Attenders <span id="attAm">2</span></h3>
+                <ul id="attendersList">
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic" id="mitko"></div>
+                            <div class="attenderName">Dimitar Tonchev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic" id="jivko"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a>
+                            <div class="attenderPic"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender">
+                        <a href="#">
+                            <div class="attenderPic"></div>
+                            <div class="attenderName">Jivko Kirishev</div>
+                        </a>
+                    </li>
+                    <li class="listAttender toggler" id="hider">
+                        <a>
+                            <div class="attenderName">Hide attenders</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="eventDetails">
+                <h3>About</h3>
 
-
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="attenderPic" id="mitko"></div>
-                        <div class="attenderName">Dimitar Tonchev</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="attenderPic" id="jivko"></div>
-                        <div class="attenderName">Jivko Kirishev</div>
-                    </a>
-                </li>
-            </ul>
+                <p>
+                    Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs
+                    burgdoggen meatball t-bone shank pork ribeye capicola. Bresaola tri-tip ham pancetta. Turducken
+                    frankfurter doner shank leberkas spare ribs. Doner turkey sirloin pig landjaeger chuck, pork chop
+                    hamburger pork belly chicken tail ham hock ball tip capicola. Sirloin corned beef tenderloin, t-bone
+                    chicken filet mignon jerky boudin short ribs frankfurter. Short loin andouille fatback short ribs
+                    cupim frankfurter alcatra jerky. Shoulder biltong pig strip steak beef ribs burgdoggen landjaeger
+                    spare ribs chuck tenderloin sirloin rump fatback meatball kevin.
+                </p>
+            </div>
+        </section>
+        <div id="setDatesWrapper">
+            <button class="dateSetToggler dateInputButtons">Set Dates</button>
+            <!--TODO: VALIDATION OF THE DATES -->
+            <form id="inputPrefEventDates">
+                <input type="text" class="dateInput" id="dateStart">
+                <input type="text" class="dateInput" id="dateEnd">
+                <input type="submit" class="dateInputButtons" value="Apply Dates" id="datesSubmit"/>
+            </form>
+            <div id="calendar"></div>
         </div>
-        <div id="eventDetails">
-            <h3>About</h3>
-
-            <p>
-                Bacon ipsum dolor amet venison pancetta salami frankfurter boudin fatback tenderloin short ribs
-                burgdoggen meatball t-bone shank pork ribeye capicola. Bresaola tri-tip ham pancetta. Turducken
-                frankfurter doner shank leberkas spare ribs. Doner turkey sirloin pig landjaeger chuck, pork chop
-                hamburger pork belly chicken tail ham hock ball tip capicola. Sirloin corned beef tenderloin, t-bone
-                chicken filet mignon jerky boudin short ribs frankfurter. Short loin andouille fatback short ribs
-                cupim frankfurter alcatra jerky. Shoulder biltong pig strip steak beef ribs burgdoggen landjaeger
-                spare ribs chuck tenderloin sirloin rump fatback meatball kevin.
-            </p>
-        </div>
-        <!--TODO: Make the calendar styles-->
-        <div id="calendar"></div>
-
     </section>
 
 
