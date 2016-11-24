@@ -38,22 +38,22 @@
 
 </style>
 <script>
-    $(window).on('load',function () {
+    $(window).on('load', function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
     $(function () {
         $(".datepickerBox").datepicker();
     });
-    $(function() {
+    $(function () {
         var datePicker = $('.datepickerBox').datepicker();
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             datePicker.datepicker('hide');
             datePicker.blur();
         });
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             datePicker.datepicker('hide');
             datePicker.blur();
         });
@@ -65,8 +65,10 @@
 <header id="mainHeader">
     <div id="headerContent">
         <div id="searchWrapper">
-            <div id="buttonSearchIcon"></div>
-            <input type="search" placeholder="Search.." id="searchContent">
+            <form action="searchPage.html">
+                <input type="search" placeholder="Search.." id="searchContent">
+                <input type="submit" id="buttonSearchIcon" value="">
+            </form>
         </div>
         <ul id="sideBarMenu">
             <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
@@ -103,11 +105,14 @@
             <div class="lbl"><label for="descriptionArea">Description</label></div>
             <textarea rows="8" cols="60" name="description" id="descriptionArea"
                       placeholder="Mention every detail.."></textarea>
+
             <div class="lbl">Event Dates</div>
             <div class="lbl smallLbl"><label for="eventLength">Event Length</label></div>
             <input type="text" class="inputDates" id="eventLength" pattern="[0-9]*" placeholder="How much days ?">
+
             <div class="lbl smallLbl"><label for="eventLength">Event start hour</label></div>
-            <input type="text" class="inputDates inputHour" id="eventHour" maxlength="2" pattern="[0-9]*" placeholder="HH">
+            <input type="text" class="inputDates inputHour" id="eventHour" maxlength="2" pattern="[0-9]*"
+                   placeholder="HH">
             <input type="text" class="inputDates inputHour" maxlength="2" pattern="[0-9]*" placeholder="MM">
 
             <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
@@ -213,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" id="addImage" onclick="addImage()">+ Add Image</a>
+                <div id="addImage" onclick="addImage()">+ Add Image</div>
             </div>
             <script type="text/javascript" src="../scripts/imagePreview.js"></script>
             <script>

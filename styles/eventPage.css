@@ -141,14 +141,14 @@ body {
 /*EVENT INFO WRAPPER*/
 #eventInformation {
     display:flex;
-    flex-flow: row-reverse;
+    flex-flow: row;
     margin: auto;
     transition: all 0.3s;
 }
 
 /*EVENT DETAILS*/
 
-#eventDetails h3 {
+#eventDetails h3,#attenders h3,#informationTable h3 {
     color: rgba(0, 0, 0, 0.65);
     margin: 10px;
 }
@@ -161,16 +161,17 @@ body {
 }
 
 
-
+/*ATTENDERS INFO WRAPPER*/
+#atInfWrapper {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
 /*ATTENDERS TABLE*/
 #attenders {
-    flex: 1;
-    margin: 20px;
-}
-#attenders h3 {
-    color: rgba(0, 0, 0, 0.65);
-    margin: 10px;
-
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
 }
 #attAm {
     display: inline-block;
@@ -217,6 +218,52 @@ body {
 }
 
 
+/*EVENT INFORMATION TABLE */
+#informationTable {
+    display: block;
+    margin: 40px auto 10px auto;
+    width: 80%;
+    max-width: 400px;
+}
+#informationTable ul {
+    margin: auto;
+    list-style: none;
+}
+#informationTable ul li {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+#informationTable ul li > div {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.infTableHeader {
+    font-weight: bold;
+    color: rgba(0,0,0,0.6);
+}
+.infPercentage div {
+    padding: 3px;
+    background-color:rgba(165,205,78,0.7);
+    border-radius: 10px;
+    width: 30px;
+    line-height: 30px;
+    height: 30px;
+
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+    vertical-align: middle;
+}
+.infTableInfo {
+    color: rgba(65, 82, 31, 0.70);
+    font-weight: bold;
+}
+
+
 /*CALENDAR SET DATES*/
 #setDatesWrapper {
     margin: auto;
@@ -255,6 +302,7 @@ body {
     display: none;
 }
 #datesSubmit {
+    display: none;
     opacity: 0;
     transition: all 0.3s ease-out;
     border: 1px solid rgba(0,0,0,0.5);

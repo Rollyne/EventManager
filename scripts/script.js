@@ -36,13 +36,13 @@ $(function () {
 function InviteBox(button, form) {
     if ($(form).hasClass('inviteUserDisabled')) {
         $(button).addClass('inviteBtnAct');
-        $.when($(form).css('display','flex')).done(function () {
+        $.when($(form).css('display', 'flex')).done(function () {
             $(form).css('opacity');
-            $(form).removeClass('inviteUserDisabled').css('opacity','1');
+            $(form).removeClass('inviteUserDisabled').css('opacity', '1');
         });
     } else {
         $(button).removeClass('inviteBtnAct');
-        $.when($(form).css('opacity','0')).done(function () {
+        $.when($(form).css('opacity', '0')).done(function () {
             $(form).addClass('inviteUserDisabled');
         });
     }
@@ -50,7 +50,7 @@ function InviteBox(button, form) {
 /*List limit function*/
 $(function () {
     var attendersAmount = $('#attendersList').children().length - 1,
-        moreAttenders = attendersAmount-4,
+        moreAttenders = attendersAmount - 4,
         overflower = '<div class="attenderName">' + moreAttenders + ' more attenders</div>',
         nthChildSafe = $('.listAttender:nth-child(5) a .attenderName'),
         listed = false;
@@ -63,8 +63,8 @@ $(function () {
     } else {
         $('.listAttender:last-child').hide();
     }
-    $('.listAttender:nth-child(5) a').on('click' ,function() {
-        if(!listed) {
+    $('.listAttender:nth-child(5) a').on('click', function () {
+        if (!listed) {
 
             $('.listAttender:nth-child(5) a .attenderPic').fadeIn();
             $('.listAttender:nth-child(5) a .attenderName').replaceWith(nthChildSafe);
@@ -72,21 +72,50 @@ $(function () {
             $('.listAttender:last-child').show('slow');
             $('.listAttender:nth-child(5)').removeClass('toggler');
             //$(liElement).appendTo('#attendersList');
-            listed=true;
+            listed = true;
         }
     });
     $('#hider').on('click', function () {
-        let remove = moreAttenders+1;
-        if(listed) {
+        let remove = moreAttenders + 1;
+        if (listed) {
             $('.listAttender:last-child').hide('slow');
-            $('.listAttender:gt('+ remove + ')').hide('slow');
+            $('.listAttender:gt(' + remove + ')').hide('slow');
             $('.listAttender:nth-child(5) a .attenderPic').hide();
             $('.listAttender:nth-child(5) a .attenderName').replaceWith(overflower);
             $('.listAttender:nth-child(5)').addClass('toggler');
-            listed=false;
+            listed = false;
         }
     });
 });
+
+//SCROLL TO ATTENDERS FUNCTION
+function scrollTo(dirId) {
+    $('html, body').animate({
+        scrollTop: $('#'+dirId).offset().top
+    }, 1000);
+}
+
+/*ERROR MESSAGE FUNCTION*/
+var errorMessages = {
+    errmsgClass: 'inputErrMsg',
+    inputErrorMessage: function (box, message) {
+        let error = '<div class="' + this.errmsgClass + ' Msg">' + message + '</div>',
+            $errorSelector = $(box + ':has(.' + this.errmsgClass + ')');
+        if ($errorSelector[0] != undefined) {
+            $('.' + this.errmsgClass).remove();
+            $(box).prepend(error);
+        } else {
+            $(box).prepend(error);
+        }
+    },
+
+    removeErrorMessage: function (box) {
+        let $errorSelector = $(box + ':has(.' + this.errmsgClass + ')');
+        if ($errorSelector[0] != undefined) {
+            $('.' + this.errmsgClass).remove();
+        }
+    }
+};
 
 //Home Page Views
 // TODO: Shorten the code by making the views in functions and using "this" as a tool

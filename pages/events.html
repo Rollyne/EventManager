@@ -54,8 +54,10 @@
 <header id="mainHeader">
     <div id="headerContent">
         <div id="searchWrapper">
-            <div id="buttonSearchIcon"></div>
-            <input type="search" placeholder="Search.." id="searchContent">
+            <form action="searchPage.html">
+                <input type="search" placeholder="Search.." id="searchContent">
+                <input type="submit" id="buttonSearchIcon" value="">
+            </form>
         </div>
         <ul id="sideBarMenu">
             <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
@@ -85,7 +87,7 @@
             <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
                 <div class="inviteText">Invite</div>
             </li>
-            <li>Attenders</li>
+            <li id="attendersBtn" onclick="scrollTo('attenders')">Attenders</li>
             <li>Edit</li>
         </ul>
         <form class="inviteUser inviteUserDisabled">
@@ -122,58 +124,6 @@
 
         </div>
         <section id="eventInformation">
-            <div id="attenders">
-                <h3>Attenders <span id="attAm">2</span></h3>
-                <ul id="attendersList">
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic" id="mitko"></div>
-                            <div class="attenderName">Dimitar Tonchev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic" id="jivko"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a>
-                            <div class="attenderPic"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender">
-                        <a href="#">
-                            <div class="attenderPic"></div>
-                            <div class="attenderName">Jivko Kirishev</div>
-                        </a>
-                    </li>
-                    <li class="listAttender toggler" id="hider">
-                        <a>
-                            <div class="attenderName">Hide attenders</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <div id="eventDetails">
                 <h3>About</h3>
 
@@ -187,13 +137,106 @@
                     spare ribs chuck tenderloin sirloin rump fatback meatball kevin.
                 </p>
             </div>
+            <div id="atInfWrapper">
+                <div id="attenders">
+                    <h3>Attenders <span id="attAm"></span></h3>
+                    <ul id="attendersList">
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic" id="mitko"></div>
+                                <div class="attenderName">Dimitar Tonchev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic" id="jivko"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a>
+                                <div class="attenderPic"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender">
+                            <a href="#">
+                                <div class="attenderPic"></div>
+                                <div class="attenderName">Jivko Kirishev</div>
+                            </a>
+                        </li>
+                        <li class="listAttender toggler" id="hider">
+                            <a>
+                                <div class="attenderName">Hide attenders</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <section id="informationTable">
+                    <h3>Dates Information</h3>
+                    <ul>
+                        <li>
+                            <div class="infTableHeader">Event Limits</div>
+                            <div class="infTableInfo">
+                                <div id="eventBeforeDate">15.11.2016</div>
+                                <div>24.12.2016</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="infTableHeader">Length</div>
+                            <div class="infTableInfo">4 days</div>
+                        </li>
+                        <li>
+                            <div class="infTableHeader">Your Dates</div>
+                            <div class="infTableInfo">
+                                <div>No dates set</div>
+                                <!--<div>17.11.2016</div>-->
+                                <!--<div>21.11.2016</div>-->
+                            </div>
+                        </li>
+                        <li>
+                            <div class="infTableHeader">Starts At</div>
+                            <div class="infTableInfo">14:00</div>
+                        </li>
+                        <li>
+                            <div class="infTableHeader">Best Dates</div>
+                            <div class="infPercentage">
+                                <div>70%</div>
+                            </div>
+                            <div class="infTableInfo">
+                                <div>17.11.2016</div>
+                                <div>21.11.2016</div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
         </section>
+
+
         <div id="setDatesWrapper">
             <button class="dateSetToggler dateInputButtons">Set Dates</button>
             <!--TODO: VALIDATION OF THE DATES -->
             <form id="inputPrefEventDates">
                 <input type="text" class="dateInput" id="dateStart">
-                <input type="text" class="dateInput" id="dateEnd">
                 <input type="submit" class="dateInputButtons" value="Apply Dates" id="datesSubmit"/>
             </form>
             <div id="calendar"></div>

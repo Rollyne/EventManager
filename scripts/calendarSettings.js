@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
         if(!dateSelectTriggered) {
             $(this).addClass('selectToggActive');
             $(this).text('Cancel');
-            $('#datesSubmit').css('opacity', '1');
+            $('#datesSubmit').css({'display': 'block','opacity': '1'});
             $('.ui-datepicker').css('background-color', 'rgba(0,0,0,0.9)');
             dateSelectTriggered = true;
         } else {
@@ -37,7 +37,14 @@ jQuery(document).ready(function () {
             $(this).text('Set Dates');
             $('.ui-datepicker').css('background-color', 'rgba(0,0,0,0.8)');
             $('#datesSubmit').css('opacity', '0');
+            setTimeout(function() {
+                $('#datesSubmit').hide()
+            }, 500);
+            $('td').removeClass('calendarHighlightSelected');
             dateSelectTriggered = false;
+            selectedDates = [];
+            $cal.datepicker("option","beforeShowDay", beforeShow)
+
         }
     });
 
@@ -50,61 +57,61 @@ jQuery(document).ready(function () {
     }
     var datesArray = datesFromJSONArray(dateDetails),
         selectedDates = [];
+    function beforeShow(date) {
+        let highlight = $.inArray(date.getTime(), datesArray) >= 0,
+            elIndex = $.inArray(date.getTime(), datesArray),
+            selected = $.inArray(date.getTime(), selectedDates) >= 0;
+        if (elIndex >= 0) {
+            percentAttenders = parseInt(dateDetails.Dates[elIndex].FreePeopleCount / allAttenders * 10);
+        }
+        if(selected) {
+            return [true, 'calendarHighlightSelected', ''];
+        } else if (highlight) {
+            switch (percentAttenders) {
+                case 1 :
+                    return [true, "calendarHighlight1", ''];
+                    break;
+                case 2 :
+                    return [true, "calendarHighlight2", ''];
+                    break;
+                case 3 :
+                    return [true, "calendarHighlight3", ''];
+                    break;
+                case 4 :
+                    return [true, "calendarHighlight4", ''];
+                    break;
+                case 5 :
+                    return [true, "calendarHighlight5", ''];
+                    break;
+                case 6 :
+                    return [true, "calendarHighlight6", ''];
+                    break;
+                case 7 :
+                    return [true, "calendarHighlight7", ''];
+                    break;
+                case 8 :
+                    return [true, "calendarHighlight8", ''];
+                    break;
+                case 9 :
+                    return [true, "calendarHighlight9", ''];
+                    break;
+                case 10 :
+                    return [true, "calendarHighlight10", ''];
+                    break;
+                default :
+                    return [true, 'calendarHighlight0', ''];
+                    break;
+            }
+        } else{
+            return [true, '', ''];
+        }
+    }
     $cal.datepicker(
         {
             inline: true,
             firstDay: 1,
             showOtherMonths: true,
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            beforeShowDay: function (date) {
-                let highlight = $.inArray(date.getTime(), datesArray) >= 0,
-                    elIndex = $.inArray(date.getTime(), datesArray),
-                    selected = $.inArray(date.getTime(), selectedDates) >= 0;
-                if (elIndex >= 0) {
-                    percentAttenders = parseInt(dateDetails.Dates[elIndex].FreePeopleCount / allAttenders * 10);
-                }
-                if(selected) {
-                    return [true, 'calendarHighlightSelected', ''];
-                } else if (highlight) {
-                    switch (percentAttenders) {
-                        case 1 :
-                            return [true, "calendarHighlight1", ''];
-                            break;
-                        case 2 :
-                            return [true, "calendarHighlight2", ''];
-                            break;
-                        case 3 :
-                            return [true, "calendarHighlight3", ''];
-                            break;
-                        case 4 :
-                            return [true, "calendarHighlight4", ''];
-                            break;
-                        case 5 :
-                            return [true, "calendarHighlight5", ''];
-                            break;
-                        case 6 :
-                            return [true, "calendarHighlight6", ''];
-                            break;
-                        case 7 :
-                            return [true, "calendarHighlight7", ''];
-                            break;
-                        case 8 :
-                            return [true, "calendarHighlight8", ''];
-                            break;
-                        case 9 :
-                            return [true, "calendarHighlight9", ''];
-                            break;
-                        case 10 :
-                            return [true, "calendarHighlight10", ''];
-                            break;
-                        default :
-                            return [true, 'calendarHighlight0', ''];
-                            break;
-                    }
-                } else{
-                    return [true, '', ''];
-                }
-            },
             dateFormat: 'dd/mm/yy',
             minDate: dateAfter,
             maxDate: dateBefore,
@@ -117,11 +124,17 @@ jQuery(document).ready(function () {
                     $('#dateStart').val(date);
                     for (let i = 0; i < eventLength; i++) {
                         pushedDate = startDate.getTime() + (1000 * 60 * 60 * 24) * i;
+                        if(pushedDate > dateBefore.getTime()){
+                            errorMessages.inputErrorMessage('#calendar' ,'There should be ' + eventLength + ' days avaliable');
+                            selectedDates = [];
+                            $('#dateStart').val('');
+                            break;
+                        }
+                        errorMessages.removeErrorMessage('#calendar');
                         selectedDates.push(pushedDate);
                     }
-                    let endDate = new Date(pushedDate);
-                    $('#dateEnd').val(endDate.getDate() + '/' + (endDate.getMonth()+1) + '/' + endDate.getFullYear());
                 }
             }
         });
+    $cal.datepicker("option","beforeShowDay", beforeShow)
 });

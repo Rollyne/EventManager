@@ -27,13 +27,7 @@ function ImagePreview(picker, dropTarget, inputId, previewId, titleId, remover) 
         }
         return valid;
     }
-    function validateImgFile () {
 
-    }
-
-    function inputErrorMessage(message) {
-        return error = '<div class="inputErrMsg Msg">' + message + '</div>'
-    }
 
 
     $dropzone.on('dragover', function () {
@@ -70,14 +64,14 @@ function ImagePreview(picker, dropTarget, inputId, previewId, titleId, remover) 
                 $(".inputErrMsg").remove();
             }
             if(errorMsg != ''){
-                $dropzone.prepend(inputErrorMessage(errorMsg));
+                errorMessages.inputErrorMessage(picker,errorMsg);
             }
             isThereError = true;
         } else {
             if (isThereError) {
                 $(".inputErrMsg").hide().remove();
             }
-            reader.onload = function (event) {
+            reader.onload =  function (event) {
                 $dropimg.css('background-image', 'url(' + event.target.result + ')');
             };
 
@@ -127,16 +121,16 @@ function ImagePreview(picker, dropTarget, inputId, previewId, titleId, remover) 
                 $(".inputErrMsg").remove();
             }
             if(errorMsg != ''){
-                $dropzone.prepend(inputErrorMessage(errorMsg));
+                errorMessages.inputErrorMessage(picker,errorMsg);
             }
             isThereError = true;
         } else {
             if (isThereError) {
                 $(".inputErrMsg").hide().remove();
             }
-            reader.on('load',  function (event) {
+            reader.onload =  function (event) {
                 $dropimg.css('background-image', 'url(' + event.target.result + ')');
-            });
+            };
             reader.readAsDataURL(file);
         }
         //}
