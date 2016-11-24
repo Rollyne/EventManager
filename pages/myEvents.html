@@ -57,19 +57,18 @@
             <li class="menuButton"><a href="myEvents.html" id="menuMyEvents" class="selectedMenuButton">My Events</a>
             </li>
             <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
-            <li class="menuButton"><a href="events.html" id="menuEvents">Events</a></li>
+            <li class="menuButton"><a href="eventsList.html" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
             <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
             <li class="menuButton"><a href="myProfile.html" id="menuMyProfile">My Profile</a></li>
-            <li class="menuButton"><a href="#" id="menuContact<">Contact</a></li>
             <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
         </ul>
         <footer id="sideBarFooter">
-            <a href="#" id="footerUserDetails">
+            <a href="myEvents.html" id="footerUserDetails">
                 <div id="footerUserDetailsProfilePicture"></div>
-                <span id="footerUsername">Dimitar</span>
+                <div id="footerUsername">Dimitar Tonchev</div>
             </a>
         </footer>
     </div>
@@ -79,9 +78,9 @@
     <div style="background-image: url(../images/profileBackground.jpg);" id="bannerWrapper"></div>
     <div id="profileHeader">
         <ul id="profileHeaderMenu">
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Friends</a></li>
-            <li><a href="#">Photos</a></li>
+            <li><a href="eventsList.html">Events</a></li>
+            <li><a href="friendsList.html">Friends</a></li>
+            <li><a href="myProfile.html">Edit Profile</a></li>
         </ul>
     </div>
     <section id="profile">
@@ -122,7 +121,6 @@
             </aside>
             <div class="horLine" id="abEvSeparator"></div>
             <section id="userEvents">
-                <h2>Happening Now</h2>
                 <article class="eventsWrapper">
                     <div class="eventWrapper">
                         <div class="eventImage">
@@ -137,22 +135,21 @@
                         <div class="eventDetails">
                             <div class="eventDate"><span>Wed, Nov 09, 14:00</span></div>
 
-                            <h3 class="eventHeader"><span><a href="events.html">В Балкана на хижа Балкански Рози</a></span></h3>
+                            <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span></h3>
 
                             <p class="eventDesc">
                                 Bacon ipsum dolor amet beef ribs filet mignon ham,
                                 venison pork capicola t-bone. Landjaeger biltong leberkas.
                             </p>
-                            <footer class="eventPlace">
-                                <span>гр.Карлово, Централен Балкан</span>
-                            </footer>
-                            <footer class="eventTags">
-                                #Balkan #GrillAndBeer
-                            </footer>
+                            <!--<footer class="eventPlace">-->
+                                <!--<span>гр.Карлово, Централен Балкан</span>-->
+                            <!--</footer>-->
+                            <!--<footer class="eventTags">-->
+                                <!--#Balkan #GrillAndBeer-->
+                            <!--</footer>-->
                         </div>
                     </div>
                 </article>
-                <h2>Upcoming Events</h2>
                 <article class="eventsWrapper">
                     <div class="eventWrapper">
                         <div class="eventImage" id="friday">
@@ -171,17 +168,15 @@
                                 Bacon ipsum dolor amet beef ribs filet mignon ham,
                                 venison pork capicola t-bone. Landjaeger biltong leberkas.
                             </p>
-                            <footer class="eventPlace">
-                                гр.Пловдв, жк.Тракия
-                            </footer>
-                            <footer class="eventTags">
-                                #FridayNight #Party #EvenMoreBeer
-                            </footer>
+                            <!--<footer class="eventPlace">-->
+                                <!--гр.Пловдв, жк.Тракия-->
+                            <!--</footer>-->
+                            <!--<footer class="eventTags">-->
+                                <!--#FridayNight #Party #EvenMoreBeer-->
+                            <!--</footer>-->
                         </div>
                     </div>
                 </article>
-
-                <h2>Past Events</h2>
             </section>
         </div>
     </section>

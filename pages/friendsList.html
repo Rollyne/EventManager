@@ -10,7 +10,6 @@
     <script type="text/javascript" src="../scripts/sideBar.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
-    <link rel="stylesheet" type="text/css" href="../styles/eventBlock.css">
     <link rel="stylesheet" type="text/css" href="../styles/userBlock.css">
     <link rel="stylesheet" type="text/css" href="../styles/searchPage.css">
 
@@ -51,7 +50,7 @@
 <div class="se-pre-con"></div>
 <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="headerContent" class="searchPage">
+    <div id="headerContent">
         <div id="searchWrapper">
             <form action="searchPage.html">
                 <input type="search" placeholder="Search.." id="searchContent">
@@ -59,9 +58,9 @@
             </form>
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="myEvents.html" class="selectedMenuButton" id="menuMyEvents">My Events</a></li>
             <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
-            <li class="menuButton"><a href="eventsList.html" id="menuEvents">Events</a></li>
+            <li class="menuButton"><a href="event.html"  id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
@@ -77,12 +76,10 @@
         </footer>
     </div>
 </header>
-
 <main>
-    <div id="searchPageWrapper">
-        <h1>Search results</h1>
-        <section id="users">
-            <h2>Users</h2>
+    <div id="eventsWrapper">
+        <h1>Friends</h1>
+        <section id="friends">
             <article class="usersWrapper">
                 <div class="userWrapper">
                     <div class="userProfilePic"></div>
@@ -127,47 +124,7 @@
                     </div>
                 </div>
             </article>
-        </section>
-        <section id="events">
-            <h2>Events</h2>
-            <article class="eventsWrapper">
-                <div class="eventWrapper">
-                    <div class="eventImage">
-                        <table class="eventAttenders">
-                            <tr>
-                                <td class="attender jivko"></td>
-                                <td class="attender mitko"></td>
-                                <td class="moreAttenders">+3</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="eventDetails">
-                        <div class="eventDate"><span>Wed, Nov 09, 14:00</span></div>
-
-                        <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span>
-                        </h3>
-
-                        <p class="eventDesc">
-                            Bacon ipsum dolor amet beef ribs filet mignon ham,
-                            venison pork capicola t-bone. Landjaeger biltong leberkas.
-                        </p>
-                        <!--<footer class="eventPlace">-->
-                            <!--<span>гр.Карлово, Централен Балкан</span>-->
-                        <!--</footer>-->
-                        <!--<footer class="eventTags">-->
-                            <!--#Balkan #GrillAndBeer-->
-                        <!--</footer>-->
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section id="friends">
-            <h2>Friends</h2>
-
-            <h3>No such friends</h3>
+            <!--<h3>No friends to show</h3>-->
         </section>
     </div>
 </main>
-
-</body>
-</html>

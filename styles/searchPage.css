@@ -5,7 +5,7 @@ main section > h2, main section > h3, main h1 {
 main section {
     margin: 50px auto;
 }
-#searchPageWrapper {
+main > div {
     width: 80%;
     height: 100%;
     margin: 50px auto;
@@ -25,6 +25,9 @@ section h2 {
 }
 section h2 {
     color: rgba(0,0,0,0.7);
+}
+section h3 {
+    color: rgba(0,0,0,0.5);
 }
 
 
@@ -47,6 +50,24 @@ section h2 {
     .eventImage {
         width: 100%;
         height: 200px;
+    }
+    .userWrapper{
+        flex-flow: column;
+        flex-wrap: nowrap;
+        width: 235px;
+        min-width: 50px;
+    }
+    .userProfilePic {
+        width: 235px;
+        height: 235px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .userDetails {
+        margin: auto;
+    }
+    .userName {
+        text-align: center;
     }
 }
 

@@ -19,7 +19,14 @@
     flex-flow: row;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     margin: 20px auto;
+    width: 45%;
+    min-width: 350px;
 }
+
+.userDetailsWrapper {
+    margin: 10px;
+}
+
 .userDetails {
     border-spacing: 5px;
 }
@@ -50,7 +57,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 300px;
 }
 
 

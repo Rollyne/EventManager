@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
     <link rel="stylesheet" type="text/css" href="../styles/eventBlock.css">
-    <link rel="stylesheet" type="text/css" href="../styles/userBlock.css">
     <link rel="stylesheet" type="text/css" href="../styles/searchPage.css">
 
 
@@ -51,7 +50,7 @@
 <div class="se-pre-con"></div>
 <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
-    <div id="headerContent" class="searchPage">
+    <div id="headerContent">
         <div id="searchWrapper">
             <form action="searchPage.html">
                 <input type="search" placeholder="Search.." id="searchContent">
@@ -61,7 +60,7 @@
         <ul id="sideBarMenu">
             <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
             <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
-            <li class="menuButton"><a href="eventsList.html" id="menuEvents">Events</a></li>
+            <li class="menuButton"><a href="eventsList.html" class="selectedMenuButton" id="menuEvents">Events</a></li>
             <li class="menuUnderline">
                 <div class="menuUnderlineContent"></div>
             </li>
@@ -77,59 +76,12 @@
         </footer>
     </div>
 </header>
-
 <main>
-    <div id="searchPageWrapper">
-        <h1>Search results</h1>
-        <section id="users">
-            <h2>Users</h2>
-            <article class="usersWrapper">
-                <div class="userWrapper">
-                    <div class="userProfilePic"></div>
-                    <div class="userDetailsWrapper">
-                        <h3 class="userName"><span><a href="myEvents.html">Dimitar Tonchev</a></span></h3>
+    <div id="eventsWrapper">
+        <h1>All Events</h1>
 
-                        <table class="userDetails">
-                            <tr>
-                                <th>Events Created</th>
-                                <td>23</td>
-                            </tr>
-                            <tr>
-                                <th>Events Attended</th>
-                                <td>28</td>
-                            </tr>
-                            <tr>
-                                <th>Friends</th>
-                                <td>203</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="userWrapper">
-                    <div class="userProfilePic"></div>
-                    <div class="userDetailsWrapper">
-                        <h3 class="userName"><span><a href="myEvents.html">Dimitar Tonchev</a></span></h3>
-
-                        <table class="userDetails">
-                            <tr>
-                                <th>Events Created</th>
-                                <td>23</td>
-                            </tr>
-                            <tr>
-                                <th>Events Attended</th>
-                                <td>28</td>
-                            </tr>
-                            <tr>
-                                <th>Friends</th>
-                                <td>203</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section id="events">
-            <h2>Events</h2>
+        <section id="ownEvents">
+            <h2>Your events</h2>
             <article class="eventsWrapper">
                 <div class="eventWrapper">
                     <div class="eventImage">
@@ -144,8 +96,7 @@
                     <div class="eventDetails">
                         <div class="eventDate"><span>Wed, Nov 09, 14:00</span></div>
 
-                        <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span>
-                        </h3>
+                        <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span></h3>
 
                         <p class="eventDesc">
                             Bacon ipsum dolor amet beef ribs filet mignon ham,
@@ -161,13 +112,38 @@
                 </div>
             </article>
         </section>
-        <section id="friends">
-            <h2>Friends</h2>
+        <section id="attendEvents">
+            <h2>Events attending</h2>
+            <article class="eventsWrapper">
+                <div class="eventWrapper">
+                    <div class="eventImage" id="friday">
+                        <table class="eventAttenders">
+                            <tr>
+                                <td class="attender jivko"></td>
+                                <td class="attender mitko"></td>
+                                <td class="moreAttenders">+3</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="eventDetails">
+                        <div class="eventDate"><span>Wed, Nov 09, 14:00</span></div>
 
-            <h3>No such friends</h3>
+                        <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span></h3>
+
+                        <p class="eventDesc">
+                            Bacon ipsum dolor amet beef ribs filet mignon ham,
+                            venison pork capicola t-bone. Landjaeger biltong leberkas.
+                        </p>
+                        <!--<footer class="eventPlace">-->
+                            <!--<span>гр.Карлово, Централен Балкан</span>-->
+                        <!--</footer>-->
+                        <!--<footer class="eventTags">-->
+                            <!--#Balkan #GrillAndBeer-->
+                        <!--</footer>-->
+                    </div>
+                </div>
+            </article>
+            <!--<h3>No events to show</h3>-->
         </section>
     </div>
 </main>
-
-</body>
-</html>
