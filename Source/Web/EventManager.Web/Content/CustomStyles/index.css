@@ -41,7 +41,7 @@
     text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
 }
 
-#logoText {
+#logoTextWrapper {
     font-size: 11vw;
     transition: all 0.2s;
 }
@@ -174,7 +174,7 @@ input[type="text"]:focus, input[type="password"]:focus {
         width: 40%;
 }
 @media all and (min-width: 600px) {
-    #logoText {
+    #logoTextWrapper {
         font-size: 7vw;
         transition: all 0.2s;
     }

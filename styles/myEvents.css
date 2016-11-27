@@ -101,10 +101,21 @@ body {
     margin: auto;
 }
 #userName{
-    margin: 10px auto;
     color: rgba(0,0,0,0.65);
-    font-size: 2em;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    font-size: 2em;
+
+}
+#userName a{
+    color: rgba(0,0,0,0.65);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+
+    transition: all 0.3s ease-out;
+}
+#userName a:hover {
+    color: rgba(121, 159, 68, 0.70);
 }
 
 /*User Details Table*/

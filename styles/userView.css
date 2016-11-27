@@ -1,0 +1,32 @@
+#detailsAside {
+    justify-content: center;
+    display: flex;
+    flex-flow: row;
+}
+#userAbout {
+    width: 60%;
+    margin-left: 5%;
+}
+#userAbout h3, #userAbout p {
+    text-align: left;
+}
+#aboutUser {
+    display: block;
+}
+#profileHeader {
+    opacity: 0;
+}
+#userIdentity {
+    width: 100%;
+}
+@media screen and (max-width: 900px){
+    #detailsAside {
+        flex-flow: column;
+    }
+    #userAbout {
+        width: 90%;
+    }
+    #userAbout h3, #userAbout p {
+        text-align: center;
+    }
+}

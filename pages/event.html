@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/ico" href="../icons/logo.ico">
     <title>Argus | Хижа Балкански рози</title>
     <script src="../scripts/jquery.min.js"></script>
     <script src="../scripts/jquery.browser.min.js"></script>
@@ -87,7 +88,7 @@
                 <div class="inviteText">Invite</div>
             </li>
             <li id="attendersBtn" onclick="scrollTo('attenders')">Attenders</li>
-            <li>Edit</li>
+            <li id="editEventButton"><a href="editEvent.html">Edit</a></li>
         </ul>
         <form class="inviteUser inviteUserDisabled">
             <input type="text" placeholder="Username.."/>
@@ -154,39 +155,30 @@
                         </li>
                         <li class="listAttender">
                             <a href="#">
-                                <div class="attenderPic"></div>
+                                <div class="attenderPic" id="jivko"></div>
                                 <div class="attenderName">Jivko Kirishev</div>
                             </a>
                         </li>
                         <li class="listAttender">
                             <a href="#">
-                                <div class="attenderPic"></div>
-                                <div class="attenderName">Jivko Kirishev</div>
-                            </a>
-                        </li>
-                        <li class="listAttender">
-                            <a>
-                                <div class="attenderPic"></div>
+                                <div class="attenderPic" id="jivko"></div>
                                 <div class="attenderName">Jivko Kirishev</div>
                             </a>
                         </li>
                         <li class="listAttender">
                             <a href="#">
-                                <div class="attenderPic"></div>
+                                <div class="attenderPic" id="jivko"></div>
                                 <div class="attenderName">Jivko Kirishev</div>
                             </a>
                         </li>
                         <li class="listAttender">
                             <a href="#">
-                                <div class="attenderPic"></div>
+                                <div class="attenderPic" id="jivko"></div>
                                 <div class="attenderName">Jivko Kirishev</div>
                             </a>
                         </li>
-                        <li class="listAttender toggler" id="hider">
-                            <a>
-                                <div class="attenderName">Hide attenders</div>
-                            </a>
-                        </li>
+
+
                     </ul>
                 </div>
                 <section id="informationTable">
@@ -217,14 +209,16 @@
                         </li>
                         <li>
                             <div class="infTableHeader">Best Dates</div>
-                            <div class="infPercentage">
-                                <div>70%</div>
-                            </div>
                             <div class="infTableInfo">
                                 <div>17.11.2016</div>
                                 <div>21.11.2016</div>
                             </div>
                         </li>
+                        <!--<li class="listAttender toggler" id="hider">-->
+                        <!--<a>-->
+                        <!--<div class="attenderName">Hide attenders</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
                     </ul>
                 </section>
             </div>

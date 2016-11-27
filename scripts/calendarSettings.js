@@ -122,9 +122,12 @@ jQuery(document).ready(function () {
                         startDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]),
                         pushedDate = startDate;
                     $('#dateStart').val(date);
+                    $('#datesSubmit').prop('disabled', false);
                     for (let i = 0; i < eventLength; i++) {
                         pushedDate = startDate.getTime() + (1000 * 60 * 60 * 24) * i;
                         if(pushedDate > dateBefore.getTime()){
+                            console.log()
+                            $('#datesSubmit').prop('disabled', true);
                             errorMessages.inputErrorMessage('#calendar' ,'There should be ' + eventLength + ' days avaliable');
                             selectedDates = [];
                             $('#dateStart').val('');

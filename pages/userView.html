@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/eventBlock.css">
     <link rel="stylesheet" type="text/css" href="../styles/myEvents.css">
+    <link rel="stylesheet" type="text/css" href="../styles/userView.css">
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
 </head>
 <style>
@@ -45,7 +46,8 @@
 </script>
 <body>
 <div class="se-pre-con"></div>
-<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') "><svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">
+    <svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
 <g id="Layer_3">
 </g>
@@ -59,7 +61,8 @@
 		c-9,0-16.3,7.3-16.3,16.3c0,9,7.3,16.3,16.3,16.3c9,0,16.3-7.3,16.3-16.3C40.5,15.2,33.2,7.9,24.2,7.9z"/>
 	<path class="st4" d="M47.8,27.4H6.3v-3.1H48C48,24.2,48,25.7,47.8,27.4z"/>
 </g>
-                </svg></div>
+                </svg>
+</div>
 <header id="mainHeader">
     <div id="headerContent">
         <div id="searchWrapper">
@@ -69,7 +72,7 @@
             </form>
         </div>
         <ul id="sideBarMenu">
-            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents" class="selectedMenuButton">My Events</a>
+            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a>
             </li>
             <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create Event</a></li>
             <li class="menuButton"><a href="eventsList.html" id="menuEvents">Events</a></li>
@@ -101,9 +104,8 @@
     <section id="profile">
         <div id="userIdentity">
             <div id="userProfilePic"></div>
-            <h1 id="userName"><a href="userView.html">Dimitar Tonchev</a></h1>
+            <h1 id="userName">Dimitar Tonchev</h1>
         </div>
-        <div id="contentWrapper">
             <aside id="detailsAside">
                 <table id="userDetails">
                     <tr>
@@ -134,66 +136,6 @@
                     </p>
                 </div>
             </aside>
-            <div class="horLine" id="abEvSeparator"></div>
-            <section id="userEvents">
-                <article class="eventsWrapper">
-                    <div class="eventWrapper">
-                        <div class="eventImage">
-                            <table class="eventAttenders">
-                                <tr>
-                                    <td class="attender jivko"></td>
-                                    <td class="attender mitko"></td>
-                                    <td class="moreAttenders">+3</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="eventDetails">
-                            <div class="eventDate"><span>Wed, Nov 09, 14:00</span></div>
-
-                            <h3 class="eventHeader"><span><a href="event.html">В Балкана на хижа Балкански Рози</a></span></h3>
-
-                            <p class="eventDesc">
-                                Bacon ipsum dolor amet beef ribs filet mignon ham,
-                                venison pork capicola t-bone. Landjaeger biltong leberkas.
-                            </p>
-                            <!--<footer class="eventPlace">-->
-                                <!--<span>гр.Карлово, Централен Балкан</span>-->
-                            <!--</footer>-->
-                            <!--<footer class="eventTags">-->
-                                <!--#Balkan #GrillAndBeer-->
-                            <!--</footer>-->
-                        </div>
-                    </div>
-                </article>
-                <article class="eventsWrapper">
-                    <div class="eventWrapper">
-                        <div class="eventImage" id="friday">
-                            <table class="eventAttenders">
-                                <tr>
-                                    <td class="attender jivko"></td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="eventDetails">
-                            <div class="eventDate">Wed, Nov 09, 14:00</div>
-
-                            <h3 class="eventHeader"><a href="#">Петъчна сбирка на интелигенцията</a></h3>
-
-                            <p class="eventDesc">
-                                Bacon ipsum dolor amet beef ribs filet mignon ham,
-                                venison pork capicola t-bone. Landjaeger biltong leberkas.
-                            </p>
-                            <!--<footer class="eventPlace">-->
-                                <!--гр.Пловдв, жк.Тракия-->
-                            <!--</footer>-->
-                            <!--<footer class="eventTags">-->
-                                <!--#FridayNight #Party #EvenMoreBeer-->
-                            <!--</footer>-->
-                        </div>
-                    </div>
-                </article>
-            </section>
-        </div>
     </section>
 
 </main>

@@ -49,19 +49,19 @@ function InviteBox(button, form) {
 }
 /*List limit function*/
 $(function () {
-    var attendersAmount = $('#attendersList').children().length - 1,
+    var attendersAmount = $('#attendersList').children().length,
         moreAttenders = attendersAmount - 4,
         overflower = '<div class="attenderName">' + moreAttenders + ' more attenders</div>',
         nthChildSafe = $('.listAttender:nth-child(5) a .attenderName'),
         listed = false;
-    $('#attAm').text(attendersAmount);
+
     if (attendersAmount > 5) {
         $('.listAttender:lt(5)').show();
         $('.listAttender:nth-child(5)').addClass('toggler');
         $('.listAttender:nth-child(5) a .attenderPic').hide();
         $('.listAttender:nth-child(5) a .attenderName').replaceWith(overflower);
     } else {
-        $('.listAttender:last-child').hide();
+        $('.listAttender').show();
     }
     $('.listAttender:nth-child(5) a').on('click', function () {
         if (!listed) {
@@ -86,6 +86,7 @@ $(function () {
             listed = false;
         }
     });
+    $('#attAm').text(attendersAmount);
 });
 
 //SCROLL TO ATTENDERS FUNCTION

@@ -57,6 +57,20 @@ body {
     background-color: rgba(0,0,0,0.1);
 }
 
+#eventProps #editEventButton:hover {
+    background-color: transparent;
+}
+#editEventButton a:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+#eventProps #editEventButton {
+    padding: 0;
+}
+#editEventButton a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+}
 
 
 .inviteText {
@@ -284,6 +298,7 @@ body {
     transition: all 0.5s;
     outline: none;
 }
+
 .dateInputButtons:hover {
     background-color: rgba(109,229,10,0.7);
 }
@@ -308,6 +323,10 @@ body {
     border: 1px solid rgba(0,0,0,0.5);
     box-shadow: inset 1px 1px 20px 3px rgba(0, 0, 0, 0.3);
     background-color: rgba(109,229,10,0.7);
+}
+#datesSubmit:disabled {
+    background-color: darkgray;
+    cursor: default;
 }
 
 
