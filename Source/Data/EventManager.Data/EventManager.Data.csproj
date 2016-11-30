@@ -64,9 +64,13 @@
     <Compile Include="Migrations\201611281750179_InitialCreate.Designer.cs">
       <DependentUpon>201611281750179_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611301048562_FriendsIdAdded.cs" />
-    <Compile Include="Migrations\201611301048562_FriendsIdAdded.Designer.cs">
-      <DependentUpon>201611301048562_FriendsIdAdded.cs</DependentUpon>
+    <Compile Include="Migrations\201611301818519_ManyToMany.cs" />
+    <Compile Include="Migrations\201611301818519_ManyToMany.Designer.cs">
+      <DependentUpon>201611301818519_ManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611301918275_ManyToManyEv_ApUsr.cs" />
+    <Compile Include="Migrations\201611301918275_ManyToManyEv_ApUsr.Designer.cs">
+      <DependentUpon>201611301918275_ManyToManyEv_ApUsr.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +107,11 @@
     <EmbeddedResource Include="Migrations\201611281750179_InitialCreate.resx">
       <DependentUpon>201611281750179_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301048562_FriendsIdAdded.resx">
-      <DependentUpon>201611301048562_FriendsIdAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611301818519_ManyToMany.resx">
+      <DependentUpon>201611301818519_ManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611301918275_ManyToManyEv_ApUsr.resx">
+      <DependentUpon>201611301918275_ManyToManyEv_ApUsr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

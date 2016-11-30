@@ -25,9 +25,7 @@ namespace EventManager.Services.Data
             var currentUser = this.users.GetCurrentUser();
             var userFriends = currentUser.Friends;
             userFriends.Add(newUser);
-            //currentUser.FriendsId.Add(newUser.Id);
             newUser.Friends.Add(currentUser);
-            //newUser.FriendsId.Add(currentUser.Id);
 
             this.users.Edit(currentUser);
             this.users.Edit(newUser);
@@ -63,14 +61,8 @@ namespace EventManager.Services.Data
 
         public IList<ApplicationUser> FindFriendByName(string name)
         {
-            var userFriendsId = this.users.GetCurrentUser().FriendsId;
-            var allUsers = this.users.GetAllUsers();
-            var userFriends = new List<ApplicationUser>();
-
-            foreach (var item in userFriendsId)
-            {
-                userFriends.Add(allUsers.Where(x => x.Id == item).FirstOrDefault());
-            }
+            var currentUser = this.users.GetCurrentUser();
+            var userFriends = currentUser.Friends;
 
             // x => x.UserName.Contains(name)
             var searchResult = userFriends.Where(x => x.Name == name).ToList();

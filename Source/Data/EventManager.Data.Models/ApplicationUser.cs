@@ -22,7 +22,6 @@
             this.Comments = new HashSet<Comment>();
             this.EventDates = new HashSet<EventDate>();
             this.Friends = new HashSet<ApplicationUser>();
-            this.FriendsId = new HashSet<string>();
         }
 
         public string Name { get; set; }
@@ -41,8 +40,6 @@
         }
 
         public virtual ICollection<ApplicationUser> Friends { get; set; }
-
-        public virtual ICollection<string> FriendsId { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }
 

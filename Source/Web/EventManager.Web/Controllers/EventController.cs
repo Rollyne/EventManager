@@ -91,9 +91,26 @@ namespace EventManager.Web.Controllers
                 }
             }
 
-            model.AttendersCount = currentEvent.Users.Count + 1;
+            if (currentEvent.Creator.Id == this.user.CurrentUserId())
+            {
+                model.IsCreator = true;
+            }
+            else
+            {
+                model.IsCreator = false;
+            }
+
+            if (this.date.DatesForThisEvent(id).Where(x => x.Creator.Id == this.user.CurrentUserId()).Any())
+            {
+                model.IsDateAdded = true;
+            }
+            else
+            {
+                model.IsDateAdded = false;
+            }
+
+            model.AttendersCount = currentEvent.Users.Count;
             model.Attenders = new List<Attenders>();
-            model.Attenders.Add(new Attenders { Name = currentEvent.Creator.Name, PhotoPath = "../../Images/ApplicationImages/UserImages/" + currentEvent.Creator.Id + "/Photo.png" });
             foreach (var item in currentEvent.Users)
             {
                 model.Attenders.Add(new Attenders { Name = item.Name, PhotoPath = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png" });
@@ -105,6 +122,13 @@ namespace EventManager.Web.Controllers
 
             model.BestStartDate = currentEvent.OptimalStartDate;
             model.BestEndDate = currentEvent.OptimalEndDate;
+
+            var myDates = this.date.DatesForThisEvent(id).Where(x => x.Creator.Id == this.user.CurrentUserId()).FirstOrDefault();
+            if (myDates != null)
+            {
+                model.MyStartDate = myDates.StartDate;
+                model.MyEndDate = myDates.EndDate;
+            }
 
             model.CurrUrsPic = "../../Images/ApplicationImages/UserImages/" + this.user.CurrentUserId() + "/Photo.png";
 

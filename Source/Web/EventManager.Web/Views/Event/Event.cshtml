@@ -1,5 +1,5 @@
 ﻿@model EventManager.Web.ViewModels.EventDetails.EventViewModel
-
+@using Microsoft.AspNet.Identity;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Event";
@@ -18,9 +18,13 @@
     <div id="eventName">@Model.Name</div>
     <section id="event">
         <ul id="eventProps">
-            <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
-                <div class="inviteText">Invite</div>
-            </li>
+            @if (Model.IsCreator)
+            {
+                <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
+                    <div class="inviteText">Invite</div>
+                </li>
+            }
+            
             <li id="attendersBtn" onclick="scrollTo('attenders')">Attenders</li>
         </ul>
         @using (Html.BeginForm("AddAttender", "Event", new { id = Model.Id }, FormMethod.Post, new { @class = "inviteUser inviteUserDisabled" }))
@@ -120,14 +124,23 @@
                             <div class="infTableHeader">Length</div>
                             <div class="infTableInfo">@Model.EventLength days</div>
                         </li>
-                        @*<li>
+                        <li>
                             <div class="infTableHeader">Your Dates</div>
                             <div class="infTableInfo">
-                                <div>No dates set</div>
-                                <!--<div>17.11.2016</div>-->
-                                <!--<div>21.11.2016</div>-->
+                                @if (Model.MyStartDate != null && Model.MyEndDate != null)
+                                {
+                                    date = (DateTime)Model.MyStartDate;
+                                    <div id="eventBeforeDate">@date.ToString("dd.MM.yyyy")</div>
+                                    date = (DateTime)Model.MyEndDate;
+                                    <div>@date.ToString("dd.MM.yyyy")</div>
+                                }
+                                else
+                                {
+                                    <div>No dates set</div>
+                                }
+
                             </div>
-                        </li>*@
+                        </li>
                         @*<li>
                             <div class="infTableHeader">Starts At</div>
                             <div class="infTableInfo">14:00</div>
@@ -150,13 +163,17 @@
         </section>
 
         <div id="setDatesWrapper">
-            <button class="dateSetToggler dateInputButtons">Set Dates</button>
-            <!--TODO: VALIDATION OF THE DATES -->
-            @using (Html.BeginForm("AddDate", "Event", new { id = Model.Id }, FormMethod.Post, new { id = "inputPrefEventDates" }))
+            @if (!Model.IsDateAdded)
             {
-                <input type="text" class="dateInput" id="dateStart" name="date">
-                <input type="submit" class="dateInputButtons" value="Apply Dates" id="datesSubmit" />
+                <button class="dateSetToggler dateInputButtons">Set Dates</button>
+                <!--TODO: VALIDATION OF THE DATES -->
+                using (Html.BeginForm("AddDate", "Event", new { id = Model.Id }, FormMethod.Post, new { id = "inputPrefEventDates" }))
+                {
+                    <input type="text" class="dateInput" id="dateStart" name="date">
+                    <input type="submit" class="dateInputButtons" value="Apply Dates" id="datesSubmit" />
+                }
             }
+
             <div id="calendar"></div>
         </div>
     </section>

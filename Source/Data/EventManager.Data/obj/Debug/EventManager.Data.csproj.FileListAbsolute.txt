@@ -174,4 +174,5 @@ C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
-C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.FriendsIdAdded.resources
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToMany.resources
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToManyEv_ApUsr.resources

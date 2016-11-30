@@ -22,6 +22,10 @@ namespace EventManager.Web.ViewModels.EventDetails
 
         public string DatesPath { get; set; }
 
+        public bool IsCreator { get; set; }
+
+        public bool IsDateAdded { get; set; }
+
         public int AttendersCount { get; set; }
 
         public IList<Attenders> Attenders { get; set; }
@@ -35,6 +39,10 @@ namespace EventManager.Web.ViewModels.EventDetails
         public DateTime? BestStartDate { get; set; }
 
         public DateTime? BestEndDate { get; set; }
+
+        public DateTime? MyStartDate { get; set; }
+
+        public DateTime? MyEndDate { get; set; }
 
         public IList<Comments> Comments { get; set; }
 

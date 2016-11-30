@@ -66,3 +66,4 @@ C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Common\bin
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.dll
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.csprojResolveAssemblyReference.cache
