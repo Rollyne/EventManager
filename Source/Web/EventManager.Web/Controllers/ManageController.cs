@@ -289,7 +289,7 @@
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
 
-                return this.RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+                return this.RedirectToAction("UserProfile", "UserPage");
             }
 
             this.AddErrors(result);

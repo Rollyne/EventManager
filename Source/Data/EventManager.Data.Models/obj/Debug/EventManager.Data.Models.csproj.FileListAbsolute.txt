@@ -62,3 +62,35 @@ C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data.Models\bin\Deb
 C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.dll
 C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.pdb
 C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.dll.config
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.dll.config
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data.Models\obj\Debug\EventManager.Data.Models.csprojResolveAssemblyReference.cache

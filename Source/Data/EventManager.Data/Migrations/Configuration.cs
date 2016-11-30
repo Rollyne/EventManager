@@ -19,26 +19,31 @@
 
         protected override void Seed(ApplicationDbContext context)
         {
-            const string AdministratorUserName = "admin@admin.com";
-            const string AdministratorPassword = AdministratorUserName;
+            const string AdministratorUserName = "user@user.com";
+            const string AdministratorPassword = "user12";
 
-            if (!context.Roles.Any())
-            {
-                // Create admin role
-                var roleStore = new RoleStore<IdentityRole>(context);
-                var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole { Name = GlobalConstants.AdministratorRoleName };
-                roleManager.Create(role);
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+            var user = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName, Name = "User" };
+            userManager.Create(user, AdministratorPassword);
 
-                // Create admin user
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
-                var user = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName };
-                userManager.Create(user, AdministratorPassword);
+            //if (!context.Roles.Any())
+            //{
+            //    // Create admin role
+            //    var roleStore = new RoleStore<IdentityRole>(context);
+            //    var roleManager = new RoleManager<IdentityRole>(roleStore);
+            //    var role = new IdentityRole { Name = GlobalConstants.AdministratorRoleName };
+            //    roleManager.Create(role);
 
-                // Assign user to admin role
-                userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
-            }
+            //    // Create admin user
+            //    var userStore = new UserStore<ApplicationUser>(context);
+            //    var userManager = new UserManager<ApplicationUser>(userStore);
+            //    var user = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName, Name = "User" };
+            //    userManager.Create(user, AdministratorPassword);
+
+            //    // Assign user to admin role
+            //    userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+            //}
         }
     }
 }

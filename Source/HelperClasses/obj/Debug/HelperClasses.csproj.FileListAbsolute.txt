@@ -7,3 +7,14 @@ C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\bin\Debug\HelperClasses
 C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\bin\Debug\HelperClasses.pdb
 C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.dll
 C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\HelperClasses\obj\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\HelperClasses\obj\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\HelperClasses\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\HelperClasses\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache

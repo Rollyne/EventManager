@@ -1,0 +1,104 @@
+﻿@model EventManager.Web.ViewModels.UserPage.ChangeUserInfoViewModel
+@{
+    ViewBag.Title = "Argus | Edit profile";
+    ViewBag.Page = "MyProfile";
+}
+@Styles.Render("~/Content/MyProfileStyle")
+
+<script>
+    function abToggler(id) {
+        let $inputBox = $('#' + id);
+        if ($inputBox.is(':disabled')) {
+            $inputBox.prop('disabled', false);
+            if (id != 'aboutUser') {
+                $inputBox.focus().select();
+            }
+        } else {
+            $inputBox.prop('disabled', true);
+        }
+    }
+</script>
+
+<main id="mainContent">
+    <h1>My Profile</h1>
+
+    @{
+        var model = Model;
+    }
+
+    @using (Html.BeginForm("ChangeUserInfo", "UserPage", new { }, FormMethod.Post, new { role = "form", id = "profileForm", enctype = "multipart/form-data" }))
+    {
+        <div id="imageInputWrapper">
+            <div class="setting image_picker" id="profilePicPicker">
+                <h2>Profile Picture</h2>
+                <div class="settings_wrap">
+                    <label class="drop_target" id="profilePic_drop_target">
+                        <div id="profilePicPreview" class="image_preview"></div>
+                        @Html.TextBoxFor(m => m.Photo, new { id = "profilePicInput", type = "file" })
+                    </label>
+                </div>
+                <a data-action="removeProfilePic">
+                    <i class="fa fa-ban"></i> Remove Current Image
+                </a>
+            </div>
+            <div class="setting image_picker" id="bannerPicPicker">
+                <h2>Banner Picture</h2>
+                <div class="settings_wrap">
+                    <label class="drop_target" id="bannerPic_drop_target">
+                        <div id="bannerPicPreview" class="image_preview"></div>
+                        @Html.TextBoxFor(m => m.Banner, new { id = "bannerPicInput", type = "file" })
+                    </label>
+                </div>
+                <a data-action="removeBannerPic">
+                    <i class="fa fa-ban"></i> Remove Current Image
+                </a>
+            </div>
+        </div>
+        @Scripts.Render("~/bundles/ImagePreviewScript")
+        <script>
+                jQuery(document).ready(function () {
+                    $('#profilePicPreview').css('background-image', 'url(@Model.PhotoPath)');
+                    $('#bannerPicPreview').css('background-image', 'url(@Model.BannerPath)');
+                });
+                ImagePreview("#bannerPicPicker", "#bannerPic_drop_target", "#bannerPicInput", "#bannerPicPreview", "", "removeBannerPic");
+                ImagePreview("#profilePicPicker", "#profilePic_drop_target", "#profilePicInput", "#profilePicPreview", "", "removeProfilePic");
+        </script>
+        <h2>Personal information</h2>
+        <div class="lblInpGr">
+            <label for="username" id="usernamelbl">Username</label>
+            <div class="iconInpGr">
+                <a class="editContentIcon" onclick="abToggler('username')"></a>
+                @Html.TextBoxFor(m => m.UserName, new { type = "text", placeholder = Model.UserName, @class="inText", id = "username", disabled = "disabled" })
+            </div>
+        </div>
+        <div class="lblInpGr">
+            <label for="aboutUser" id="aboutlbl">About</label>
+            <div class="iconInpGr">
+                <a class="editContentIcon" id="textareaIcon" onclick="abToggler('aboutUser')"></a>
+                @Html.TextAreaFor(m => m.Description, new { type = "text", id = "aboutUser", placeholder = Model.Description, rows = "10", cols = "60", disabled = "disabled" })
+            </div>
+        </div>
+        @*<div class="lblInpGr">
+            <label for="userEmail">Email Address</label>
+            <div class="iconInpGr">
+                <a class="editContentIcon" onclick="abToggler('userEmail')"></a>
+                <input type="email" id="userEmail" class="inText" value="rollyne@abv.bg" disabled>
+            </div>
+        </div>*@
+        <input type="submit" value="Apply Changes">
+    }
+
+    @using (Html.BeginForm("ChangeEmail", "UserPage", FormMethod.Post, new { id = "changeEmail" }))
+    {
+        <div class="lblInpGr">
+            <label for="userEmail">Email Address</label>
+            <div class="iconInpGr">
+                <a class="editContentIcon" onclick="abToggler('userEmail')"></a>
+                <input type="email" id="userEmail" class="inText" name="email" value="@Model.Email" disabled>
+            </div>
+        </div>
+        <input type="submit" value="Save Email">
+    }
+
+    @Html.Partial("~/Views/Manage/ChangePassword.cshtml", new EventManager.Web.ViewModels.Manage.ChangePasswordViewModel())
+</main>

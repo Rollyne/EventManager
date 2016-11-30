@@ -1,0 +1,87 @@
+﻿@model EventManager.Web.ViewModels.UserPage.UserPageViewModel
+@using Microsoft.AspNet.Identity;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Page = "UserProfile";
+    ViewBag.Title = "Argus | My events";
+}
+
+@Styles.Render("~/Content/UserProfileStyle")
+
+<main>
+    <div id="bannerWrapper" style="background-image: url(@Model.User.BannerFileName);"></div>
+    <div id="profileHeader">
+        <ul id="profileHeaderMenu">
+            <li><a href="@Url.Action("EventList", "UserPage")">Events</a></li>
+            <li><a href="@Url.Action("FriendList", "UserPage")">Friends</a></li>
+            <li><a href="@Url.Action("ChangeUserInfo", "UserPage")">Edit Profile</a></li>
+        </ul>
+    </div>
+    <section id="profile">
+        <div id="userIdentity">
+            <div id="userProfilePic" style="background-image: url(@Model.User.PhotoFileName);"></div>
+            <h1 id="userName"><a href="@Url.Action("UserDetails", "UserPage", new { userId = User.Identity.GetUserId().ToString() })">@Model.User.UserName</a></h1>
+        </div>
+        <div id="contentWrapper">
+            <aside id="detailsAside">
+                <table id="userDetails">
+                    <tr>
+                        <th>Events Created</th>
+                        <td>@Model.User.CreatedEvents</td>
+                    </tr>
+                    <tr>
+                        <th>Events Attended</th>
+                        <td>@Model.User.AttendedEvents</td>
+                    </tr>
+                    <tr>
+                        <th>Friends</th>
+                        <td>@Model.User.FriendsCount</td>
+                    </tr>
+                </table>
+                <div id="userAbout">
+                    <h3>About</h3>
+                    <p id="aboutUser">
+                        @Model.User.Description
+                    </p>
+                </div>
+            </aside>
+            <div class="horLine" id="abEvSeparator"></div>
+            <section id="userEvents">
+                <h2>Events</h2>
+                <article class="eventsWrapper">
+                    @foreach (var item in Model.Events)
+                    {
+
+                        <div class="eventWrapper">
+                            <div class="eventImage" style="background-image: url(@item.ImagesFilePath);">
+                                @*<table class="eventAttenders">
+                            <tr>
+                                <td class="attender jivko"></td>
+                                <td class="attender mitko"></td>
+                                <td class="moreAttenders">+3</td>
+                            </tr>
+                        </table>*@
+                            </div>
+                            <div class="eventDetails">
+                                <div class="eventDate"><span>@item.StartEventDate.ToString("ddd, MMM dd")</span></div>
+                                <h3 class="eventHeader"><span>@Html.ActionLink((item.Destination.IsEmpty() ? "No Article" : item.Destination), "Event", "Event", new { id = item.Id }, new { })</span></h3>
+
+                                <p class="eventDesc">
+                                    @item.Content
+                                </p>
+                                @*<footer class="eventPlace">
+                            <span>гр.Карлово, Централен Балкан</span>
+                        </footer>
+                        <footer class="eventTags">
+                            #Balkan #GrillAndBeer
+                        </footer>*@
+                            </div>
+                        </div>
+
+                    }
+                </article>
+            </section>
+        </div>
+    </section>
+</main>

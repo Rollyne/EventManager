@@ -12,6 +12,11 @@ namespace EventManager.Tools.Helpers
 
         public int FreePeopleCount{ get; set; }
 
-        public int DaysCount { get; set; }
+        //public string DateFormat()
+        //{
+        //    return this.Date.ToString("dd/MM/yyyy");
+        //}
+
+        //public int DaysCount { get; set; }
     }
 }

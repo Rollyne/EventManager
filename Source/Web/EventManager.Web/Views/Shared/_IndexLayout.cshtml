@@ -6,10 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Event Manager</title>
+    <title>@ViewBag.Title</title>
+    <script src="../../Scripts/CustomScripts/jquery.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery.browser.min.js"></script>
+    @Scripts.Render("~/bundles/scriptScript")
     @Styles.Render("~/Content/globalStyle")
     @Styles.Render("~/Content/indexStyle")
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
 </head>
 
 <style>
@@ -35,7 +38,7 @@
     }
 </style>
 <script>
-    $(window).on('load', function () {
+    $(window).on('load',function () {
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
@@ -64,12 +67,12 @@
     </div>
 
     <footer id="mainFooter">
-        <span id="footerText">(c) Copyright</span>
+        <span id="footerText">(c) Copyright J&D</span>
     </footer>
 
     
     @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
-    @Scripts.Render("~/bundles/indexScript")
+    
     @RenderSection("scripts", required: false)
 </body>
 

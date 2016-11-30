@@ -36,6 +36,20 @@
             return base.SaveChanges();
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<ApplicationUser>()
+            .HasMany(up => up.Friends)
+            .WithMany();
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(up => up.Events)
+                .WithMany(ev => ev.Users);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         private void ApplyAuditInfoRules()
         {
             // Approach via @julielerman: http://bit.ly/123661P

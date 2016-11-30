@@ -19,40 +19,53 @@ namespace EventManager.Services.Data
             this.users = users;
         }
 
-        public void AddFriend(ApplicationUser user)
+        public void AddFriend(string userId)
         {
+            var newUser = this.users.GetAllUsers().Where(x => x.Id == userId).FirstOrDefault();
             var currentUser = this.users.GetCurrentUser();
             var userFriends = currentUser.Friends;
-            userFriends.Add(user);
+            userFriends.Add(newUser);
+            newUser.Friends.Add(currentUser);
 
             this.users.Edit(currentUser);
+            this.users.Edit(newUser);
             this.users.Save();
 
         }
 
-        public void UploadPhoto(HttpPostedFileBase photo)
+        public void UploadPhoto(HttpPostedFileBase photo, HttpPostedFileBase banner)
         {
             var currentUser = this.users.GetCurrentUser();
-            var photoName = string.Format("{0}.jpg", currentUser.Id);
-            string path = Path.Combine(Environment.CurrentDirectory, @"Images\UserPhotos\", photoName);
+            var photoName = "Photo.png";
+            string path = Path.Combine(HttpContext.Current.Server.MapPath("~"), @"Images\ApplicationImages\UserImages\", currentUser.Id.ToString());
+            Directory.CreateDirectory(path);
 
             if (photo != null)
             {
-                photo.SaveAs(path);
+                photo.SaveAs(Path.Combine(path, photoName));
+            }
+            else
+            {
+                //this.RemovePhoto();
             }
 
-            currentUser.PhotoFileName = path;
-
-            this.users.Edit(currentUser);
-            this.users.Save();
+            if (banner != null)
+            {
+                banner.SaveAs(Path.Combine(path, "Banner.png"));
+            }
+            else
+            {
+                //File.Delete(Path.Combine(path, "Banner.png"));
+            }
         }
 
         public IList<ApplicationUser> FindFriendByName(string name)
         {
-            var userFriends = this.users.GetCurrentUser().Friends;
+            var currentUser = this.users.GetCurrentUser();
+            var userFriends = currentUser.Friends;
 
             // x => x.UserName.Contains(name)
-            var searchResult = userFriends.Where(x => x.UserName == name).ToList();
+            var searchResult = userFriends.Where(x => x.Name == name).ToList();
 
             return searchResult;
         }
@@ -62,7 +75,7 @@ namespace EventManager.Services.Data
             var allUsers = this.users.GetAllUsers();
 
             // x => x.UserName.Contains(name)
-            var searchResult = allUsers.Where(x => x.UserName == name).ToList();
+            var searchResult = allUsers.Where(x => x.Name == name).ToList();
 
             return searchResult;
         }
@@ -70,35 +83,114 @@ namespace EventManager.Services.Data
         public IList<ApplicationUser> FriendsByName()
         {
             var currentUser = this.users.GetCurrentUser();
-            var userFriends = currentUser.Friends.OrderBy(x => x.UserName).ToList();
+            var userFriends = currentUser.Friends.OrderBy(x => x.Name).ToList();
 
             return userFriends;
         }
 
-        public void RemoveFriend(ApplicationUser user)
+        public void RemoveFriend(string userId)
         {
             var currentUser = this.users.GetCurrentUser();
+            var friendUser = currentUser.Friends.Where(x => x.Id == userId).FirstOrDefault();
             var userFriends = currentUser.Friends;
-            userFriends.Remove(user);
+            userFriends.Remove(friendUser);
+            friendUser.Friends.Remove(currentUser);
 
             this.users.Edit(currentUser);
+            this.users.Edit(friendUser);
             this.users.Save();
         }
 
         public void RemovePhoto()
         {
             var currentUser = this.users.GetCurrentUser();
-            var photoFilePath = currentUser.PhotoFileName;
+            var photoFilePath = currentUser.PhotoFilePath;
 
-            if (File.Exists(photoFilePath))
+            if (File.Exists(Path.Combine(photoFilePath, "Photo.png")))
             {
-                File.Delete(photoFilePath);
+                File.Delete(Path.Combine(photoFilePath, "Photo.png"));
+                File.Copy(Path.Combine(HttpContext.Current.Server.MapPath("~"), @"Images\ApplicationImages\UserImages\NoPhoto.png"), Path.Combine(HttpContext.Current.Server.MapPath("~"), @"Images\ApplicationImages\UserImages\", currentUser.Id.ToString(), "Photo.png"), true);
+            }
+        }
+
+        public string CurrentUserName()
+        {
+            var user = this.users.GetCurrentUser();
+            if (user == null)
+            {
+                return string.Empty;
             }
 
-            currentUser.PhotoFileName = string.Empty;
+            return user.Name;
+        }
+
+        public void ChangeProfileInfo(string userName, string description)
+        {
+            var currentUser = this.users.GetCurrentUser();
+
+            if (userName != null)
+            {
+                currentUser.Name = userName;
+            }
+
+            if (description != null)
+            {
+                currentUser.Description = description;
+            }
 
             this.users.Edit(currentUser);
             this.users.Save();
+        }
+
+        public string UserDescription()
+        {
+            var description = this.users.GetCurrentUser().Description;
+
+            return description;
+        }
+
+        public string GetUserPath()
+        {
+            var path = this.users.GetCurrentUser().PhotoFilePath;
+
+            path = path.Replace("\\", "/");
+
+            return path;
+        }
+
+        public string CurrentUserId()
+        {
+            var user = this.users.GetCurrentUser();
+            if (user == null)
+            {
+                return string.Empty;
+            }
+
+            return user.Id;
+        }
+
+        public void ChangeEmail(string newEmail)
+        {
+            var currentUser = this.users.GetCurrentUser();
+            currentUser.Email = newEmail;
+            currentUser.UserName = newEmail;
+
+            this.users.Edit(currentUser);
+            this.users.Save();
+        }
+
+        public string Email()
+        {
+            var currentUser = this.users.GetCurrentUser();
+
+            return currentUser.Email;
+        }
+
+        public ApplicationUser User(string userId)
+        {
+            var user = this.users.GetAllUsers().Where(x => x.Id == userId).FirstOrDefault();
+
+            return user;
         }
     }
 }

@@ -18,3 +18,10 @@ C:\Users\Jivko\Desktop\EventManager\Source\Web\EventManager.Web.Infrastructure\b
 C:\Users\Jivko\Desktop\EventManager\Source\Web\EventManager.Web.Infrastructure\bin\Debug\AutoMapper.xml
 C:\Users\Jivko\Desktop\EventManager\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.dll
 C:\Users\Jivko\Desktop\EventManager\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\bin\Debug\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\bin\Debug\EventManager.Web.Infrastructure.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\bin\Debug\AutoMapper.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\bin\Debug\AutoMapper.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Web\EventManager.Web.Infrastructure\obj\Debug\EventManager.Web.Infrastructure.pdb

@@ -12,3 +12,8 @@ C:\Users\Jivko\Desktop\EventManager\Source\Services\EventManager.Services.Web\bi
 C:\Users\Jivko\Desktop\EventManager\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
 C:\Users\Jivko\Desktop\EventManager\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
 C:\Users\Jivko\Desktop\EventManager\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.csprojResolveAssemblyReference.cache

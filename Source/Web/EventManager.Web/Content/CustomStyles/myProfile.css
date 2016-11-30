@@ -1,0 +1,351 @@
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.55);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 2.5em;
+}
+
+/*IMAGE INPUT SETTINGS*/
+#imageInputWrapper {
+    display: inline-flex;
+    flex-flow: row;
+}
+
+.setting {
+    display: block;
+    background: #fff;
+    margin: 0 auto 3px;
+    width: 215px;
+}
+
+#profilePicPicker {
+    margin-right: 40px;
+}
+
+.setting h2 {
+    color: #999;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 24px;
+}
+
+.setting a[data-action] {
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+    line-height: 24px;
+    transition: color 0.2s;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.setting a[data-action] i {
+    width: 1.25em;
+    text-align: center;
+}
+
+.setting a[data-action]:hover {
+    color: #A3FF56;
+}
+
+.setting a[data-action].disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.setting a[data-action].disabled:hover {
+    color: #555;
+}
+
+.image_picker {
+    margin: 10px 0;
+}
+
+.image_picker .settings_wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.image_picker .settings_wrap .drop_target,
+.image_picker .settings_wrap .settings_actions {
+    float: left;
+}
+
+.image_picker .settings_wrap .drop_target {
+    margin-right: 18px;
+}
+
+.image_picker .settings_wrap .settings_actions {
+    margin-top: 12px;
+}
+
+.settings_actions.vertical a {
+    display: block;
+}
+
+.settings_actions h3 {
+    color: #aaa;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 24px;
+}
+
+.drop_target {
+    position: relative;
+    cursor: pointer;
+    background: #e6e6e6;
+    border-top: 1px solid #cccccc;
+    border-radius: 4px;
+    width: 200px;
+    height: 200px;
+    padding: 4px 6px 6px;
+    transition: all 0.2s;
+}
+
+#bannerPicPicker {
+    width: 50%;
+}
+
+#bannerPic_drop_target {
+    width: 95%;
+}
+
+.drop_target input[type="file"] {
+    visibility: hidden;
+}
+
+.drop_target:before {
+    content: '+';
+    position: absolute;
+    display: block;
+    width: 93%;
+    line-height: 195px;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    transition: color 0.2s;
+}
+
+.drop_target:hover,
+.drop_target.dropping {
+    background: #A3FF56;
+    border-top-color: #A3FF56;
+}
+
+.drop_target:hover:before,
+.drop_target.dropping:before {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.drop_target .image_preview {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+
+#mainContent {
+    display: flex;
+    flex-flow: column;
+}
+
+#profileForm, #changePasswordForm, #changeEmail, #imageForm {
+    display: flex;
+    flex-flow: column;
+    width: 85%;
+    margin: 20px auto;
+}
+
+
+form h2 {
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    padding: 0 10px;
+    border-bottom: 2px solid transparent;
+    border-top: 1px solid transparent;
+    outline: none;
+    border-left: 2px solid rgba(163, 255, 86, 0.8);
+    border-right: 2px solid rgba(163, 255, 86, 0.8);
+    text-align: left;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+textarea:disabled {
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.inText {
+    width: 100%;
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    padding: 5px;
+    font-size: 1.2em;
+    outline: none;
+    border-bottom: 2px solid rgba(163, 255, 86, 0.8);
+    color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    transition: all 0.3s ease-out;
+}
+
+.inText:disabled {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.lblInpGr {
+    flex-flow: row;
+    margin: 20px;
+}
+
+.lblInpGr label {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 120px;
+    vertical-align: top;
+    margin-top: 8px;
+
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.PassGr label {
+    font-size: 1em;
+    width: 150px;
+    display: inline-flex;
+}
+
+.inTextPass {
+    margin-left: 15px;
+    display: inline-flex;
+    width: 55%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.inTextPass:focus {
+    border-bottom: 2px solid rgba(163, 255, 86, 0.8);
+}
+
+.iconInpGr {
+    width: 70%;
+    display: inline-flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+.lblInpGr #aboutlbl {
+    margin-top: 0;
+!important;
+}
+
+.editContentIcon {
+    display: block;
+    background-image: url(../../Images/icons/featherIcon.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 0 10px;
+    border-bottom: 1px solid black;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+#textareaIcon {
+    margin: 0 10px;
+}
+
+.lblInpGr:hover .editContentIcon {
+    opacity: 0.75;
+}
+
+.editContentIcon:hover {
+    background-image: url(../../Images/icons/featherIconHover.png);
+    border-bottom: 1px solid #3f7e09;
+}
+
+main input[type="submit"] {
+    display: block;
+    padding: 10px;
+    margin: 30px auto;
+    border: 2px solid #6DE50A;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+#picturesButton {
+    margin: 20px 0;
+
+}
+
+main input[type="submit"]:hover {
+    background-color: #6DE50A;
+    box-shadow: inset 1px 1px 20px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+@media screen and (max-width: 850px) {
+    #picturesButton {
+        margin: 20px auto;
+    }
+    .lblInpGr {
+        display: flex;
+        flex-flow: column;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .lblInpGr label, .lblInpGr .inText, .lblInpGr .iconInpGr {
+        margin: 0;
+        text-align: left;
+        width: 100%;
+
+    }
+
+    #profileForm .lblInpGr label {
+        margin-left: 45px;
+        margin-bottom: 10px;
+    }
+
+    #imageInputWrapper {
+        flex-flow: column;
+    }
+
+    #bannerPicPicker {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    #profilePicPicker {
+        margin: auto;
+    }
+
+}

@@ -1,0 +1,199 @@
+/* Header Styles */
+main {
+    margin-left: auto;
+}
+
+#headerMenu {
+    padding: 0 0 14px 0;
+}
+
+#mainHeader {
+    max-width: 100%;
+    overflow: auto;
+    background-color: rgb(102, 102, 102);
+    display: none;
+}
+
+/* Sidebar Toggler Settings */
+#svgLogo {
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+}
+#sidebarToggler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px 2px 5px;
+    font-size: 1.2em;
+    z-index: 1000;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.dropdownToggle:hover {
+    transform: scale(1.5, 1.5);
+    padding: 30px;
+    border-radius: 0 50% 50% 50%;
+    cursor: pointer;
+}
+
+/* Sidebar Settings */
+/* TODO: Make it responsive on mobile widescreen */
+
+#headerContent {
+    margin-top: 63px;
+}
+
+#sideBarMenu {
+    margin-top: 10px;
+    overflow: hidden;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.menuButton {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    margin: -3px 0 -3px 0;
+}
+
+.menuButton a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    padding: 15px 0 15px 15px;
+    font-size: 1.2em;
+    width: 100%;
+    display: block;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.menuButton a:hover, .selectedMenuButton {
+    background-color: #6DE50A;
+}
+
+.menuUnderlineContent, .eventDetailsUnderline {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 90%;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+/* Search Settings */
+
+#searchWrapper {
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-bottom: 10px;
+}
+.searchPage #searchWrapper {
+    background-color: rgba(109,229,10, 0.5);
+}
+
+#buttonSearchIcon {
+    position: absolute;
+    color: #FFFFFF;
+    top: 70px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../Images/icons/search-128.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+
+input[type="search"] {
+    margin: 30px 0 0 10px;
+    width: 95%;
+    display: block;
+    padding: 10px 0 10px 45px;
+    text-align: left;
+    background-color: transparent;
+
+!important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 1.2em;
+    font-family: myriadPro;
+    transition: all 1s;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border-bottom: 1px solid #6DE50A;
+}
+
+/*User Details Settings */
+#footerUserDetailsProfilePicture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: -1px 1px 12px rgba(0, 0, 0, 0.4);
+    background-image: url(../images/profilePicture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-shrink: 0;
+    margin: 3px 0 0 5px;
+}
+
+#sideBarFooter {
+    margin-top: 30px;
+    height: 50px;
+    display: block;
+    bottom: -5px;
+    left: 0;
+}
+
+#footerUserDetails {
+    display: flex;
+    flex-flow: row;
+    opacity: 0.5;
+    width: 100%;
+    height: 50px;
+    text-decoration: none;
+    transition: all 0.5s;
+    background-color: black;
+}
+
+#footerUserDetails div {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#footerUsername {
+    margin-left: 10px;
+    color: white;
+    font-size: 1em;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#footerUserDetails:hover {
+    box-shadow: inset 2px 2px 20px 5px rgba(0, 0, 0, 0.3);
+    background-color: #6DE50A;
+    opacity: 1;
+}
+
+@media all and (min-width: 600px) {
+    #mainHeader {
+        max-width: 300px;
+        display: block;
+    }
+}
+

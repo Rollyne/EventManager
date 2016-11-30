@@ -1,0 +1,83 @@
+main section > h2, main section > h3, main h1 {
+    margin: 20px auto;
+    text-align: center;
+}
+article > h3 {
+    width: 100%;
+    text-align: center;
+}
+main section {
+    margin: 50px auto;
+}
+main > div {
+    width: 80%;
+    height: 100%;
+    margin: 50px auto;
+    border-right: 2px solid rgba(0,0,0,0.5);
+    border-left: 2px solid rgba(0,0,0,0.5);
+    padding: 30px;
+}
+
+main h1 {
+    color: rgba(0,0,0,0.5);
+
+}
+
+section h2 {
+    color: rgba(0,0,0,0.6);
+    margin: 10px;
+}
+section h2 {
+    color: rgba(0,0,0,0.7);
+}
+section h3 {
+    color: rgba(0,0,0,0.5);
+}
+
+
+
+.usersWrapper {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+/*RESPONSIVE EVENT BLOCK*/
+
+@media screen and (max-width: 800px){
+    .eventHeader, .eventDetails footer, .eventDate {
+        max-width: 300px;
+    }
+    .eventWrapper{
+        flex-flow: column;
+    }
+    .eventImage {
+        width: 100%;
+        height: 200px;
+    }
+    .userWrapper{
+        flex-flow: column;
+        flex-wrap: nowrap;
+        width: 235px;
+        min-width: 50px;
+    }
+    .userProfilePic {
+        width: 235px;
+        height: 235px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .userDetails {
+        margin: auto;
+    }
+    .userName {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .eventHeader, .eventDetails footer, .eventDate {
+        max-width: 200px;
+    }
+}
+

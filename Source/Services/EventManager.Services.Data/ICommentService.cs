@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EventManager.Services.Data
 {
-    interface ICommentService
+    public interface ICommentService
     {
         void AddComment(int eventId, string content);
 

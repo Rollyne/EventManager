@@ -1,0 +1,173 @@
+﻿@using EventManager.Web.ViewModels.CrEvent
+@model CreateEventViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Page = "CreateEvent";
+    ViewBag.Title = "Argus | Create new event";
+}
+
+@Scripts.Render("~/bundles/DatepickerScript")
+@Styles.Render("~/Content/CalendarStyle")
+@Styles.Render("~/Content/CreateEventStyle")
+
+<script>
+    $(function () {
+        $(".datepickerBox").datepicker();
+    });
+    $(function () {
+        var datePicker = $('.datepickerBox').datepicker();
+
+        $(window).scroll(function () {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+
+        $(window).resize(function () {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+    });
+</script>
+
+<main>
+    <section id="createEventForm">
+        <h1>Create New Event</h1>
+
+        @using (Html.BeginForm("CreateEvent", "Event", new { }, FormMethod.Post, new { role = "form", id = "createEvent", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="lbl"><label for="eventTitle">Event name</label></div>
+            @Html.TextBoxFor(m => m.Destination, new { type = "text", placeholder = "Think of a great title", id = "eventTitle", required = "required" })
+            <div class="lbl"><label for="descriptionArea">Description</label></div>
+            @Html.TextAreaFor(m => m.Content, new { type = "text", name = "description", id = "descriptionArea", placeholder = "Mention every detail..", rows = "8", cols = "60" })
+
+            <div class="lbl">Event Dates</div>
+            <div class="lbl smallLbl"><label for="eventLength">Event Length</label></div>
+            @Html.TextBoxFor(m => m.EventLength, new { type = "text", @class = "inputDates", id = "eventLength", pattern = "[0-9]*", placeholder = "How much days ?" })
+            <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
+            @Html.TextBoxFor(m => m.StartEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "fromDate", value = "", placeholder = "From when" })
+            @Html.TextBoxFor(m => m.EndEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "toDate", value = "", placeholder = "To when" })
+
+
+
+            <div class="setting" id="imageUplWrapper">
+                <div class="setting image_picker" id="image_picker0">
+                    <h2>Banner Image</h2>
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target0">
+                            <div id="image_preview0" class="image_preview"></div>
+                            @Html.TextBoxFor(m => m.BannerImage, new { id = "inputFile0", type = "file" })
+                        </label>
+                        <div class="settings_actions vertical">
+                            <h3>This image will be displayed as banner</h3>
+                            <a data-action="remove_current_image0" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker">
+                    <h2>Event Images</h2>
+                    <div class="settings_wrap">
+                        @{ 
+                            Model.Images.Add(new ImageAndTitle());
+                        }
+                        <label class="drop_target" id="drop_target">
+                            <div id="image_preview" class="image_preview"></div>
+                            @Html.TextBoxFor(m => m.Images[0].Image, new { id = "inputFile", type = "file" })
+                        </label>
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title"></label>
+                                @Html.TextBoxFor(m => m.Images[0].Title, new { placeholder = "Title", type = "text" })
+                            </div>
+                            <a data-action="remove_current_image" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker1">
+                    <h2></h2>
+                    <div class="settings_wrap">
+                        @{
+                            Model.Images.Add(new ImageAndTitle());
+                        }
+                        <label class="drop_target" id="drop_target1">
+                            <div id="image_preview1" class="image_preview"></div>
+                            @Html.TextBoxFor(m => m.Images[1].Image, new { id = "inputFile1", type = "file" })
+                        </label>
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title1"></label>
+                                @Html.TextBoxFor(m => m.Images[1].Title, new { placeholder = "Title", type = "text" })
+                            </div>
+                            <a data-action="remove_current_image1" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker2">
+                    <h2></h2>
+                    <div class="settings_wrap">
+                        @{
+                            Model.Images.Add(new ImageAndTitle());
+                        }
+                        <label class="drop_target" id="drop_target2">
+                            <div id="image_preview2" class="image_preview"></div>
+                            @Html.TextBoxFor(m => m.Images[2].Image, new { id = "inputFile2", type = "file" })
+                        </label>
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title2"></label>
+                                @Html.TextBoxFor(m => m.Images[2].Title, new { placeholder = "Title", type = "text" })
+                            </div>
+                            <a data-action="remove_current_image2" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker3">
+                    <h2></h2>
+                    <div class="settings_wrap">
+                        @{
+                            Model.Images.Add(new ImageAndTitle());
+                        }
+                        <label class="drop_target" id="drop_target3">
+                            <div id="image_preview3" class="image_preview"></div>
+                            @Html.TextBoxFor(m => m.Images[3].Image, new { id = "inputFile3", type = "file" })
+                        </label>
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title3"></label>
+                                @Html.TextBoxFor(m => m.Images[3].Title, new { placeholder = "Title", type = "text" })
+                            </div>
+                            <a data-action="remove_current_image3" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" id="addImage" onclick="addImage()">+ Add Image</a>
+            </div>
+            @Scripts.Render("~/bundles/ImagePreviewScript")
+            <script>
+                var inputIds = [
+                ["#image_picker0","#drop_target0","#inputFile0", "#image_preview0", "#image_title0","remove_current_image0"],
+                ["#image_picker","#drop_target","#inputFile", "#image_preview", "#image_title","remove_current_image"],
+                ["#image_picker1","#drop_target1","#inputFile1", "#image_preview1", "#image_title1","remove_current_image1"],
+                ["#image_picker2","#drop_target2","#inputFile2", "#image_preview2", "#image_title2","remove_current_image2"],
+                ["#image_picker3","#drop_target3","#inputFile3", "#image_preview3", "#image_title3","remove_current_image3"]
+            ];
+
+            for (var i = 0; i < inputIds.length; i++) {
+                ImagePreview(inputIds[i][0], inputIds[i][1],inputIds[i][2],inputIds[i][3],inputIds[i][4],inputIds[i][5]);
+            }
+            </script>
+
+            <input type="submit" value="Create Event" />
+        }
+</main>

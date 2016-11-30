@@ -2,6 +2,7 @@
 using EventManager.Data.Common.Models;
 using System;
 using System.IO;
+using System.Web;
 
 namespace EventManager.Data.Models
 {
@@ -22,22 +23,29 @@ namespace EventManager.Data.Models
 
         public string Content { get; set; }
 
-        private readonly string eventFilePath = Path.Combine(Environment.CurrentDirectory, @"Images\EventImages\");
+        private readonly string eventFilePath = HttpContext.Current.Server.MapPath("~\\Images\\ApplicationImages\\EventImages");
 
         public string ImagesFilePath
         {
             get
             {
                 var path = Path.Combine(this.eventFilePath, this.Id.ToString());
+                Directory.CreateDirectory(path);
                 return path;
             }
         }
 
         public virtual ICollection<EventDate> Dates { get; set; }
 
-        public virtual DateTime StartEventDate { get; set; }
+        public virtual DateTime? OptimalStartDate { get; set; }
 
-        public virtual DateTime EndEventDate { get; set; }
+        public virtual DateTime? OptimalEndDate { get; set; }
+
+        public virtual DateTime? StartEventDate { get; set; }
+
+        public virtual DateTime? EndEventDate { get; set; }
+
+        public int? EventLength { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
     }
