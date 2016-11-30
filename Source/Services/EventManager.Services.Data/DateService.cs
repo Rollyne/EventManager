@@ -24,14 +24,14 @@ namespace EventManager.Services.Data
             this.users = users;
         }
 
-        public void AddDate(int eventId, DateTime startDate, DateTime endDate)
+        public void AddDate(int eventId, DateTime startDate)
         {
             var _event = this.events.GetById(eventId);
 
             var eventDate = new EventDate
                         {
                             StartDate = startDate,
-                            EndDate = endDate,
+                            EndDate = startDate.AddDays((int)_event.EventLength),
                             Event = _event,
                             Creator = this.users.GetCurrentUser()
                         };

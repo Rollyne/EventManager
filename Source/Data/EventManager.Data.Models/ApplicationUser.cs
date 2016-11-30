@@ -9,6 +9,8 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Data.Entity;
     using System.Collections.Generic;
+    using System.Web;
+    using System.IO;
 
 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -20,13 +22,27 @@
             this.Comments = new HashSet<Comment>();
             this.EventDates = new HashSet<EventDate>();
             this.Friends = new HashSet<ApplicationUser>();
+            this.FriendsId = new HashSet<string>();
         }
 
-        //public string UserName { get; set; }
+        public string Name { get; set; }
 
-        public string PhotoFileName { get; set; }
+        public string Description { get; set; }
+
+        private readonly string photoFilePath = "~\\Images\\ApplicationImages\\UserImages";
+
+        public string PhotoFilePath
+        {
+            get
+            {
+                var path = HttpContext.Current.Server.MapPath(Path.Combine(this.photoFilePath, this.Id.ToString()));
+                return path;
+            }
+        }
 
         public virtual ICollection<ApplicationUser> Friends { get; set; }
+
+        public virtual ICollection<string> FriendsId { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }
 

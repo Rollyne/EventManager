@@ -1,0 +1,49 @@
+﻿@model EventManager.Web.ViewModels.UserPage.UserVewModel
+
+@{
+    ViewBag.Title = "Argus | My events";
+}
+
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/eventBlock.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/myEvents.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/userView.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/sidebarSheet.css">
+
+<main>
+    <div style="background-image: url(@Model.BannerFileName);" id="bannerWrapper"></div>
+    <div id="profileHeader">
+        <ul id="profileHeaderMenu">
+            <li><a href="@Url.Action("EventList", "UserPage")">Events</a></li>
+            <li><a href="@Url.Action("FriendList", "UserPage")">Friends</a></li>
+            <li><a href="@Url.Action("ChangeUserInfo", "UserPage")">Edit Profile</a></li>
+        </ul>
+    </div>
+    <section id="profile">
+        <div id="userIdentity">
+            <div id="userProfilePic" style="background-image: url(@Model.PhotoFileName);"></div>
+            <h1 id="userName">@Model.UserName</h1>
+        </div>
+            <aside id="detailsAside">
+                <table id="userDetails">
+                    <tr>
+                        <th>Events Created</th>
+                        <td>@Model.CreatedEvents</td>
+                    </tr>
+                    <tr>
+                        <th>Events Attended</th>
+                        <td>@Model.AttendedEvents</td>
+                    </tr>
+                    <tr>
+                        <th>Friends</th>
+                        <td>@Model.FriendsCount</td>
+                    </tr>
+                </table>
+                <div id="userAbout">
+                    <h3>About</h3>
+                    <p id="aboutUser">
+                        @Model.Description
+                    </p>
+                </div>
+            </aside>
+        <section>
+</main>

@@ -205,9 +205,11 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="Controllers\UserPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +222,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\CrEvent\CreateEventViewModel.cs" />
+    <Compile Include="ViewModels\EventDetails\EventViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
@@ -231,7 +235,11 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\UserPage\ChangeUserInfoViewModel.cs" />
+    <Compile Include="ViewModels\UserPage\EventListViewModel.cs" />
     <Compile Include="ViewModels\UserPage\EventViewModel.cs" />
+    <Compile Include="ViewModels\UserPage\FriendListViewModel.cs" />
+    <Compile Include="ViewModels\UserPage\SearchViewModel.cs" />
     <Compile Include="ViewModels\UserPage\UserPageViewModel.cs" />
     <Compile Include="ViewModels\UserPage\UserVewModel.cs" />
   </ItemGroup>
@@ -240,8 +248,20 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomStyles\calendar.css" />
+    <Content Include="Content\CustomStyles\createEvent.css" />
+    <Content Include="Content\CustomStyles\eventBlock.css" />
+    <Content Include="Content\CustomStyles\eventPage.css" />
     <Content Include="Content\CustomStyles\global.css" />
+    <Content Include="Content\CustomStyles\imageAccordion.css" />
     <Content Include="Content\CustomStyles\index.css" />
+    <Content Include="Content\CustomStyles\myEvents.css" />
+    <Content Include="Content\CustomStyles\myProfile.css" />
+    <Content Include="Content\CustomStyles\searchPage.css" />
+    <Content Include="Content\CustomStyles\sidebarSheet.css" />
+    <Content Include="Content\CustomStyles\userBlock.css" />
+    <Content Include="Content\CustomStyles\userPage.css" />
+    <Content Include="Content\CustomStyles\userView.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -262,10 +282,23 @@
     <Content Include="Images\background1.jpg" />
     <Content Include="Images\background2.jpg" />
     <Content Include="Images\background3.jpg" />
+    <Content Include="Images\icons\arrows.png" />
+    <Content Include="Images\icons\featherIcon.png" />
+    <Content Include="Images\icons\featherIconHover.png" />
+    <Content Include="Images\icons\search-128.png" />
     <Content Include="Images\Preloader_3.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\CustomScripts\index.js" />
+    <Content Include="Scripts\CustomScripts\calendarSettings.js" />
+    <Content Include="Scripts\CustomScripts\imageAccordion.js" />
+    <Content Include="Scripts\CustomScripts\imagePreview.js" />
+    <Content Include="Scripts\CustomScripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\CustomScripts\jquery-ui-datepicker.min.js" />
+    <Content Include="Scripts\CustomScripts\jquery.browser.min.js" />
+    <Content Include="Scripts\CustomScripts\jquery.min.js" />
+    <Content Include="Scripts\CustomScripts\script.js" />
+    <Content Include="Scripts\CustomScripts\sideBar.js" />
+    <Content Include="Scripts\CustomScripts\slidemenu.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
@@ -278,7 +311,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -311,6 +346,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_IndexLayout.cshtml" />
+    <Content Include="Views\UserPage\UserProfile.cshtml" />
+    <Content Include="Views\Event\CreateEvent.cshtml" />
+    <Content Include="Views\UserPage\ChangeUserInfo.cshtml" />
+    <Content Include="Views\Event\Event.cshtml" />
+    <Content Include="Views\UserPage\FriendList.cshtml" />
+    <Content Include="Views\UserPage\EventList.cshtml" />
+    <Content Include="Views\UserPage\SearchResult.cshtml" />
+    <Content Include="Views\UserPage\UserDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -347,6 +390,10 @@
     <ProjectReference Include="..\..\EventManager.Common\EventManager.Common.csproj">
       <Project>{701F322F-AA01-4DDC-90B6-6935981C1E73}</Project>
       <Name>MvcTemplate.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HelperClasses\HelperClasses.csproj">
+      <Project>{40c14dc8-d751-4cdb-b8ac-57181d6658ba}</Project>
+      <Name>HelperClasses</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\EventManager.Services.Data\EventManager.Services.Data.csproj">
       <Project>{90fe4c4d-122a-406d-8a40-79c561fb8184}</Project>

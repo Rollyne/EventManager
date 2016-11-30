@@ -12,7 +12,17 @@ namespace EventManager.Web.ViewModels.UserPage
     {
         public string UserName { get; set; }
 
+        public string Description { get; set; }
+
         public string PhotoFileName { get; set; }
+
+        public int CreatedEvents { get; set; }
+
+        public int AttendedEvents { get; set; }
+
+        public int FriendsCount { get; set; }
+
+        public string BannerFileName { get; set; }
 
         //public IList<ApplicationUser> Friends { get; set; }
 

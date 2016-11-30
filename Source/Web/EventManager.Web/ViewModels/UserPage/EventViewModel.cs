@@ -8,7 +8,7 @@ using System.Web;
 
 namespace EventManager.Web.ViewModels.UserPage
 {
-    public class EventViewModel : IMapFrom<Event>, IHaveCustomMappings
+    public class EventViewModel : IMapFrom<Event>
     {
         public int Id { get; set; }
 
@@ -19,15 +19,5 @@ namespace EventManager.Web.ViewModels.UserPage
         public string ImagesFilePath { get; set; }
 
         public DateTime StartEventDate { get; set; }
-
-        public DateTime EndEventDate { get; set; }
-
-        public string CreatorName { get; set; }
-
-        public void CreateMappings(IMapperConfiguration configuration)
-        {
-            configuration.CreateMap<Event, EventViewModel>()
-                .ForMember(x => x.CreatorName, opt => opt.MapFrom(x => x.Creator.UserName));
-        }
     }
 }

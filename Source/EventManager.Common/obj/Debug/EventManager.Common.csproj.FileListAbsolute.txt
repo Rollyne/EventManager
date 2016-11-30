@@ -12,3 +12,7 @@ C:\Users\Jivko\Desktop\EventManager\Source\EventManager.Common\bin\Debug\EventMa
 C:\Users\Jivko\Desktop\EventManager\Source\EventManager.Common\bin\Debug\EventManager.Common.pdb
 C:\Users\Jivko\Desktop\EventManager\Source\EventManager.Common\obj\Debug\EventManager.Common.dll
 C:\Users\Jivko\Desktop\EventManager\Source\EventManager.Common\obj\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\EventManager.Common\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\EventManager.Common\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\EventManager.Common\obj\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\EventManager.Common\obj\Debug\EventManager.Common.pdb

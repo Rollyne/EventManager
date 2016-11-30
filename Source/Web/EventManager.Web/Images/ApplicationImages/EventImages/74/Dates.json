@@ -1,0 +1,112 @@
+{
+  "MaxPeople": 2,
+  "DateAfter": {
+    "Day": 24,
+    "Month": 11,
+    "Year": 2016
+  },
+  "DateBefore": {
+    "Day": 7,
+    "Month": 11,
+    "Year": 2016
+  },
+  "EventLength": 5,
+  "Dates": [
+    {
+      "Day": 12,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 13,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 11,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 12,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 13,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 14,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 15,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 16,
+      "Month": 8,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 8,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 9,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 10,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 11,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 14,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 15,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 16,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 17,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    }
+  ]
+}

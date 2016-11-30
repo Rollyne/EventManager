@@ -68,7 +68,6 @@
         {
             this.ViewBag.ReturnUrl = returnUrl;
 
-
             return this.View("~/Views/Home/Index.cshtml");
         }
 
@@ -105,7 +104,7 @@
                 case SignInStatus.Failure:
                 default:
                     this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return this.View(model);
+                    return this.View("~/Views/Home/Index.cshtml");
             }
         }
 
@@ -163,7 +162,7 @@
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return this.View();
+            return this.View("~/Views/Home/Index.cshtml");
         }
 
         // POST: /Account/Register
@@ -171,10 +170,10 @@
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
-        {
+       {
             if (this.ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Email.Remove(model.Email.IndexOf('@')) };
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -185,14 +184,14 @@
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    return this.RedirectToAction("Index", "Home");
+                    return this.RedirectToAction("UserProfile", "UserPage");
                 }
 
                 this.AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
-            return this.View(model);
+            return this.View("~/Views/Home/Index.cshtml");
         }
 
         // GET: /Account/ConfirmEmail
@@ -390,7 +389,7 @@
                             return this.View("ExternalLoginFailure");
                         }
 
-                        var user = new ApplicationUser { UserName = string.Format("{0} {1}", myInfo.first_name, myInfo.last_name), Email = myInfo.email };
+                        var user = new ApplicationUser { Name = string.Format("{0} {1}", myInfo.first_name, myInfo.last_name), Email = myInfo.email, UserName = myInfo.email };
                         var result2 = await this.UserManager.CreateAsync(user);
                         if (result2.Succeeded)
                         {
@@ -398,7 +397,7 @@
                             if (result2.Succeeded)
                             {
                                 await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                                return this.View("~/Views/Home/Index.cshtml");
+                                return this.RedirectToAction("UserProfile", "UserPage");
                             }
                         }
 
@@ -502,7 +501,8 @@
                 return this.Redirect(returnUrl);
             }
 
-            return this.RedirectToAction("Index", "Home");
+            //return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("UserProfile", "UserPage");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

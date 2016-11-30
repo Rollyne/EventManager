@@ -8,6 +8,8 @@ using EventManager.Data.Common;
 using System.Web;
 using System.IO;
 using EventManager.Tools.Helpers;
+using Newtonsoft.Json;
+using EventManager.Web.ViewModels.CrEvent;
 
 namespace EventManager.Services.Data
 {
@@ -47,12 +49,18 @@ namespace EventManager.Services.Data
                 _event.Users.Add(user);
                 this.events.Edit(_event);
                 this.events.Save();
+
+                user.Events.Add(_event);
+
+                this.users.Edit(user);
+                this.users.Save();
             }
         }
 
         public IList<Event> AllEvents()
         {
-            var allEvents = this.users.GetCurrentUser().Events.ToList();
+            //var allEvents = this.users.GetCurrentUser().Events.ToList();
+            var allEvents = this.events.All().ToList();
 
             return allEvents;
         }
@@ -65,12 +73,14 @@ namespace EventManager.Services.Data
             foreach (var eventDate in eventDates)
             {
                 var days = eventDate.EndDate - eventDate.StartDate;
-                
+
                 for (int i = 0; i <= days.Days; i++)
                 {
-                    if (peopleCount.Where(x => x.Date == eventDate.StartDate.AddDays(i)).Any())
+                    var date = eventDate.StartDate.AddDays(i);
+
+                    if (peopleCount.Where(x => x.Date == date).Any())
                     {
-                        var index = peopleCount.FindIndex(x => x.Date == eventDate.StartDate.AddDays(i));
+                        var index = peopleCount.FindIndex(x => x.Date == date);
                         peopleCount[index].FreePeopleCount++;
                     }
                     else
@@ -78,39 +88,127 @@ namespace EventManager.Services.Data
                         peopleCount.Add(new FreePeople
                         {
                             Date = eventDate.StartDate.AddDays(i),
-                            DaysCount = 1,
+                            //DaysCount = 1,
                             FreePeopleCount = 1
                         });
                     }
                 }
             }
+
             peopleCount = peopleCount.OrderByDescending(x => x.FreePeopleCount).ThenBy(x => x.Date).ToList();
 
-            var startDate = peopleCount[0].Date;
-            DateTime endDate;
+            var currentEvent = this.events.GetById(eventId);
 
-            int j = 0;
-            do
+            var structuredJson = new
             {
-                endDate = peopleCount[j].Date;
-                j++;
+                MaxPeople = currentEvent.Users.Count + 1, // TODO: Implement function for max people count;
+                DateAfter = new
+                {
+                    Day = currentEvent.StartEventDate.Value.Day,
+                    Month = currentEvent.StartEventDate.Value.Month,
+                    Year = currentEvent.StartEventDate.Value.Year
+                },
+                DateBefore = new
+                {
+                    Day = currentEvent.EndEventDate.Value.Day,
+                    Month = currentEvent.EndEventDate.Value.Month,
+                    Year = currentEvent.EndEventDate.Value.Year
+                },
+                EventLength = currentEvent.EventLength,
+                Dates = peopleCount.Select(x => new { Day = x.Date.Day, Month = x.Date.Month, Year = x.Date.Year, x.FreePeopleCount }).ToList()
+            };
+
+            //var structuredJson = peopleCount.Select(x => new { Day = x.Date.Day, Month = x.Date.Month, Year = x.Date.Year, x.FreePeopleCount }).ToList();
+            var json = JsonConvert.SerializeObject(structuredJson, Formatting.Indented);
+
+            using (StreamWriter file = new StreamWriter(Path.Combine(currentEvent.ImagesFilePath, "Dates.json")))
+            {
+                file.WriteLine(json);
             }
-            while (peopleCount[j - 1].Date.AddDays(1) == peopleCount[j].Date && peopleCount[0].FreePeopleCount == peopleCount[j].FreePeopleCount);
 
-            var _event = this.events.GetById(eventId);
+            if (peopleCount.Count > 0)
+            {
+                DateTime startDate = peopleCount[0].Date;
+                //DateTime endDate;
 
-            _event.StartEventDate = startDate;
-            _event.EndEventDate = endDate;
+                //int j = 0;
+                //do
+                //{
+                //    endDate = peopleCount[j].Date;
+                //    j++;
+                //}
+                //while (peopleCount[j - 1].Date.AddDays(1) == peopleCount[j].Date && peopleCount[0].FreePeopleCount == peopleCount[j].FreePeopleCount);
 
-            this.events.Edit(_event);
+                currentEvent.OptimalStartDate = startDate;
+                currentEvent.OptimalEndDate = startDate.AddDays((int)currentEvent.EventLength);
+            }
+            else
+            {
+                DateTime startDate = (DateTime)currentEvent.StartEventDate;
+
+                currentEvent.OptimalStartDate = startDate;
+                currentEvent.OptimalEndDate = startDate.AddDays((int)currentEvent.EventLength);
+            }
+
+            this.events.Edit(currentEvent);
             this.events.Save();
         }
 
-        public void CreateEvent(string destination)
+        public void CreateEvent(string destination, string content, DateTime? startDate, DateTime? endDate, int? length, IList<ImageAndTitle> images, HttpPostedFileBase bannerImage)
         {
-            var _event = new Event { Destination = destination };
+
+            var _event = new Event
+            {
+                Destination = destination,
+                Creator = this.users.GetCurrentUser(),
+                StartEventDate = startDate,
+                EndEventDate = endDate,
+                EventLength = length
+            };
+
+            if (!string.IsNullOrWhiteSpace(content))
+            {
+                _event.Content = content;
+            }
+
             this.events.Add(_event);
             this.events.Save();
+
+
+            this.CalculateEventTime(_event.Id);
+
+            var bannerName = string.Format("{0}.png", "Banner123");
+            var bannerFullPath = Path.Combine(_event.ImagesFilePath, bannerName);
+            if (bannerImage != null)
+            {
+                bannerImage.SaveAs(bannerFullPath);
+            }
+
+            foreach (var item in images)
+            {
+                string imageName;
+                if (string.IsNullOrEmpty(item.Title))
+                {
+                    imageName = string.Format("{0}.png", Guid.NewGuid().ToString());
+                }
+                else
+                {
+                    imageName = string.Format("{0}.png", item.Title);
+                }
+
+                var imageFullPath = Path.Combine(_event.ImagesFilePath, imageName);
+                if (item.Image != null)
+                {
+                    item.Image.SaveAs(imageFullPath);
+                }
+            }
+
+            var user = this.users.GetCurrentUser();
+            user.Events.Add(_event);
+
+            this.users.Edit(user);
+            this.users.Save();
+
         }
 
         public void DeleteEvent(Event _event)
@@ -149,10 +247,18 @@ namespace EventManager.Services.Data
             return eventsByDest;
         }
 
+        public Event FindEventById(int id)
+        {
+            // x => x.Destination.Contains(destination)
+            var eventById = this.AllEvents().Where(x => x.Id == id).FirstOrDefault();
+
+            return eventById;
+        }
+
         public IList<string> ImageFilePaths(int eventId)
         {
             var _event = this.events.GetById(eventId);
-            var imagePaths = Directory.GetFiles(_event.ImagesFilePath).ToList();
+            var imagePaths = Directory.GetFiles(_event.ImagesFilePath).Where(x => !x.Contains("Dates.json")).ToList();
 
             return imagePaths;
         }
@@ -161,7 +267,7 @@ namespace EventManager.Services.Data
         {
             var allEvents = this.AllEvents();
             var currentUser = this.users.GetCurrentUser();
-            var notOwnedEvents = allEvents.Where(x => x.Creator != currentUser).ToList();
+            var notOwnedEvents = allEvents.Where(x => (x.Creator != currentUser && x.Users.Any(z => z.Id == currentUser.Id))).ToList();
 
             return notOwnedEvents;
         }

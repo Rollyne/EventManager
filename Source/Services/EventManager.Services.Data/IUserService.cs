@@ -12,13 +12,29 @@ namespace EventManager.Services.Data
     {
         IList<ApplicationUser> FindUserByName(string name);
 
-        void AddFriend(ApplicationUser user);
+        string CurrentUserName();
 
-        void RemoveFriend(ApplicationUser user);
+        string CurrentUserId();
 
-        void UploadPhoto(HttpPostedFileBase photo);
+        string UserDescription();
+
+        ApplicationUser User(string userId);
+
+        void AddFriend(string userId);
+
+        void RemoveFriend(string userId);
+
+        void UploadPhoto(HttpPostedFileBase photo, HttpPostedFileBase banner);
 
         void RemovePhoto();
+
+        string Email();
+
+        void ChangeEmail(string newEmail);
+
+        string GetUserPath();
+
+        void ChangeProfileInfo(string userName, string description);
 
         IList<ApplicationUser> FriendsByName();
 

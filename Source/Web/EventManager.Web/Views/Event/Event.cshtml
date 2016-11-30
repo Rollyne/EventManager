@@ -1,0 +1,193 @@
+﻿@model EventManager.Web.ViewModels.EventDetails.EventViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Event";
+}
+
+    <script>var pathToJson = '@Model.DatesPath'</script>
+    <script src="../../Scripts/CustomScripts/jquery-ui-datepicker.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/calendarSettings.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/calendar.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/eventPage.css">
+
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/imageAccordion.css"/>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/imageAccordion.js"></script>
+<main>
+    <div style="background-image: url(@Model.Banner);" id="bannerWrapper"></div>
+    <div id="eventName">@Model.Name</div>
+    <section id="event">
+        <ul id="eventProps">
+            <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
+                <div class="inviteText">Invite</div>
+            </li>
+            <li id="attendersBtn" onclick="scrollTo('attenders')">Attenders</li>
+        </ul>
+        @using (Html.BeginForm("AddAttender", "Event", new { id = Model.Id }, FormMethod.Post, new { @class = "inviteUser inviteUserDisabled" }))
+        {
+            <input type="text" placeholder="Username.." name="name" />
+            <input type="submit" value="Invite" />
+        }
+        @{
+            var imagesCount = Model.ImagesAndNames.Count;
+        }
+        @if (imagesCount > 0)
+        {
+        <div class="ia-container">
+            <figure>
+                <div class="accImage" style="background-image: url(@(imagesCount > 0 ? Model.ImagesAndNames[0].ImagePath : ""))"></div>
+                <input type="radio" name="radio-set" checked="checked" />
+                    @if (Model.ImagesAndNames[0].ImageName != "")
+                    {
+                    <figcaption><span>@Model.ImagesAndNames[0].ImageName</span></figcaption>
+                    }
+                @if (imagesCount > 1)
+                {
+                <figure>
+                    <div class="accImage" style="background-image: url(@(imagesCount > 1 ? Model.ImagesAndNames[1].ImagePath : ""))"></div>
+                    <input type="radio" name="radio-set" />
+                        @if (Model.ImagesAndNames[1].ImageName != "")
+                        {
+                            <figcaption><span>@Model.ImagesAndNames[1].ImageName</span></figcaption>
+                        }
+                    @if (imagesCount > 2)
+                    {
+                    <figure>
+                        <div class="accImage" style="background-image: url(@(imagesCount > 2 ? Model.ImagesAndNames[2].ImagePath : ""))"></div>
+                        <input type="radio" name="radio-set" />
+                            @if (Model.ImagesAndNames[2].ImageName != "")
+                        {
+                                <figcaption><span>@Model.ImagesAndNames[2].ImageName</span></figcaption>
+                            }
+                        @if (imagesCount > 3)
+                        {
+                        <figure>
+                            <div class="accImage" style="background-image: url(@(imagesCount > 3 ? Model.ImagesAndNames[3].ImagePath : ""))"></div>
+                            <input id="ia-selector-last" type="radio" name="radio-set" />
+                                @if (Model.ImagesAndNames[3].ImageName != "")
+                                {
+                                    <figcaption><span>@Model.ImagesAndNames[3].ImageName</span></figcaption>
+                                }
+                        </figure>
+                        }
+                    </figure>
+                    }
+                </figure>
+                }
+            </figure>
+        </div>
+        }
+        <section id="eventInformation">
+            <div id="eventDetails">
+                <h3>About</h3>
+                <p>
+                    @Model.Description
+                </p>
+            </div>
+            <div id="atInfWrapper">
+                <div id="attenders">
+                    <h3>Attenders <span id="attAm">@Model.AttendersCount</span></h3>
+                    <ul id="attendersList">
+                        @foreach (var item in Model.Attenders)
+                        {                           
+                            <li class="listAttender">
+                                <a>
+                                    <div class="attenderPic" style="background-image: url(@item.PhotoPath)"></div>
+                                    <div class="attenderName">@item.Name</div>
+                                </a>
+                            </li>
+                        }
+                        <li class="listAttender toggler" id="hider">
+                            <a>
+                                <div class="attenderName">Hide attenders</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <section id="informationTable">
+                    <h3>Dates Information</h3>
+                    <ul>
+                        <li>
+                            <div class="infTableHeader">Event Limits</div>
+                            <div class="infTableInfo">
+                                @{ var date = (DateTime)Model.EventStartDate; }
+                                <div id="eventBeforeDate">@date.ToString("dd.MM.yyyy")</div>
+                                @{ date = (DateTime)Model.EventEndDate; }
+                                <div>@date.ToString("dd.MM.yyyy")</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="infTableHeader">Length</div>
+                            <div class="infTableInfo">@Model.EventLength days</div>
+                        </li>
+                        @*<li>
+                            <div class="infTableHeader">Your Dates</div>
+                            <div class="infTableInfo">
+                                <div>No dates set</div>
+                                <!--<div>17.11.2016</div>-->
+                                <!--<div>21.11.2016</div>-->
+                            </div>
+                        </li>*@
+                        @*<li>
+                            <div class="infTableHeader">Starts At</div>
+                            <div class="infTableInfo">14:00</div>
+                        </li>*@
+                        <li>
+                            <div class="infTableHeader">Best Dates</div>
+                            @*<div class="infPercentage">
+                                <div>70%</div>
+                            </div>*@
+                            <div class="infTableInfo">
+                                @{ date = (DateTime)Model.BestStartDate; }
+                                <div>@date.ToString("dd.MM.yyyy")</div>
+                                @{ date = (DateTime)Model.BestEndDate; }
+                                <div>@date.ToString("dd.MM.yyyy")</div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <div id="setDatesWrapper">
+            <button class="dateSetToggler dateInputButtons">Set Dates</button>
+            <!--TODO: VALIDATION OF THE DATES -->
+            @using (Html.BeginForm("AddDate", "Event", new { id = Model.Id }, FormMethod.Post, new { id = "inputPrefEventDates" }))
+            {
+                <input type="text" class="dateInput" id="dateStart" name="date">
+                <input type="submit" class="dateInputButtons" value="Apply Dates" id="datesSubmit" />
+            }
+            <div id="calendar"></div>
+        </div>
+    </section>
+
+    <section id="comments">
+        @using (Html.BeginForm("AddComment", "Event", new { id = Model.Id }, FormMethod.Post))
+        {
+            <div id="postCommentSection">
+                <div id="writeComment">
+                    <div id="writeCommentPicture" style="background-image: url(@Model.CurrUrsPic)"></div>
+                    <textarea rows="3" name="comment" placeholder="Write comment here"></textarea>
+                </div>
+                <input type="submit" id="postCommentButton" value="Post">
+            </div>
+        }
+        
+        <!--TODO: Make the images as img or editable script url-->
+
+        @foreach (var item in Model.Comments)
+        {
+            <div class="comment">
+                <div class="commentContent">
+                    <div class="commentAuthorPicture" style="background-image: url(@item.ComentatorPhoto)"></div>
+                    <p>
+                        <a class="authorName">@item.ComentatorName</a>
+                        @item.Comment
+                    </p>
+                </div>
+                <span class="commentDate">Posted on @item.CommentDate.ToLocalTime()</span>
+            </div>
+        }
+       
+    </section>
+</main>

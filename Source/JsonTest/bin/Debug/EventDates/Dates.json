@@ -1,0 +1,53 @@
+{
+  "MaxPeople": 20,
+  "Dates": [
+    {
+      "Day": 26,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 28,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 3
+    },
+    {
+      "Day": 29,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 4
+    },
+    {
+      "Day": 30,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 9
+    },
+    {
+      "Day": 1,
+      "Month": 12,
+      "Year": 2016,
+      "FreePeopleCount": 10
+    },
+    {
+      "Day": 2,
+      "Month": 12,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 4,
+      "Month": 12,
+      "Year": 2016,
+      "FreePeopleCount": 5
+    },
+    {
+      "Day": 20,
+      "Month": 12,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+﻿@model EventManager.Web.ViewModels.UserPage.FriendListViewModel
+@{
+    ViewBag.Title = "Argus | Friends";
+    ViewBag.Page = "FriendList";
+}
+
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/userBlock.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/searchPage.css">
+
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/imageAccordion.css" />
+<script type="text/javascript" src="../../Scripts/CustomScripts/imageAccordion.js"></script>
+
+<main>
+    <div id="eventsWrapper">
+        <h1>Friends</h1>
+        <section id="friends">
+            <article class="usersWrapper">
+                @if (Model.Friends.Count < 1)
+                {
+                    <h3>No friends to show</h3>
+                }
+                else
+                {
+                    foreach (var item in Model.Friends)
+                    {
+                        <div class="userWrapper">
+                            <form action="@Url.Action("RemoveFriend", "UserPage")" method="post">
+                                <button type="submit" name="userId" value="@item.Id" class="removeUser">-</button>
+                            </form>
+                            <div class="userProfilePic" style="background-image: url(@item.PhotoFileName);"></div>
+                            <div class="userDetailsWrapper">
+                                <h3 class="userName"><span><a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">@item.UserName</a></span></h3>
+                                <table class="userDetails">
+                                    <tr>
+                                        <th>Events Created</th>
+                                        <td>@item.CreatedEvents</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Events Attended</th>
+                                        <td>@item.AttendedEvents</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Friends</th>
+                                        <td>@item.FriendsCount</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                }
+            </article>
+            <!--<h3>No friends to show</h3>-->
+        </section>
+    </div>
+</main>
+

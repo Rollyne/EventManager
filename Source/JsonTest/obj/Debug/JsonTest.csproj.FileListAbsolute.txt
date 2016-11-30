@@ -1,0 +1,30 @@
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\JsonTest.exe.config
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\JsonTest.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\obj\Debug\JsonTest.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\obj\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\EventManager\Source\JsonTest\obj\Debug\JsonTest.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\JsonTest.exe.config
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\obj\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\obj\Debug\JsonTest.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\JsonTest.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\JsonTest\obj\Debug\JsonTest.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\JsonTest.exe.config
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\JsonTest.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\HelperClasses.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\HelperClasses.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\obj\Debug\JsonTest.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\obj\Debug\JsonTest.exe
+C:\Users\Jivko\Desktop\migrations\Argus\Source\JsonTest\obj\Debug\JsonTest.pdb

@@ -1,0 +1,135 @@
+﻿@model EventManager.Web.ViewModels.UserPage.SearchViewModel
+
+@{
+    ViewBag.Title = "Argus | Search results";
+    ViewBag.Page = "SearchResult";
+}
+
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/eventBlock.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/userBlock.css">
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/searchPage.css">
+
+<link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/imageAccordion.css" />
+<script type="text/javascript" src="../../Scripts/CustomScripts/imageAccordion.js"></script>
+
+
+<main>
+    <div id="searchPageWrapper">
+        <h1>Search results</h1>
+        <section id="users">
+            <h2>Users</h2>
+            <article class="usersWrapper">
+                @if (Model.Users.Count < 1)
+                {
+                    <h3 style="text-align: center;">No users to show</h3>
+                }
+                else
+                {
+                    foreach (var item in Model.Users)
+                    {
+                        <div class="userWrapper">
+                            <form action="@Url.Action("AddFriend", "UserPage")" method="post">
+                                <button type="submit" name="userId" value="@item.Id" class="addUser">+</button>
+                            </form>
+                            
+                            <div class="userProfilePic" style="background-image: url(@item.PhotoFileName);"></div>
+                            <div class="userDetailsWrapper">
+                                <h3 class="userName"><span><a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">@item.UserName</a></span></h3>
+                                <table class="userDetails">
+                                    <tr>
+                                        <th>Events Created</th>
+                                        <td>@item.CreatedEvents</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Events Attended</th>
+                                        <td>@item.AttendedEvents</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Friends</th>
+                                        <td>@item.FriendsCount</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                }
+            </article>
+        </section>
+        <section id="events">
+            <h2>Events</h2>
+            <article class="eventsWrapper">
+                @if (Model.Events.Count < 1)
+                {
+                    <h3>No events to show</h3>
+                }
+                else
+                {
+                    foreach (var item in Model.Events)
+                    {
+                        <div class="eventWrapper">
+                            <div class="eventImage" style="background-image: url(@item.ImagesFilePath);">
+                                @*<table class="eventAttenders">
+                                        <tr>
+                                            <td class="attender jivko"></td>
+                                            <td class="attender mitko"></td>
+                                            <td class="moreAttenders">+3</td>
+                                        </tr>
+                                    </table>*@
+                            </div>
+                            <div class="eventDetails">
+                                <div class="eventDate"><span>@item.StartEventDate.ToString("ddd, MMM dd")</span></div>
+                                <h3 class="eventHeader"><span>@Html.ActionLink((item.Destination.IsEmpty() ? "No Article" : item.Destination), "Event", "Event", new { id = item.Id }, new { })</span></h3>
+
+                                <p class="eventDesc">
+                                    @item.Content
+                                </p>
+                                @*<footer class="eventPlace">
+                                        <span>гр.Карлово, Централен Балкан</span>
+                                    </footer>
+                                    <footer class="eventTags">
+                                        #Balkan #GrillAndBeer
+                                    </footer>*@
+                            </div>
+                        </div>
+                    }
+                }
+            </article>
+        </section>
+        <section id="friends">
+            <h2>Friends</h2>
+            @if (Model.Friends.Count < 1)
+            {
+                <h3>No friends to show</h3>
+            }
+            else
+            {
+                foreach (var item in Model.Friends)
+                {
+                    <div class="userWrapper">
+                        <form action="@Url.Action("RemoveFriend", "UserPage")" method="post">
+                            <button type="submit" name="userId" value="@item.Id" class="removeUser">-</button>
+                        </form>
+                        <div class="userProfilePic" style="background-image: url(@item.PhotoFileName);"></div>
+                        <div class="userDetailsWrapper">
+                            <h3 class="userName"><span><a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">@item.UserName</a></span></h3>
+                            <table class="userDetails">
+                                <tr>
+                                    <th>Events Created</th>
+                                    <td>@item.CreatedEvents</td>
+                                </tr>
+                                <tr>
+                                    <th>Events Attended</th>
+                                    <td>@item.AttendedEvents</td>
+                                </tr>
+                                <tr>
+                                    <th>Friends</th>
+                                    <td>@item.FriendsCount</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                }
+            }
+        </section>
+    </div>
+</main>

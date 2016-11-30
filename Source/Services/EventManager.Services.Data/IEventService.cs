@@ -1,4 +1,5 @@
 ﻿using EventManager.Data.Models;
+using EventManager.Web.ViewModels.CrEvent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace EventManager.Services.Data
 {
     public interface IEventService
     {
-        void CreateEvent(string destination);
+        void CreateEvent(string destination, string content, DateTime? startDate, DateTime? endDate, int? length, IList<ImageAndTitle> images, HttpPostedFileBase bannerImage);
 
         void EditEvent(int eventId, string content, string destination);
 
@@ -29,6 +30,8 @@ namespace EventManager.Services.Data
         IList<Event> NotOwnedEvents();
 
         IList<Event> FindEventByDestination(string destination);
+
+        Event FindEventById(int id);
 
         void AddUser(int eventId, ApplicationUser user);
 

@@ -60,9 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201609281448357_InitialCreate.cs" />
-    <Compile Include="Migrations\201609281448357_InitialCreate.Designer.cs">
-      <DependentUpon>201609281448357_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201611281750179_InitialCreate.cs" />
+    <Compile Include="Migrations\201611281750179_InitialCreate.Designer.cs">
+      <DependentUpon>201611281750179_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611301048562_FriendsIdAdded.cs" />
+    <Compile Include="Migrations\201611301048562_FriendsIdAdded.Designer.cs">
+      <DependentUpon>201611301048562_FriendsIdAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,8 +100,11 @@
     </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609281448357_InitialCreate.resx">
-      <DependentUpon>201609281448357_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611281750179_InitialCreate.resx">
+      <DependentUpon>201611281750179_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611301048562_FriendsIdAdded.resx">
+      <DependentUpon>201611301048562_FriendsIdAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
