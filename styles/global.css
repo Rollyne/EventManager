@@ -19,7 +19,9 @@ body {
 * {
     font-family: myriadPro;
 }
-
+textarea {
+    font-family: myriadPro;
+}
 /* Header */
 #mainHeader {
     position: fixed;

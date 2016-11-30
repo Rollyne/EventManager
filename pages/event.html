@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/sidebarSheet.css">
     <link rel="stylesheet" type="text/css" href="../styles/eventPage.css">
 
+    <link rel="stylesheet" type="text/css" href="../styles/slidemenu.css"/>
+    <script type="text/javascript" src="../scripts/slidemenuAcc.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../styles/imageAccordion.css"/>
     <script type="text/javascript" src="../scripts/imageAccordion.js"></script>
 </head>
@@ -47,9 +50,7 @@
         $(".se-pre-con").fadeOut("slow");
     });
 </script>
-<body>
-
-
+<body onload="slideMenu.build('sm',300,10,10,1)">
 <div class="se-pre-con"></div>
 <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
 <header id="mainHeader">
@@ -94,34 +95,46 @@
             <input type="text" placeholder="Username.."/>
             <input type="submit" value="Invite"/>
         </form>
-        <div class="ia-container">
-            <figure>
-                <div class="accImage" style="background-image: url(../images/imgAcc3.jpg)"></div>
-                <input type="radio" name="radio-set" checked="checked"/>
-                <figcaption><span>Пръскалото</span></figcaption>
+        <!--<div class="ia-container">-->
+        <!--<figure>-->
+        <!--<div class="accImage" style="background-image: url(../images/imgAcc3.jpg)"></div>-->
+        <!--<input type="radio" name="radio-set" checked="checked"/>-->
+        <!--<figcaption><span>Пръскалото</span></figcaption>-->
 
-                <figure>
-                    <div class="accImage" style="background-image: url(../images/imgAcc2.jpg)"></div>
-                    <input type="radio" name="radio-set"/>
-                    <figcaption><span>Стара Река</span></figcaption>
+        <!--<figure>-->
+        <!--<div class="accImage" style="background-image: url(../images/imgAcc2.jpg)"></div>-->
+        <!--<input type="radio" name="radio-set"/>-->
+        <!--<figcaption><span>Стара Река</span></figcaption>-->
 
-                    <figure>
-                        <div class="accImage" style="background-image: url(../images/imgAcc1.jpg)"></div>
-                        <input type="radio" name="radio-set"/>
-                        <figcaption><span>Огнище на хижата</span></figcaption>
+        <!--<figure>-->
+        <!--<div class="accImage" style="background-image: url(../images/imgAcc1.jpg)"></div>-->
+        <!--<input type="radio" name="radio-set"/>-->
+        <!--<figcaption><span>Огнище на хижата</span></figcaption>-->
 
-                        <figure>
-                            <div class="accImage" style="background-image: url(../images/eventImage1.jpg)"></div>
-                            <input id="ia-selector-last" type="radio" name="radio-set"/>
-                            <figcaption><span>Балкански Рози</span></figcaption>
-                        </figure>
+        <!--<figure>-->
+        <!--<div class="accImage" style="background-image: url(../images/eventImage1.jpg)"></div>-->
+        <!--<input id="ia-selector-last" type="radio" name="radio-set"/>-->
+        <!--<figcaption><span>Балкански Рози</span></figcaption>-->
+        <!--</figure>-->
 
-                    </figure>
+        <!--</figure>-->
 
-                </figure>
+        <!--</figure>-->
 
-            </figure>
+        <!--</figure>-->
 
+        <!--</div>-->
+        <div id="imageAccordion">
+            <ul id="sm" class="sm">
+                <li class="eventImage" style="background-image: url(../images/eventImage1.jpg)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage2.jpg)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage1.jpg)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage.png)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage.png)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage.png)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage.png)"></li>
+                <li class="eventImage" style="background-image: url(../images/eventImage1.jpg)"></li>
+            </ul>
         </div>
         <section id="eventInformation">
             <div id="eventDetails">

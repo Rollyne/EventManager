@@ -3,8 +3,8 @@
 	max-width: 635px;
 	margin: 40px auto 20px auto;
 	overflow: hidden;
-	box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-	border: 7px solid rgba(255,255,255,0.6);
+	/*box-shadow: 1px 1px 4px rgba(0,0,0,0.8);*/
+	/*border: 7px solid rgba(255,255,255,0.6);*/
 }
 
 .ia-container figure {

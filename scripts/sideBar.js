@@ -21,19 +21,20 @@ $(window).on("load", function () {
 
     function windowToggle() {
         if (theWindow.width() >= 600) {
+            $('main').css({"margin-left": "300px"});
             $userDrop.show(function () {
                 $dropdownMenu.animate({opacity: 1}, 200);
                 $dropdownMenu.show('slow');
             });
-            $('main').css({"margin-left": "300px"});
+
             $userWrapper.css({"cursor": "default"});
             if ($userWrapper.hasClass('dropdownToggle')) {
                 $userWrapper.removeAttr('class', 'dropdownToggle');
             }
         } else {
             $('main').css({"margin-left": "auto"});
-            if ($userWrapper.hasClass('dropdownToggle')) {
-                $userWrapper.attr('class', 'dropdownToggle');
+            if (!$userWrapper.hasClass('dropdownToggle')) {
+                $userWrapper.removeAttr('class', 'dropdownToggle');
             }
         }
     }
