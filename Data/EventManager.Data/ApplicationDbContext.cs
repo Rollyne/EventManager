@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using EventManager.Data.Models;
+    using Migrations;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -38,6 +39,8 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
 
             modelBuilder.Entity<ApplicationUser>()
             .HasMany(up => up.Friends)

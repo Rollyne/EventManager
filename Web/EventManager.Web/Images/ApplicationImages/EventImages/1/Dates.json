@@ -1,0 +1,58 @@
+{
+  "MaxPeople": 3,
+  "DateAfter": {
+    "Day": 7,
+    "Month": 11,
+    "Year": 2016
+  },
+  "DateBefore": {
+    "Day": 4,
+    "Month": 12,
+    "Year": 2016
+  },
+  "EventLength": 4,
+  "Dates": [
+    {
+      "Day": 15,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 16,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 17,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 2
+    },
+    {
+      "Day": 13,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 14,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 18,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 19,
+      "Month": 11,
+      "Year": 2016,
+      "FreePeopleCount": 1
+    }
+  ]
+}
