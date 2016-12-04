@@ -1,0 +1,15 @@
+{
+  "MaxPeople": 1,
+  "DateAfter": {
+    "Day": 7,
+    "Month": 12,
+    "Year": 2016
+  },
+  "DateBefore": {
+    "Day": 23,
+    "Month": 12,
+    "Year": 2016
+  },
+  "EventLength": 3,
+  "Dates": []
+}

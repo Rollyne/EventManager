@@ -193,7 +193,7 @@ namespace EventManager.Services.Data
                 }
                 else
                 {
-                    imageName = string.Format("{0}.png", item.Title);
+                    imageName = string.Format("{0}.png", item.Title.Replace(" ", "_"));
                 }
 
                 var imageFullPath = Path.Combine(_event.ImagesFilePath, imageName);
