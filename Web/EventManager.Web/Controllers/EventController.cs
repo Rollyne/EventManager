@@ -84,7 +84,7 @@ namespace EventManager.Web.Controllers
 
                     model.ImagesAndNames.Add(new ImagesAndNames
                     {
-                        ImageName = imageName,
+                        ImageName = imageName.Replace("_", " "),
                         ImagePath = imagePath
 
                     });

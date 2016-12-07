@@ -31,7 +31,7 @@ namespace EventManager.Services.Data
             var eventDate = new EventDate
                         {
                             StartDate = startDate,
-                            EndDate = startDate.AddDays((int)_event.EventLength),
+                            EndDate = startDate.AddDays((int)_event.EventLength - 1),
                             Event = _event,
                             Creator = this.users.GetCurrentUser()
                         };

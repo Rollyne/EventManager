@@ -52,7 +52,7 @@
             @Html.TextAreaFor(m => m.Content, new { type = "text", name = "description", id = "descriptionArea", placeholder = "Mention every detail..", rows = "8", cols = "60" })
 
             <div class="lbl">Event Dates</div>
-            <div class="lbl smallLbl"><label for="eventLength">Event Length</label></div>
+            <div class="lbl smallLbl"><label for="eventLength">Event Duration</label></div>
             @Html.TextBoxFor(m => m.EventLength, new { type = "text", @class = "inputDates", id = "eventLength", pattern = "[0-9]*", placeholder = "How many days ?" })
             <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
             @Html.TextBoxFor(m => m.StartEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "fromDate", value = "", placeholder = "From when" })
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" id="addImage" onclick="addImage()">+ Add Image</a>
+                <a id="addImage" onclick="addImage()">+ Add Image</a>
             </div>
             @Scripts.Render("~/bundles/ImagePreviewScript")
             <script>

@@ -17,16 +17,16 @@ namespace EventManager.Data.Common
         {
             if (context == null)
             {
-                throw new ArgumentException("An instance of DbContext is required to use this repository.");
+                throw new ArgumentException("An instance of DbContext is required to use this repository.", nameof(context));
             }
 
             this.Context = context;
             this.DbSet = this.Context.Set<T>();
         }
 
-        private IDbSet<T> DbSet { set; get; }
+        private IDbSet<T> DbSet { get; }
 
-        private DbContext Context { set; get; }
+        private DbContext Context { get; }
 
         public T GetCurrentUser()
         {
