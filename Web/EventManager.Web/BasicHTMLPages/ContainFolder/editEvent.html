@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/ico" href="../../Images/icons/logo.ico">
+    <title>Argus | Create new event</title>
+    <script src="../../Scripts/CustomScripts/jquery.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery.browser.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery.validate.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery-ui-datepicker.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/script.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/sideBar.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/validation.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/eventForms.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/global.css">
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/sidebarSheet.css">
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/calendar.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/createEvent.css">
+
+</head>
+<style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../../Images/Preloader_3.gif) center no-repeat #fff;
+    }
+    .image_picker {
+        display: block;
+    }
+
+</style>
+<script>
+    $(window).on('load', function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+    $(function () {
+        $(".datepickerBox").datepicker({
+            showOn: "button",
+            buttonImage: "../../Images/icons/datepickerIcon.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+    });
+    $(function () {
+        var datePicker = $('.datepickerBox').datepicker();
+
+        $(window).scroll(function () {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+
+        $(window).resize(function () {
+            datePicker.datepicker('hide');
+            datePicker.blur();
+        });
+    });
+</script>
+<body>
+<div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">EM</div>
+<header id="mainHeader">
+    <div id="headerContent">
+        <div id="searchWrapper">
+            <form action="searchPage.html">
+                <input type="search" placeholder="Search.." id="searchContent">
+                <input type="submit" id="buttonSearchIcon" value="">
+            </form>
+        </div>
+        <ul id="sideBarMenu">
+            <li class="menuButton"><a href="myEvents.html" id="menuMyEvents">My Events</a></li>
+            <li class="menuButton"><a href="createEvent.html" id="menuCreateEvent">Create
+                Event</a></li>
+            <li class="menuButton"><a href="eventsList.html" class="selectedMenuButton" id="menuEvents">Events</a></li>
+            <li class="menuUnderline">
+                <div class="menuUnderlineContent"></div>
+            </li>
+            <li class="menuButton"><a href="index.html" id="menuHome">Home</a></li>
+            <li class="menuButton"><a href="myProfile.html" id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+        </ul>
+        <footer id="sideBarFooter">
+            <a href="myEvents.html" id="footerUserDetails">
+                <div id="footerUserDetailsProfilePicture"></div>
+                <div id="footerUsername">Dimitar Tonchev</div>
+            </a>
+        </footer>
+    </div>
+</header>
+<script>
+
+
+</script>
+<main>
+    <section id="createEventForm">
+        <h1>Edit Event</h1>
+
+
+        <form id="createEvent">
+
+
+            <div class="lbl"><label for="eventTitle">Event name</label></div>
+            <div class="inputBoxes">
+                <input type="text" id="eventTitle" name="title" placeholder="Think of a great title" value="Живко умре" required>
+                <!--TODO: Title goes here-->
+            </div>
+            <div class="lbl"><label for="descriptionArea">Description</label></div>
+            <div class="inputBoxes">
+                <textarea rows="8" cols="60" name="description" id="descriptionArea"
+                          placeholder="Mention every detail..">Bacon ipsum dolor amet turducken ribeye kielbasa, pig hamburger brisket venison flank prosciutto salami pork leberkas meatball. Cupim pork loin venison, brisket jerky burgdoggen shoulder kevin pork chop hamburger tri-tip pork. Pancetta boudin beef prosciutto fatback salami sirloin ham hock. Short ribs bacon shoulder shankle, jerky ground round tri-tip fatback ribeye pastrami burgdoggen capicola. Ham hock pork belly strip steak cupim kielbasa tenderloin.</textarea>
+                <!--TODO: Event desc goes in the tag-->
+            </div>
+            <div class="lbl">Event Dates</div>
+            <div class="lbl smallLbl"><label for="eventLength">Event Duration</label></div>
+            <div class="inputBoxes">
+                <input type="text" class="inputDates" id="eventLength" pattern="[0-9]*" placeholder="How much days ?"
+                       name="duration" value="1">
+                <!--TODO: Duration goes here-->
+            </div>
+
+            <div class="lbl smallLbl"><label for="eventLength">Event start hour</label></div>
+            <div class="inputHours inputBoxes">
+                <input type="text" class="inputDates inputHour" id="eventHour" maxlength="2" pattern="[0-9]*"
+                       placeholder="HH" name="hour" value="01"><!-- TODO: Event Hour goes in the value-->
+                <input type="text" class="inputDates inputHour" id="eventMinutes" maxlength="2" pattern="[0-9]*"
+                       placeholder="MM"
+                       name="minutes" value="50">
+                <!--TODO: Event minutes goes in the value-->
+            </div>
+
+            <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
+            <div class="datesDisplay inputBoxes">
+                <div id="fromDay" class="dateDisplay"></div>
+                <div id="fromMonth" class="dateDisplay"></div>
+                <div id="fromYear" class="dateDisplay"></div>
+
+                <input type="text" class="inputDates datepickerBox" id="fromDate" placeholder="From when"
+                       name="fromDate" value="10/08/1999">
+                <!--TODO: From date goes here MM/DD/YYYY-->
+            </div>
+
+            <div class="datesDisplay inputBoxes">
+                <div id="toDay" class="dateDisplay"></div>
+                <div id="toMonth" class="dateDisplay"></div>
+                <div id="toYear" class="dateDisplay"></div>
+
+                <input type="text" class="inputDates datepickerBox" id="toDate" placeholder="To when" name="toDate" value="10/08/2005">
+                <!--TODO: To date goes here MM/DD/YYYY-->
+            </div>
+
+
+
+            <div class="setting" id="imageUplWrapper">
+                <div class="setting image_picker" id="image_picker0">
+                    <h2>Banner Image</h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target0">
+                            <div id="image_preview0" class="image_preview"></div>
+                            <input id="inputFile0" type="file" name="bannerImage"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <h3>This image will be displayed as banner</h3>
+                            <a data-action="remove_current_image0" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker">
+                    <h2>Event Images</h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target dropped" id="drop_target">
+                            <div id="image_preview" style="background-image: url(../../Images/background0.jpg)" class="image_preview"></div>
+                            <input id="inputFile" type="file" name="image0"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details_active image_details">
+                                <label class="input_line image_title" id="image_title"></label>
+                                <input type="text" placeholder="Title" name="image0Title" value="Хижичка"/>
+                            </div>
+                            <a data-action="remove_current_image" class="">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker1">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target1">
+                            <div id="image_preview1" class="image_preview"></div>
+                            <input id="inputFile1" type="file" name="image1"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title1"></label>
+                                <input type="text" placeholder="Title" name="image1Title"/>
+                            </div>
+                            <a data-action="remove_current_image1" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker2">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target2">
+                            <div id="image_preview2" class="image_preview"></div>
+                            <input id="inputFile2" type="file" name="image2"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title2"></label>
+                                <input type="text" placeholder="Title" name="image2Title"/>
+                            </div>
+                            <a data-action="remove_current_image2" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting image_picker" id="image_picker3">
+                    <h2></h2>
+
+                    <div class="settings_wrap">
+                        <label class="drop_target" id="drop_target3">
+                            <div id="image_preview3" class="image_preview"></div>
+                            <input id="inputFile3" type="file" name="image3"/>
+                        </label>
+
+                        <div class="settings_actions vertical">
+                            <div class="image_details">
+                                <label class="input_line image_title" id="image_title3"></label>
+                                <input type="text" placeholder="Title" name="image3Title"/>
+                            </div>
+                            <a data-action="remove_current_image3" class="disabled">
+                                <i class="fa fa-ban"></i> Remove Current Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="../../Scripts/CustomScripts/imagePreview.js"></script>
+            <script>
+                var inputIds = [
+                    ["#image_picker0", "#drop_target0", "#inputFile0", "#image_preview0", "#image_title0", "remove_current_image0"],
+                    ["#image_picker", "#drop_target", "#inputFile", "#image_preview", "#image_title", "remove_current_image"],
+                    ["#image_picker1", "#drop_target1", "#inputFile1", "#image_preview1", "#image_title1", "remove_current_image1"],
+                    ["#image_picker2", "#drop_target2", "#inputFile2", "#image_preview2", "#image_title2", "remove_current_image2"],
+                    ["#image_picker3", "#drop_target3", "#inputFile3", "#image_preview3", "#image_title3", "remove_current_image3"]
+                ];
+
+                for (var i = 0; i < inputIds.length; i++) {
+                    ImagePreview(inputIds[i][0], inputIds[i][1], inputIds[i][2], inputIds[i][3], inputIds[i][4], inputIds[i][5]);
+                }
+            </script>
+
+            <input type="submit" value="Save Changes"/>
+        </form>
+
+    </section>
+</main>
+
+</body>
+</html>
