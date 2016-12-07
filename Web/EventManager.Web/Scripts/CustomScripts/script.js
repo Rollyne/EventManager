@@ -201,3 +201,17 @@ function homeView() {
         });
     }
 }
+
+
+/*INFORMATION EDIT TOGGLE FUNCTION*/
+function abToggler(id) {
+    let $inputBox = $('#' + id);
+    if ($inputBox.is(':disabled')) {
+        $inputBox.prop('disabled', false);
+        if (id != 'aboutUser') {
+            $inputBox.focus().select();
+        }
+    }
+}
+
+

@@ -6,7 +6,7 @@
 
 
 <div id="loginFormContent">
-    @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form"}))
     {
         @Html.AntiForgeryToken()
 

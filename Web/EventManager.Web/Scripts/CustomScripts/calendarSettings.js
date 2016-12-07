@@ -139,5 +139,5 @@ jQuery(document).ready(function () {
                 }
             }
         });
-    $cal.datepicker("option","beforeShowDay", beforeShow)
+    $cal.datepicker("option","beforeShowDay", beforeShow);
 });

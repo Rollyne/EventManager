@@ -11,8 +11,17 @@
 @Styles.Render("~/Content/CreateEventStyle")
 
 <script>
+    $(window).on('load', function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
     $(function () {
-        $(".datepickerBox").datepicker();
+        $(".datepickerBox").datepicker({
+            showOn: "button",
+            buttonImage: "../../Images/icons/datepickerIcon.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
     });
     $(function () {
         var datePicker = $('.datepickerBox').datepicker();

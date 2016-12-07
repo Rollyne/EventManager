@@ -227,3 +227,8 @@ input[type="text"]:focus, input[type="password"]:focus {
     }
 }
 
+
+label.error {
+    color: rgba(255, 0, 0, 0.80);
+    text-shadow: 1px 1px 10px rgba(255, 255, 255,0.3);
+}

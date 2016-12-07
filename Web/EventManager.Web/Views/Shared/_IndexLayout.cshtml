@@ -7,8 +7,11 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/ico" href="../../Images/icons/logo.ico">
     <script src="../../Scripts/CustomScripts/jquery.min.js"></script>
     <script src="../../Scripts/CustomScripts/jquery.browser.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/validation.js"></script>
     @Scripts.Render("~/bundles/scriptScript")
     @Styles.Render("~/Content/globalStyle")
     @Styles.Render("~/Content/indexStyle")
@@ -42,6 +45,32 @@
         // Animate loader off screen
         $(".se-pre-con").fadeOut("slow");
     });
+    console.log('banana');
+        $("#createEvent").validate({
+            rules: {
+            title: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                Email: {
+                                required: true,
+                                minValue: 3,
+                                regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/
+
+                            },
+                            Password: {
+                                required: true,
+                                minlength: 6
+                            },
+                            ConfrimPassword: {
+                                required: true,
+                                minlength: 6,
+                                equalTo: '#Password'
+                            }
+
+            }
+        });
 </script>
 
 <body>

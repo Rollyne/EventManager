@@ -5,20 +5,6 @@
 }
 @Styles.Render("~/Content/MyProfileStyle")
 
-<script>
-    function abToggler(id) {
-        let $inputBox = $('#' + id);
-        if ($inputBox.is(':disabled')) {
-            $inputBox.prop('disabled', false);
-            if (id != 'aboutUser') {
-                $inputBox.focus().select();
-            }
-        } else {
-            $inputBox.prop('disabled', true);
-        }
-    }
-</script>
-
 <main id="mainContent">
     <h1>My Profile</h1>
 

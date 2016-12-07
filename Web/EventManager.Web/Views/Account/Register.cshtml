@@ -4,12 +4,12 @@
     ViewBag.Title = "Register";
 }
 <div id="registerFormContent">
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form", id="regForm" }))
     {
         @Html.AntiForgeryToken()
 
-        @Html.TextBoxFor(m => m.Email, new { type = "text", placeholder = "Email", name = "email" })
-        @Html.PasswordFor(m => m.Password, new { type = "password", placeholder = "Password", name = "password" })
+        @Html.TextBoxFor(m => m.Email, new { type = "text", placeholder = "Email", name = "regEmail" })
+        @Html.PasswordFor(m => m.Password, new { type = "password", placeholder = "Password", name = "regPassword", id="regPassword" })
         @Html.PasswordFor(m => m.ConfirmPassword, new { type = "password", placeholder = "Confirm Password", name = "confirmpassword" })
         <button type="submit" class="formSubmitButton">Register</button>
 

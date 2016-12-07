@@ -18,3 +18,8 @@ C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\bin\Debug\HelperCla
 C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.dll
 C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.pdb
 C:\Users\Jivko\Desktop\migrations\Argus\Source\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\bin\Debug\HelperClasses.dll
+C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\bin\Debug\HelperClasses.pdb
+C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\obj\Debug\HelperClasses.dll
+C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\obj\Debug\HelperClasses.pdb
