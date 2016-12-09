@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     jQuery.validator.setDefaults({
         debug: true,
         success: "valid"
@@ -14,23 +14,22 @@ $(function () {
         return regexpr.test(value);
     }, "The number shouldn't be more than {0}");
     $.validator.addMethod("test", function (value, element, param) {
-        console.log('test');
         return true;
     });
 
-//VALIDATIONS
+    //VALIDATIONS
     $("#createEvent").validate({
         rules: {
-            title: {
+            Destination: {
                 required: true,
                 minlength: 3,
                 maxlength: 30
             },
-            description: {
+            Content: {
                 required: false,
                 maxlength: 1000
             },
-            duration: {
+            EventLength: {
                 required: true,
                 minlength: 1,
                 number: true,
@@ -55,6 +54,9 @@ $(function () {
                 required: true
             }
 
+        },
+        submitHandler: function (form) {
+            form.submit();
         }
     });
     $('#regForm').validate({
@@ -68,35 +70,44 @@ $(function () {
                 required: true,
                 minlength: 6
 
-            } ,
+            },
+            
             "ConfirmPassword": {
                 equalTo: "#regPassword"
             }
+        },
+        submitHandler: function (form) {
+            form.submit();
         }
     });
-    //$('#regForm').validate({
-    //    rules: {
-    //        regEmail: {
-    //            required: true,
-    //            regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    //
-    //        },
-    //        regPassword: {
-    //            required: true,
-    //            minlength: 6
-    //
-    //        } ,
-    //        ConfirmPassword: {
-    //            equalTo: "#regPassword"
-    //        }
-    //    }
-    //});
+    $('#formLogin').validate({
+        rules: {
+            Email: {
+                required: true,
+                regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+            },
+            Password: {
+                required: true,
+                minlength: 6
+
+            }
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
     jQuery.extend(jQuery.validator.messages, {
         required: function (param, input) {
-            return 'The ' + input.name + ' field is required';
+            switch (input.name) {
+                case "Destination": return 'The title field is required';
+                case "EventLength": return 'The duration field is required'
+                default: return 'The ' + input.name + ' field is required';
+            }
+            
         },
         minValue: function (param, input) {
-            if (input.name == 'duration') {
+            if (input.name == 'EventLength') {
                 return 'The ' + input.name + ' should be at least ' + param + ' day long';
             }
             if (input.name == 'hour') {
@@ -107,7 +118,7 @@ $(function () {
             }
         },
         maxValue: function (param, input) {
-            if (input.name == 'duration') {
+            if (input.name == 'EventLength') {
                 return 'The ' + input.name + " shouldn't be more than " + param + ' days long';
             }
             if (input.name == 'hour') {
@@ -118,14 +129,14 @@ $(function () {
             }
         },
         equalTo: function (param, input) {
-            if(input.name == 'ConfirmPassword'){
+            if (input.name == 'ConfirmPassword') {
                 return 'The passwords do not match';
             } else {
                 return 'The values don not match';
             }
         },
-        regex: function(param, input) {
-             return 'Please enter a valid ' + input.name;
+        regex: function (param, input) {
+            return 'Please enter a valid ' + input.name;
         },
         number: function (param, input) {
             return 'The ' + input.name + ' should be a valid number'

@@ -47,6 +47,23 @@ function InviteBox(button, form) {
         });
     }
 }
+/*SEARCH COLOR*/
+$(function () {
+    $('#searchContent').focus(function (){
+        $('#searchWrapper').css('background-color','rgba(0,0,0,0.9)');
+    });
+    $('#searchContent').blur(function (){
+        $('#searchWrapper').css('background-color','rgba(0,0,0,0.4)');
+    });
+});
+/*NOTIFICATION DISPLAY*/
+$(function () {
+    $('#notification').toggleClass('notificonClicked');
+    $('#notification').on('click',function (){
+        //let $svg = $('#notificationIcon');
+        //$svg.css('fill', '#6DE50A');
+    });
+});
 /*List limit function*/
 /*$(function () {
     var attendersAmount = $('#attendersList').children().length,

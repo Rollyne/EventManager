@@ -6,6 +6,9 @@
     ViewBag.Title = "Argus | Create new event";
 }
 
+
+<script type="text/javascript" src="../../Scripts/CustomScripts/eventForms.js"></script>
+
 @Scripts.Render("~/bundles/DatepickerScript")
 @Styles.Render("~/Content/CalendarStyle")
 @Styles.Render("~/Content/CreateEventStyle")
@@ -55,8 +58,22 @@
             <div class="lbl smallLbl"><label for="eventLength">Event Duration</label></div>
             @Html.TextBoxFor(m => m.EventLength, new { type = "text", @class = "inputDates", id = "eventLength", pattern = "[0-9]*", placeholder = "How many days ?" })
             <div class="lbl smallLbl"><label for="fromDate">Event Limits</label></div>
-            @Html.TextBoxFor(m => m.StartEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "fromDate", value = "", placeholder = "From when" })
-            @Html.TextBoxFor(m => m.EndEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "toDate", value = "", placeholder = "To when" })
+            
+            <div class="datesDisplay inputBoxes">
+                <div id="fromDay" class="dateDisplay"></div>
+                <div id="fromMonth" class="dateDisplay"></div>
+                <div id="fromYear" class="dateDisplay"></div>
+                @Html.TextBoxFor(m => m.StartEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "fromDate", value = "", placeholder = "From when" })
+            </div>
+            <div class="datesDisplay inputBoxes">
+                <div id="toDay" class="dateDisplay"></div>
+                <div id="toMonth" class="dateDisplay"></div>
+                <div id="toYear" class="dateDisplay"></div>
+
+                @Html.TextBoxFor(m => m.EndEventDate, new { type = "text", @class = "inputDates datepickerBox", id = "toDate", value = "", placeholder = "To when" })
+                <!--TODO: To date goes here MM/DD/YYYY-->
+            </div>
+            
 
 
 

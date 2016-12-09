@@ -11,7 +11,7 @@
         @Html.TextBoxFor(m => m.Email, new { type = "text", placeholder = "Email", name = "regEmail" })
         @Html.PasswordFor(m => m.Password, new { type = "password", placeholder = "Password", name = "regPassword", id="regPassword" })
         @Html.PasswordFor(m => m.ConfirmPassword, new { type = "password", placeholder = "Confirm Password", name = "confirmpassword" })
-        <button type="submit" class="formSubmitButton">Register</button>
+        <button type="submit" class="formSubmitButton" id="regSubmit">Register</button>
 
     }
     @Html.Partial("~/Views/Account/_ExternalLoginsListPartial.cshtml", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })

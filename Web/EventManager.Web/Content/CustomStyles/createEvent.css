@@ -27,7 +27,7 @@
 #createEvent .smallLbl{
     font-size: 1em;
 }
-input[name="title"], .inputDates {
+input[name="Destination"], .inputDates {
     width: 90%;
     height: 40px;
     font-size: 1.2em;

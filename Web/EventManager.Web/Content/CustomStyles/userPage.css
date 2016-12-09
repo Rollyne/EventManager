@@ -17,7 +17,6 @@ body {
     height: 300px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     background-image: url(../images/accountBackground.jpg);
     background-size: cover;
     z-index: -50;

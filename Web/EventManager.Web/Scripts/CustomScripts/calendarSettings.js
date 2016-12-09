@@ -126,7 +126,6 @@ jQuery(document).ready(function () {
                     for (let i = 0; i < eventLength; i++) {
                         pushedDate = startDate.getTime() + (1000 * 60 * 60 * 24) * i;
                         if (pushedDate > dateBefore.getTime()) {
-                            console.log()
                             $('#datesSubmit').prop('disabled', true);
                             errorMessages.inputErrorMessage('#calendar', 'There should be ' + eventLength + ' days avaliable');
                             selectedDates = [];

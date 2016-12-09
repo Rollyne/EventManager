@@ -1,9 +1,11 @@
-$(function () {
+﻿$(function () {
     let today = new Date();
-    console.log(today);
-    //$('#fromDate').val((today.getMonth() + 1) + "/" + '0' + today.getDate() + "/" + today.getFullYear());
+    if (today.getDate() >= 10) {
+        $('#fromDate').val((today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear());
+    } else {
+        $('#fromDate').val((today.getMonth() + 1) + "/" + '0' + today.getDate() + "/" + today.getFullYear());
+    }
     let loadDate = $('#fromDate').val();
-    console.log(loadDate);
     function dateInDivs(date, type) {
         date = date.split('/');
         $('#' + type + 'Month').text(date[0]);
@@ -20,10 +22,14 @@ $(function () {
     }
 
     dateInDivsFrom($('#fromDate').val());
-    //today.setDate(today.getDate() + 1);
-    //$('#toDate').val((today.getMonth() + 1) + "/" + '0' + today.getDate() + "/" + today.getFullYear());
+    today.setDate(today.getDate() + 1);
+    if (today.getDate() >= 10) {
+        $('#toDate').val((today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear());
+    } else {
+        $('#toDate').val((today.getMonth() + 1) + "/" + '0' + today.getDate() + "/" + today.getFullYear());
+    }
     dateInDivsTo($('#toDate').val());
-    $(function() {
+    $(function () {
         $('#fromDate').datepicker("option", "onSelect", dateInDivsFrom);
         $('#toDate').datepicker("option", "onSelect", dateInDivsTo);
     });
