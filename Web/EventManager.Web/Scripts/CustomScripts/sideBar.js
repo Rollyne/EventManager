@@ -42,14 +42,22 @@ $(window).on("load", function () {
 });
 
 
-
+var $icon = $('#notificationIcon'),
+    $content = $('#notificationList *'),
+    $wrapper = $('#notificationList');
 function Dropdowner(idOfWrapper, idOfDropdowner, idOfContent) {
     let $userDrop = $('#' + idOfDropdowner),
         $userWrapper = $('#' + idOfWrapper),
         $dropdownMenu = $('#' + idOfContent),
         windowSizeBig = theWindow.width() >= 600;
+    var $icon = $('#notificationIcon'),
+        $content = $('#notificationList *'),
+        $wrapper = $('#notificationList');
     if (!windowSizeBig) {
         if ($('.dropdownToggle').length == 0) {
+            $('.searchDrop').slideUp('slow');
+            $icon.removeClass('notificationClicked');
+            $content.animate({opacity: 0},300, function (){$wrapper.slideUp('fast');});
             $dropdownMenu.animate({opacity: 0}, 300, function () {
                 $userDrop.hide('slow');
             });
@@ -63,3 +71,35 @@ function Dropdowner(idOfWrapper, idOfDropdowner, idOfContent) {
         }
     }
 }
+
+/*SEARCH COLOR*/
+$(function () {
+
+    $('#searchContent').focus(function () {
+        $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.9)');
+    });
+    $('#searchContent').blur(function () {
+        $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.4)');
+    });
+});
+/*NOTIFICATION DISPLAY*/
+$(function () {
+    let $icon = $('#notificationIcon'),
+        $content = $('#notificationList *'),
+        $wrapper = $('#notificationList');
+    $icon.on('click', function () {
+        if ($icon.hasClass('notificationClicked')) {
+            $icon.removeClass('notificationClicked');
+            $content.animate({opacity: 0},'slow', function (){$wrapper.slideUp('fast');});
+
+        } else {
+            if($('.searchDrop').hasClass('dropShow')){
+                $('.searchDrop').fadeOut();
+            }
+            $icon.addClass('notificationClicked');
+            $.when($wrapper.slideDown('slow')).done(function(){
+                $content.css('opacity','1');
+            });
+        }
+    });
+});

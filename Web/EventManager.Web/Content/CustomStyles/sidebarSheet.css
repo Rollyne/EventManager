@@ -33,23 +33,7 @@ main {
     transition: all 0.5s;
     cursor: pointer;
 }
-#notification {
-    position: absolute;
-    z-index: 1000;
-    right: 10px;
-    top: 10px;
-}
-#notificationIcon {
-    fill: white;
-    width: 40px;
-    height: 40px;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-#notificationIcon:hover, .notificonClicked{
-    fill: #6DE50A;
-}
+
 
 
 
@@ -159,10 +143,115 @@ input[type="search"]:focus {
     border-bottom: 1px solid #6DE50A;
 }
 
+/*NOTIF DROP*/
+#notification {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+#notificationIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.notificationDefault {
+    fill: white;
+
+}
+#notificationIcon:hover, .notificationClicked{
+    fill: #6DE50A;
+
+}
+.notificationClicked{
+    filter: url(#dropshadow);
+}
+
+#notificationList {
+    display: none;
+    position: absolute;
+    top: 63px;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    padding: 3% 0;
+}
+#notificationList * {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.notifOptions {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 5px;
+    width: 90%;
+    justify-content: flex-end;
+}
+#notificationList h3{
+    text-align: center;
+    width: 100%;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 5%;
+}
+.hasNotifAm {
+    background-color: rgba(165,205,78,0.7);
+    padding: 1% 2%;
+    border-radius: 10px;
+    color: rgba(0,0,0,0.6)
+}
+.notifTitle {
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0.6)
+}
+.friendDetails {
+    color: rgba(255,255,255,0.5);
+}
+.notifOptions form input[type="submit"]{
+    margin: 0 5px;
+    border-radius: 5px;
+    padding: 7px;
+    color: rgba(255,255,255,0.7);
+
+    cursor: pointer;
+    outline: none;
+
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+.inviteAccept {
+    border: 1px solid rgba(109,229,10,0.5);
+    background-color: rgba(0,0,0,0.5);
+}
+.inviteDecline {
+    border: 1px solid rgba(154, 0, 0, 0.50);
+    background-color: rgba(0,0,0,0.5);
+}
+.inviteAccept:hover{
+    background-color: rgba(109,229,10,0.5);
+    border: 1px solid rgba(109,229,10,1);
+}
+.inviteDecline:hover{
+    background-color: rgba(154, 0, 0, 0.5);
+    border: 1px solid rgba(154, 0, 0, 1);
+
+}
+.notifLink {
+    text-decoration: none;
+    color: inherit;
+}
+.notifLink:hover{
+    color:rgba(165,205,78,0.7);
+}
+
 /*SEARCH DROP*/
+
 .searchDrop {
     display: none;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     width: 100%;
     opacity: 0;
@@ -172,7 +261,8 @@ input[type="search"]:focus {
     display: block;
     opacity: 1;
 }
-.searchEventPic, .searchUserPic {
+
+.searchEventPic, .searchUserPic,.notifEventPic,.notifUserPic {
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -181,6 +271,12 @@ input[type="search"]:focus {
     margin: 2%;
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.5);
+}
+.notifEventDetails > a, .friendDetails > a {
+    margin: 2%;
+}
+.notifEventPic,.notifUserPic {
+    margin: 0;
 }
 .searchDrop h4 {
     color: rgba(255,255,255,0.4);
@@ -195,18 +291,27 @@ input[type="search"]:focus {
     border-bottom: 1px solid #6DE50A;
 }
 
-.searchDrop div a {
+
+.searchDrop div a, .notifEventDetails,.friendDetails {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
     align-items: center;
     color: rgba(255,255,255,0.7);
-    cursor: pointer;
+
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
 }
-.searchDrop div a:hover{
-    background-color: rgba(0,0,0,0.5);
+.notificationItem {
+    border-bottom: 1px solid transparent;
+    padding: 1%;
+    font-size: 0.95em;
+}
+.searchDrop div a {
+    cursor: pointer;
+}
+.searchDrop div a:hover,.notificationItem:hover{
+    background-color: rgba(0,0,0,0.4);
     border-bottom: 1px solid #6DE50A;
 }
 
