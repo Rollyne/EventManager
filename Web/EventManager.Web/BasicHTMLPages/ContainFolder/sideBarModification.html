@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/ico" href="../../Images/icons/logo.ico">
+    <title>Argus | My events</title>
+    <script src="../../Scripts/CustomScripts/jquery.min.js"></script>
+    <script src="../../Scripts/CustomScripts/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/script.js"></script>
+    <script type="text/javascript" src="../../Scripts/CustomScripts/sideBar.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/global.css">
+    <link rel="stylesheet" type="text/css" href="../../Content/CustomStyles/sidebarSheet.css">
+</head>
+<style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../../Images/Preloader_3.gif) center no-repeat #fff;
+    }
+</style>
+<script>
+    $(window).on('load', function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+
+</script>
+<body>
+<div class="se-pre-con"></div>
+<div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">
+    <svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="Layer_3">
+</g>
+<g id="Layer_4">
+</g>
+<circle class="st0" cx="24" cy="24" r="24"/>
+<g>
+	<rect x="11.7" y="32.3" transform="matrix(0.4353 0.9003 -0.9003 0.4353 42.1745 0.5111)" class="st1" width="17.9" height="3.1"/>
+	<polygon class="st2" points="31,41.1 18.4,15.2 18.4,40 15.3,39 15.3,8.4 18.2,7.7 33.8,39.8 	"/>
+	<path class="st3" d="M24.2,43.7c-10.7,0-19.5-8.7-19.5-19.5S13.5,4.7,24.2,4.7c10.7,0,19.5,8.7,19.5,19.5S34.9,43.7,24.2,43.7z M24.2,7.9
+		c-9,0-16.3,7.3-16.3,16.3c0,9,7.3,16.3,16.3,16.3c9,0,16.3-7.3,16.3-16.3C40.5,15.2,33.2,7.9,24.2,7.9z"/>
+	<path class="st4" d="M47.8,27.4H6.3v-3.1H48C48,24.2,48,25.7,47.8,27.4z"/>
+</g>
+                </svg>
+</div>
+
+<header id="mainHeader">
+    <div id="notification">
+
+        <svg id="notificationIcon" class="notificationDefault" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+            <filter id="dropshadow" height="130%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+            <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+            <feMerge>
+                <feMergeNode/> <!-- this contains the offset blurred image -->
+                <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+            </feMerge>
+        </filter>
+<g>
+	<g id="notifications-none">
+		<path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75    c0-79.05-53.55-142.8-127.5-160.65V38.25C293.25,17.85,275.4,0,255,0c-20.4,0-38.25,17.85-38.25,38.25V56.1    c-73.95,17.85-127.5,81.6-127.5,160.65V357l-51,51v25.5h433.5V408L420.75,357z M369.75,382.5h-229.5V216.75    C140.25,153,191.25,102,255,102s114.75,51,114.75,114.75V382.5z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+        <div id="notificationList">
+            <h3>Notifications <span class="hasNotifAm">2</span></h3>
+
+            <div class="notificationItem eventNotification">
+                <div class="notifTitle"><a class="notifLink" href="">Jivko Kirasdasdishev</a> invited you to an event
+                </div>
+                <div class="notifEventDetails">
+                    <a href="">
+                        <div class="notifEventPic" style="background-image: url(../../Images/background1.jpg)"></div>
+                    </a>
+
+                    <div class="notifEventName">
+                        <a class="notifLink" href="">Ай на кончето</a>
+                    </div>
+                </div>
+                <div class="notifOptions">
+                    <form>
+                        <input type="submit" value="Accept" class="inviteAccept"/>
+                    </form>
+                    <form>
+                        <input type="submit" value="Decline" class="inviteDecline"/>
+                    </form>
+                </div>
+            </div>
+            <div class="notificationItem friendNotification">
+                <div class="friendDetails">
+                    <a href="">
+                        <div class="notifUserPic"></div>
+                    </a>
+
+                    <div><a class="notifLink" href="">Jivko Kirishev</a> requested a friendship</div>
+                </div>
+                <div class="notifOptions">
+                    <form>
+                        <input type="submit" value="Accept" class="inviteAccept"/>
+                    </form>
+                    <form>
+                        <input type="submit" value="Decline" class="inviteDecline"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="headerContent">
+
+        <div id="searchWrapper">
+            <form action="../../../../../EventManager/FrontEnd/pages/searchPage.html">
+                <input type="search" placeholder="Search.." id="searchContent">
+                <input type="submit" id="buttonSearchIcon" value="">
+            </form>
+
+        </div>
+        <!--TODO: ON SEARCH add class dropShow-->
+        <div class="searchDrop dropShow">
+            <!-- TODO: IF NO MATCHES <h3>Sorry, there are no matches</h3>-->
+            <h4>Users</h4>
+
+            <div class="searchUser">
+                <a>
+                    <div class="searchUserPic" style="background-image: url(../../Images/background0.jpg)"></div>
+                    <div class="searchUserName">Jivko Kirishev</div>
+                </a>
+            </div>
+            <h4>Events</h4>
+
+            <div class="searchUser">
+                <a>
+                    <div class="searchEventPic" style="background-image: url(../../Images/background1.jpg)"></div>
+                    <div class="searchEventTitle">Еко пътека "Стара река"</div>
+                </a>
+            </div>
+        </div>
+        <ul id="sideBarMenu">
+            <li class="menuButton"><a href="sideBarModification.html" id="menuMyEvents" class="selectedMenuButton">My
+                Events</a>
+            </li>
+            <li class="menuButton"><a href="../../../../../EventManager/FrontEnd/pages/createEvent.html"
+                                      id="menuCreateEvent">Create Event</a></li>
+            <li class="menuButton"><a href="../../../../../EventManager/FrontEnd/pages/eventsList.html" id="menuEvents">Events</a>
+            </li>
+            <li class="menuUnderline">
+                <div class="menuUnderlineContent"></div>
+            </li>
+            <li class="menuButton"><a href="../../../../../EventManager/FrontEnd/pages/index.html"
+                                      id="menuHome">Home</a></li>
+            <li class="menuButton"><a href="../../../../../EventManager/FrontEnd/pages/myProfile.html"
+                                      id="menuMyProfile">My Profile</a></li>
+            <li class="menuButton"><a href="#" id="menuLogout">Logout</a></li>
+        </ul>
+        <footer id="sideBarFooter">
+            <a href="sideBarModification.html" id="footerUserDetails">
+                <div id="footerUserDetailsProfilePicture"></div>
+                <div id="footerUsername">Dimitar Tonchev</div>
+            </a>
+        </footer>
+    </div>
+</header>
+
+
+</body>
+</html>
