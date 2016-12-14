@@ -204,6 +204,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="ViewModels\UserPage\EventListViewModel.cs" />
     <Compile Include="ViewModels\UserPage\EventViewModel.cs" />
     <Compile Include="ViewModels\UserPage\FriendListViewModel.cs" />
+    <Compile Include="ViewModels\UserPage\NotificationViewModel.cs" />
     <Compile Include="ViewModels\UserPage\SearchViewModel.cs" />
     <Compile Include="ViewModels\UserPage\UserPageViewModel.cs" />
     <Compile Include="ViewModels\UserPage\UserVewModel.cs" />
@@ -308,6 +310,8 @@
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -356,6 +360,9 @@
     <Content Include="Views\UserPage\EventList.cshtml" />
     <Content Include="Views\UserPage\SearchResult.cshtml" />
     <Content Include="Views\UserPage\UserDetails.cshtml" />
+    <Content Include="Views\Ajax\_SearchResult.cshtml" />
+    <Content Include="Views\Event\EditEvent.cshtml" />
+    <Content Include="Views\Ajax\_NotificationResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

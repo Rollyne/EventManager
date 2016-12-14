@@ -20,6 +20,8 @@ namespace EventManager.Web.ViewModels.CrEvent
             this.EndEventDate = null;
         }
 
+        public int Id { get; set; }
+
         public string Destination { get; set; }
 
         public string Content { get; set; }
@@ -84,5 +86,7 @@ namespace EventManager.Web.ViewModels.CrEvent
         public int? EventLength { get; set; }
 
         public HttpPostedFileBase BannerImage { get; set; }
+
+        public string BannerPath { get; set; }
     }
 }

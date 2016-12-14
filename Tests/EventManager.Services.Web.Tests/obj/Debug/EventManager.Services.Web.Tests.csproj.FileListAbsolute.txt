@@ -25,3 +25,12 @@ C:\Users\Jivko\Desktop\migrations\Argus\Source\Tests\EventManager.Services.Web.T
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.dll
 C:\Users\Jivko\Desktop\migrations\Argus\Source\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\EventManager.Services.Web.Tests.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\EventManager.Services.Web.Tests.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Tests\EventManager.Services.Web.Tests\obj\Debug\EventManager.Services.Web.Tests.pdb

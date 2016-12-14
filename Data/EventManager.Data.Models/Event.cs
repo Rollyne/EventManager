@@ -10,14 +10,11 @@ namespace EventManager.Data.Models
     {
         public Event()
         {
-            this.Users = new HashSet<ApplicationUser>();
             this.Dates = new HashSet<EventDate>();
             this.Comments = new HashSet<Comment>();
         }
 
         public virtual ApplicationUser Creator { get; set; }
-
-        public virtual ICollection<ApplicationUser> Users { get; set; }
 
         public string Destination { get; set; }
 

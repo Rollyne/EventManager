@@ -10,6 +10,7 @@ namespace EventManager.Web.ViewModels.EventDetails
     public class EventViewModel : IMapFrom<Event>
     {
         public int Id { get; set; }
+
         public string CurrUrsPic { get; set; }
 
         public string Name { get; set; }
@@ -25,6 +26,8 @@ namespace EventManager.Web.ViewModels.EventDetails
         public bool IsCreator { get; set; }
 
         public bool IsDateAdded { get; set; }
+
+        public int? MyDateId { get; set; }
 
         public int AttendersCount { get; set; }
 

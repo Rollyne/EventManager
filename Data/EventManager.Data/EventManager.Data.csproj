@@ -44,7 +44,7 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -72,11 +72,17 @@
     <Compile Include="Migrations\201611301918275_ManyToManyEv_ApUsr.Designer.cs">
       <DependentUpon>201611301918275_ManyToManyEv_ApUsr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612060930100_AcceptDeclineAdded.cs" />
+    <Compile Include="Migrations\201612060930100_AcceptDeclineAdded.Designer.cs">
+      <DependentUpon>201612060930100_AcceptDeclineAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611301918275_ManyToManyEv_ApUsr.resx">
       <DependentUpon>201611301918275_ManyToManyEv_ApUsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612060930100_AcceptDeclineAdded.resx">
+      <DependentUpon>201612060930100_AcceptDeclineAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

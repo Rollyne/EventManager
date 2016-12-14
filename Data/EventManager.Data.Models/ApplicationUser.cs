@@ -18,10 +18,8 @@
     {
         public ApplicationUser()
         {
-            this.Events = new HashSet<Event>();
             this.Comments = new HashSet<Comment>();
             this.EventDates = new HashSet<EventDate>();
-            this.Friends = new HashSet<ApplicationUser>();
         }
 
         public string Name { get; set; }
@@ -38,10 +36,6 @@
                 return path;
             }
         }
-
-        public virtual ICollection<ApplicationUser> Friends { get; set; }
-
-        public virtual ICollection<Event> Events { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 

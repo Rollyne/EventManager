@@ -22,6 +22,8 @@ namespace EventManager.Services.Data
 
         void AddFriend(string userId);
 
+        void AcceptFriend(string senderId);
+
         void RemoveFriend(string userId);
 
         void UploadPhoto(HttpPostedFileBase photo, HttpPostedFileBase banner);
@@ -36,8 +38,10 @@ namespace EventManager.Services.Data
 
         void ChangeProfileInfo(string userName, string description);
 
-        IList<ApplicationUser> FriendsByName();
+        IList<ApplicationUser> FriendsByName(string userId);
 
         IList<ApplicationUser> FindFriendByName(string name);
+
+        IList<Friends> PendingUsers();
     }
 }

@@ -54,14 +54,11 @@ namespace EventManager.Services.Data
             this.dates.Save();
         }
 
-        public void EditDate(int dateId, DateTime startDate, DateTime endDate)
+        public void EditDate(int dateId, DateTime startDate)
         {
-            var eventDate = new EventDate
-            {
-                Id = dateId,
-                StartDate = startDate,
-                EndDate = endDate
-            };
+            var eventDate = this.dates.GetById(dateId);
+            eventDate.EndDate = startDate.AddDays((eventDate.EndDate - eventDate.StartDate).Days + 1);
+            eventDate.StartDate = startDate;
 
             this.dates.Edit(eventDate);
             this.dates.Save();

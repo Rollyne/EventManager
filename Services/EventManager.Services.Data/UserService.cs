@@ -13,24 +13,31 @@ namespace EventManager.Services.Data
     public class UserService : IUserService
     {
         private readonly IUserRepository<ApplicationUser> users;
+        private readonly IDbRepository<Friends> friends;
 
-        public UserService(IUserRepository<ApplicationUser> users)
+        public UserService(IUserRepository<ApplicationUser> users, IDbRepository<Friends> friends)
         {
             this.users = users;
+            this.friends = friends;
         }
 
         public void AddFriend(string userId)
         {
             var newUser = this.users.GetAllUsers().Where(x => x.Id == userId).FirstOrDefault();
             var currentUser = this.users.GetCurrentUser();
-            var userFriends = currentUser.Friends;
-            userFriends.Add(newUser);
-            newUser.Friends.Add(currentUser);
+            this.friends.Add(new Friends { Sender = currentUser, Receiver = newUser, Status = true });
+            this.friends.Save();
+        }
 
-            this.users.Edit(currentUser);
-            this.users.Edit(newUser);
-            this.users.Save();
+        public void AcceptFriend(string senderId)
+        {
+            var currentUser = this.users.GetCurrentUser();
 
+            var friend = this.friends.All().Where(x => x.Receiver.Id == currentUser.Id && x.Sender.Id == senderId).FirstOrDefault();
+            friend.Status = true;
+
+            this.friends.Edit(friend);
+            this.friends.Save();
         }
 
         public void UploadPhoto(HttpPostedFileBase photo, HttpPostedFileBase banner)
@@ -62,12 +69,13 @@ namespace EventManager.Services.Data
         public IList<ApplicationUser> FindFriendByName(string name)
         {
             var currentUser = this.users.GetCurrentUser();
-            var userFriends = currentUser.Friends;
 
-            // x => x.UserName.Contains(name)
-            var searchResult = userFriends.Where(x => x.Name == name).ToList();
+            var recFriends = this.friends.All().Where(x => x.Receiver.Id == currentUser.Id && x.Sender.Name.ToLower().Contains(name.ToLower()) && x.Status == true).Select(x => x.Sender);
+            var sendFriends = this.friends.All().Where(x => x.Sender.Id == currentUser.Id && x.Receiver.Name.ToLower().Contains(name.ToLower()) && x.Status == true).Select(x => x.Receiver);
 
-            return searchResult;
+            var userFriends = recFriends.Concat(sendFriends).ToList();
+
+            return userFriends;
         }
 
         public IList<ApplicationUser> FindUserByName(string name)
@@ -75,15 +83,18 @@ namespace EventManager.Services.Data
             var allUsers = this.users.GetAllUsers();
 
             // x => x.UserName.Contains(name)
-            var searchResult = allUsers.Where(x => x.Name == name).ToList();
+            var searchResult = allUsers.Where(x => x.Name.ToLower().Contains(name.ToLower())).ToList();
 
             return searchResult;
         }
 
-        public IList<ApplicationUser> FriendsByName()
+        public IList<ApplicationUser> FriendsByName(string userId)
         {
-            var currentUser = this.users.GetCurrentUser();
-            var userFriends = currentUser.Friends.OrderBy(x => x.Name).ToList();
+            var recFriends = this.friends.All().Where(x => x.Receiver.Id == userId && x.Status == true).Select(x => x.Sender);
+            var sendFriends = this.friends.All().Where(x => x.Sender.Id == userId && x.Status == true).Select(x => x.Receiver);
+
+            var userFriends = recFriends.Concat(sendFriends).ToList();
+            userFriends = userFriends.OrderBy(x => x.Name).ToList();
 
             return userFriends;
         }
@@ -91,14 +102,14 @@ namespace EventManager.Services.Data
         public void RemoveFriend(string userId)
         {
             var currentUser = this.users.GetCurrentUser();
-            var friendUser = currentUser.Friends.Where(x => x.Id == userId).FirstOrDefault();
-            var userFriends = currentUser.Friends;
-            userFriends.Remove(friendUser);
-            friendUser.Friends.Remove(currentUser);
 
-            this.users.Edit(currentUser);
-            this.users.Edit(friendUser);
-            this.users.Save();
+            var recFriends = this.friends.All().Where(x => x.Receiver.Id == currentUser.Id && x.Sender.Id == userId);
+            var sendFriends = this.friends.All().Where(x => x.Sender.Id == currentUser.Id && x.Receiver.Id == userId);
+
+            var userFriend = recFriends.Concat(sendFriends).FirstOrDefault();
+
+            this.friends.HardDelete(userFriend);
+            this.friends.Save();
         }
 
         public void RemovePhoto()
@@ -186,11 +197,24 @@ namespace EventManager.Services.Data
             return currentUser.Email;
         }
 
+        // TODO: To delete this very bad function and implement logic only that I need!!!
         public ApplicationUser User(string userId)
         {
             var user = this.users.GetAllUsers().Where(x => x.Id == userId).FirstOrDefault();
 
             return user;
+        }
+
+        public IList<Friends> PendingUsers()
+        {
+            var currentUser = this.users.GetCurrentUser();
+
+            var recFriends = this.friends.All().Where(x => x.Receiver.Id == currentUser.Id && x.Status == false);
+            var sendFriends = this.friends.All().Where(x => x.Sender.Id == currentUser.Id && x.Status == false);
+
+            var userFriends = recFriends.Concat(sendFriends).ToList();
+
+            return userFriends;
         }
     }
 }

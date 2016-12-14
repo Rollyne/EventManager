@@ -100,18 +100,20 @@ namespace EventManager.Web.Controllers
                 model.IsCreator = false;
             }
 
-            if (this.date.DatesForThisEvent(id).Where(x => x.Creator.Id == this.user.CurrentUserId()).Any())
+            var myDate = this.date.DatesForThisEvent(id).Where(x => x.Creator.Id == this.user.CurrentUserId()).FirstOrDefault();
+            if (myDate != null)
             {
                 model.IsDateAdded = true;
+                model.MyDateId = myDate.Id;
             }
             else
             {
                 model.IsDateAdded = false;
             }
 
-            model.AttendersCount = currentEvent.Users.Count;
+            model.AttendersCount = this.user.FriendsByName(this.user.CurrentUserId()).Count();
             model.Attenders = new List<Attenders>();
-            foreach (var item in currentEvent.Users)
+            foreach (var item in this.user.FriendsByName(this.user.CurrentUserId()))
             {
                 model.Attenders.Add(new Attenders { Name = item.Name, PhotoPath = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png" });
             }
@@ -184,6 +186,67 @@ namespace EventManager.Web.Controllers
             }
 
             return this.RedirectToAction("Event", new { id = id });
+        }
+
+        [HttpGet]
+        public ActionResult EditEvent(int id)
+        {
+            var currentEvent = this._event.FindEventById(id);
+
+            var model = new CreateEventViewModel();
+
+            model.Id = id;
+            model.Destination = currentEvent.Destination;
+            model.Content = currentEvent.Content;
+
+            model.Images = new List<ImageAndTitle>();
+            foreach (var item in this._event.ImageFilePaths(id))
+            {
+
+                var imagePath = item.Replace('\\', '/');
+                imagePath = "../.." + imagePath.Remove(0, imagePath.IndexOf(@"/Images/"));
+
+                var slashIndex = item.LastIndexOf("\\");
+                var dotIndex = item.LastIndexOf(".");
+                var length = dotIndex - slashIndex;
+
+                if (item.Substring(slashIndex + 1, length - 1) == "Banner123")
+                {
+                    model.BannerPath = imagePath;
+                }
+                else
+                {
+                    var imageName = item.Substring(slashIndex + 1, length - 1);
+                    Guid newGuid;
+                    if (Guid.TryParse(imageName, out newGuid))
+                    {
+                        imageName = string.Empty;
+                    }
+
+                    model.Images.Add(new ImageAndTitle
+                    {
+                        Title = imageName.Replace("_", " "),
+                        OldTitle = imageName.Replace("_", " "),
+                        ImagePath = imagePath
+
+                    });
+                }
+            }
+
+            model.StartEventDate = ((DateTime)currentEvent.StartEventDate).ToString("M/d/yyyy", CultureInfo.InvariantCulture);
+            model.EndEventDate = ((DateTime)currentEvent.EndEventDate).ToString("M/d/yyyy", CultureInfo.InvariantCulture);
+            model.EventLength = currentEvent.EventLength;
+
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditEvent(CreateEventViewModel model)
+        {
+            this._event.EditEvent(model.Id, model.Destination, model.Content, model.GetStartEventDate, model.GetEndEventDate, model.EventLength, model.Images, model.BannerImage);
+
+            return this.RedirectToAction("Event", new { id = model.Id });
         }
     }
 }

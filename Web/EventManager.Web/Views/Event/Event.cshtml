@@ -23,6 +23,7 @@
                 <li id="inviteBtn" onclick="InviteBox('#inviteBtn','.inviteUser')">
                     <div class="inviteText">Invite</div>
                 </li>
+                <li id="editEventButton">@Html.ActionLink("Edit","EditEvent", new { id = Model.Id } )</li>
             }
             
             <li id="attendersBtn" onclick="scrollTo('attenders')">Attenders</li>

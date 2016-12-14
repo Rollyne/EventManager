@@ -1,0 +1,251 @@
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.dll.config
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.Models.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\MvcTemplate.Data.Models.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.JokesAndJokesCategories.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.OrganiserModelsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.FriendsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.ImagesAdded.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template\Source\Data\MvcTemplate.Data\obj\Debug\MvcTemplate.Data.Migrations.ImagesChanged.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.JokesAndJokesCategories.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.OrganiserModelsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.FriendsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ImagesAdded.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ImagesChanged.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.JokesAndJokesCategories.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.OrganiserModelsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.FriendsCreated.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ImagesAdded.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ImagesChanged.resources
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\ASP.NET-MVC-Template-Event\ASP.NET-MVC-Template\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.EventDateModelChanged.resources
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\EventManager\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.StartAndEndEventDateNull.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.RealUserNameAdded.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.EventLengthAdded.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.UserDescription.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.EventLengthNull.resources
+C:\Users\Jivko\Desktop\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.UserPhotoPathChanged.resources
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\migrations\EventManager - Copy\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToMany.resources
+C:\Users\Jivko\Desktop\migrations\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToManyEv_ApUsr.resources
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToMany.resources
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToManyEv_ApUsr.resources
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\EventManager\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToMany.resources
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToManyEv_ApUsr.resources
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Argus\Source\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.dll.config
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.Common.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EventManager.Data.Models.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.InitialCreate.resources
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToMany.resources
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.ManyToManyEv_ApUsr.resources
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.csproj.GenerateResource.Cache
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data\obj\Debug\EventManager.Data.Migrations.AcceptDeclineAdded.resources

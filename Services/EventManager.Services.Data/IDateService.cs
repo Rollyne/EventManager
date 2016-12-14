@@ -11,7 +11,7 @@ namespace EventManager.Services.Data
     {
         void AddDate(int eventId, DateTime startDate);
 
-        void EditDate(int dateId, DateTime startDate, DateTime endDate);
+        void EditDate(int dateId, DateTime startDate);
 
         void DeleteDate(EventDate date);
 

@@ -16,17 +16,20 @@ namespace EventManager.Services.Data
     public class EventService : IEventService
     {
         private readonly IDbRepository<Event> events;
+        private readonly IDbRepository<UserEvent> usersEvents;
         private readonly IUserRepository<ApplicationUser> users;
         private readonly IDateService dates;
 
         public EventService(
             IDbRepository<Event> events,
             IUserRepository<ApplicationUser> users,
-            IDateService dates)
+            IDateService dates,
+            IDbRepository<UserEvent> usersEvents)
         {
             this.events = events;
             this.users = users;
             this.dates = dates;
+            this.usersEvents = usersEvents;
         }
 
         public void AddImage(int eventId, HttpPostedFileBase image)
@@ -44,23 +47,30 @@ namespace EventManager.Services.Data
         public void AddUser(int eventId, ApplicationUser user)
         {
             var _event = this.events.GetById(eventId);
-            if (!_event.Users.Contains(user))
+            if (!usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id).Any())
             {
-                _event.Users.Add(user);
-                this.events.Edit(_event);
-                this.events.Save();
-
-                user.Events.Add(_event);
-
-                this.users.Edit(user);
-                this.users.Save();
+                usersEvents.Add(new UserEvent { User = user, Event = _event, Status = true });
+                usersEvents.Save();
             }
         }
 
-        public IList<Event> AllEvents()
+        public void UserAccept(int eventId, ApplicationUser user)
+        {
+
+            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id && x.Status == false).FirstOrDefault();
+            if (userEvent != null)
+            {
+                userEvent.Status = true;
+
+                usersEvents.Edit(userEvent);
+                usersEvents.Save();
+            }
+        }
+
+        public IList<Event> AllEvents(string userId)
         {
             //var allEvents = this.users.GetCurrentUser().Events.ToList();
-            var allEvents = this.events.All().ToList();
+            var allEvents = this.usersEvents.All().Where(x => x.User.Id == userId).Select(x => x.Event).ToList();
 
             return allEvents;
         }
@@ -101,7 +111,7 @@ namespace EventManager.Services.Data
 
             var structuredJson = new
             {
-                MaxPeople = currentEvent.Users.Count + 1, // TODO: Implement function for max people count;
+                MaxPeople = this.usersEvents.All().Where(x => x.Event.Id == eventId).Count() + 1, // TODO: Implement function for max people count;
                 DateAfter = new
                 {
                     Day = currentEvent.StartEventDate.Value.Day,
@@ -204,11 +214,14 @@ namespace EventManager.Services.Data
             }
 
             var user = this.users.GetCurrentUser();
-            user.Events.Add(_event);
+            this.AddUser(_event.Id, user);
 
-            this.users.Edit(user);
-            this.users.Save();
+            //var connection = this.usersEvents.All().Where(x => x.Event.Creator.Id == user.Id && x.User.Id == user.Id && x.Status == false).FirstOrDefault();
 
+            //connection.Status = true;
+
+            //this.usersEvents.Edit(connection);
+            //this.usersEvents.Save();
         }
 
         public void DeleteEvent(Event _event)
@@ -227,22 +240,67 @@ namespace EventManager.Services.Data
             }
         }
 
-        public void EditEvent(int eventId, string content, string destination)
+        public void EditEvent(int eventId, string destination, string content, DateTime? startDate, DateTime? endDate, int? length, IList<ImageAndTitle> images, HttpPostedFileBase bannerImage)
         {
+
             var _event = this.events.GetById(eventId);
-            if (!string.IsNullOrWhiteSpace(destination))
+
+            _event.Destination = destination;
+            _event.StartEventDate = startDate;
+            _event.EndEventDate = endDate;
+            _event.EventLength = length;
+
+            if (!string.IsNullOrWhiteSpace(content))
             {
-                _event.Destination = destination;
+                _event.Content = content;
             }
-            _event.Content = content;
+
             this.events.Edit(_event);
             this.events.Save();
+
+            this.CalculateEventTime(_event.Id);
+
+            if (bannerImage != null)
+            {
+                this.DeleteImage(eventId, "Banner123.png");
+                var bannerName = string.Format("{0}.png", "Banner123");
+                var bannerFullPath = Path.Combine(_event.ImagesFilePath, bannerName);
+                bannerImage.SaveAs(bannerFullPath);
+            }
+
+            foreach (var item in images)
+            {
+                if (item.Image != null)
+                {
+                    if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        string oldTitle = string.IsNullOrEmpty(item.OldTitle) ? item.ImagePath.Substring(item.OldTitle.LastIndexOf('/')) : string.Format("{0}.png", item.OldTitle.Replace(" ", "_"));
+                        this.DeleteImage(eventId, oldTitle);
+                    }
+
+                    string imageName;
+                    if (string.IsNullOrEmpty(item.Title))
+                    {
+                        imageName = string.Format("{0}.png", Guid.NewGuid().ToString());
+                    }
+                    else
+                    {
+                        imageName = string.Format("{0}.png", item.Title.Replace(" ", "_"));
+                    }
+
+                    var imageFullPath = Path.Combine(_event.ImagesFilePath, imageName);
+                    if (item.Image != null)
+                    {
+                        item.Image.SaveAs(imageFullPath);
+                    }
+                }
+            }
         }
 
-        public IList<Event> FindEventByDestination(string destination)
+        public IList<Event> FindEventByDestination(string destination, string userId)
         {
             // x => x.Destination.Contains(destination)
-            var eventsByDest = this.AllEvents().Where(x => x.Destination == destination).ToList();
+            var eventsByDest = this.AllEvents(userId).Where(x => x.Destination == destination).ToList();
 
             return eventsByDest;
         }
@@ -250,7 +308,7 @@ namespace EventManager.Services.Data
         public Event FindEventById(int id)
         {
             // x => x.Destination.Contains(destination)
-            var eventById = this.AllEvents().Where(x => x.Id == id).FirstOrDefault();
+            var eventById = this.events.All().Where(x => x.Id == id).FirstOrDefault();
 
             return eventById;
         }
@@ -263,33 +321,37 @@ namespace EventManager.Services.Data
             return imagePaths;
         }
 
-        public IList<Event> NotOwnedEvents()
+        public IList<Event> NotOwnedEvents(string userId)
         {
-            var allEvents = this.AllEvents();
-            var currentUser = this.users.GetCurrentUser();
-            var notOwnedEvents = allEvents.Where(x => (x.Creator != currentUser && x.Users.Any(z => z.Id == currentUser.Id))).ToList();
+            var notOwnedEvents = this.usersEvents.All().Where(x => x.User.Id == userId && x.Event.Creator.Id != userId && x.Status == true);
 
-            return notOwnedEvents;
+            return notOwnedEvents.Select(x => x.Event).ToList();
         }
 
-        public IList<Event> OwnedEvents()
+        public IList<Event> OwnedEvents(string userId)
         {
-            var allEvents = this.AllEvents();
-            var currentUser = this.users.GetCurrentUser();
-            var ownedEvents = allEvents.Where(x => x.Creator == currentUser).ToList();
+            var ownedEvents = this.usersEvents.All().Where(x => x.Event.Creator.Id == userId);
 
-            return ownedEvents;
+            return ownedEvents.Select(x => x.Event).ToList();
         }
 
         public void RemoveUser(int eventId, ApplicationUser user)
         {
-            var _event = this.events.GetById(eventId);
-            if (_event.Users.Contains(user))
+            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id).FirstOrDefault();
+            if (userEvent != null)
             {
-                _event.Users.Remove(user);
-                this.events.Edit(_event);
-                this.events.Save();
+                usersEvents.Delete(userEvent);
+                usersEvents.Save();
             }
+        }
+
+        public IList<UserEvent> PendingEvents()
+        {
+            var currentUser = this.users.GetCurrentUser();
+
+            var pendingEvents = this.usersEvents.All().Where(x => x.User.Id == currentUser.Id && x.Status == false);
+
+            return pendingEvents.ToList();
         }
     }
 }

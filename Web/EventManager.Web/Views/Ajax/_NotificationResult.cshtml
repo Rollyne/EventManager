@@ -1,0 +1,50 @@
+﻿@model EventManager.Web.ViewModels.UserPage.NotificationViewModel
+
+
+<h3>Notifications <span class="hasNotifAm">@Model.PendingsCount</span></h3>
+
+<div class="notificationItem eventNotification">
+    @foreach (var item in Model.PendingEvents)
+    {
+        <div class="notifTitle">
+            <a class="notifLink" href="">@item.InvitorName</a> invited you to an event
+        </div>
+        <div class="notifEventDetails">
+            <a href="">
+                <div class="notifEventPic" style="background-image: url(@item.ImagePath)"></div>
+            </a>
+
+            <div class="notifEventName">
+                <a class="notifLink" href="">@item.Name</a>
+            </div>
+        </div>
+        <div class="notifOptions">
+            <form>
+                <input type="submit" value="Accept" class="inviteAccept" />
+            </form>
+            <form>
+                <input type="submit" value="Decline" class="inviteDecline" />
+            </form>
+        </div>
+    }
+</div>
+<div class="notificationItem friendNotification">
+    @foreach (var item in Model.PendingUsers)
+    {
+        <div class="friendDetails">
+            <a href="">
+                <div class="notifUserPic" style="background-image: url(@item.PhotoPath)"></div>
+            </a>
+
+            <div><a class="notifLink" href="">@item.Name</a> requested a friendship</div>
+        </div>
+        <div class="notifOptions">
+            <form>
+                <input type="submit" value="Accept" class="inviteAccept" />
+            </form>
+            <form>
+                <input type="submit" value="Decline" class="inviteDecline" />
+            </form>
+        </div>
+    }
+</div>

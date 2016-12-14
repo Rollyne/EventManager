@@ -19,5 +19,10 @@ namespace EventManager.Web.ViewModels.CrEvent
         public HttpPostedFileBase Image { get; set; }
 
         public string Title { get; set; }
+
+        public string OldTitle { get; set; }
+
+
+        public string ImagePath { get; set; }
     }
 }

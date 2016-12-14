@@ -58,6 +58,11 @@ body {
     background-color: rgba(0,0,0,0.1);
 }
 
+#editEventButton a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+}
 
 
 .inviteText {

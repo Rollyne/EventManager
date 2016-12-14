@@ -15,6 +15,7 @@
 
         <script src="../../Scripts/CustomScripts/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../../Scripts/CustomScripts/validation.js"></script>
+        <script type="text/javascript" src="../../Scripts/jquery.unobtrusive-ajax.js"></script>
         @Scripts.Render("~/bundles/scriptScript")
         @Scripts.Render("~/bundles/sideBarScript")
         @Styles.Render("~/Content/globalStyle")
@@ -51,8 +52,8 @@
     <body>
         <div class="se-pre-con"></div>
         <div id="sidebarToggler" onclick="Dropdowner('sidebarToggler', 'mainHeader', 'headerContent') ">
-        <svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+            <svg version="1.1" id="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
 <g id="Layer_3">
 </g>
 <g id="Layer_4">
@@ -65,43 +66,130 @@
 		c-9,0-16.3,7.3-16.3,16.3c0,9,7.3,16.3,16.3,16.3c9,0,16.3-7.3,16.3-16.3C40.5,15.2,33.2,7.9,24.2,7.9z" />
 <path class="st4" d="M47.8,27.4H6.3v-3.1H48C48,24.2,48,25.7,47.8,27.4z" />
 </g>
-                </svg>
-        </div>
+</svg>
+</div>
+            
         <header id="mainHeader">
+
+            <div id="notification">
+
+                <svg id="notificationIcon" class="notificationDefault" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                <filter id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" /> <!-- stdDeviation is how much to blur -->
+                <feOffset dx="2" dy="2" result="offsetblur" /> <!-- how much to offset -->
+                <feMerge>
+                <feMergeNode /> <!-- this contains the offset blurred image -->
+                <feMergeNode in="SourceGraphic" /> <!-- this contains the element that the filter is applied to -->
+            </feMerge>
+        </filter>
+<g>
+                <g id="notifications-none">
+                <path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75    c0-79.05-53.55-142.8-127.5-160.65V38.25C293.25,17.85,275.4,0,255,0c-20.4,0-38.25,17.85-38.25,38.25V56.1    c-73.95,17.85-127.5,81.6-127.5,160.65V357l-51,51v25.5h433.5V408L420.75,357z M369.75,382.5h-229.5V216.75    C140.25,153,191.25,102,255,102s114.75,51,114.75,114.75V382.5z" />
+	</g>
+</g>
+                    <g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                @using (Ajax.BeginForm("Notifications", "Ajax",
+                 new AjaxOptions
+                 {
+                     HttpMethod = "POST",
+                     UpdateTargetId = "notificationList",
+                     InsertionMode = InsertionMode.Replace,
+                 }))
+                {
+                    <input type="submit" id="ajaxNotif" hidden>
+                    <script>
+                        $("#notificationIcon").keyup(function() {
+                            $("#ajaxNotif").click();
+                        });
+                    </script>
+                }
+
+                <div id="notificationList">
+
+                </div>
+            </div>
+
             <div id="headerContent" class='@(ViewBag.Page == "SearchResult" ? "searchPage" : "")'>
                 <div id="searchWrapper">
                     <form action="@Url.Action("SearchResult", "UserPage")" method="get">
                         <input type="search" name="search" placeholder="Search.." id="searchContent">
                         <input type="submit" id="buttonSearchIcon" value="">
                     </form>
-                </div>
-                <ul id="sideBarMenu">
-                    <li class="menuButton">@Html.ActionLink("My Events", "UserProfile", "UserPage", new { }, new { @class = (ViewBag.Page == "UserProfile" ? "selectedMenuButton" : ""), id = "menuMyEvents" })</li>
-                    <li class="menuButton">@Html.ActionLink("Create Event", "CreateEvent", "Event", new { }, new { @class = (ViewBag.Page == "CreateEvent" ? "selectedMenuButton" : ""), id = "menuCreateEvent" })</li>
-                    <li class="menuButton">@Html.ActionLink("Events", "EventList", "UserPage", new { }, new { @class = (ViewBag.Page == "EventList" ? "selectedMenuButton" : ""), id = "menuEvents" })</li>
-                    <li class="menuUnderline">
-                        <div class="menuUnderlineContent"></div>
-                    </li>
-                    <li class="menuButton">@Html.ActionLink("Friends", "FriendList", "UserPage", new { }, new { @class = (ViewBag.Page == "FriendList" ? "selectedMenuButton" : ""), id = "menuFriends" })</li>
-                    <li class="menuButton">@Html.ActionLink("My Profile", "ChangeUserInfo", "UserPage", new { }, new { @class = (ViewBag.Page == "MyProfile" ? "selectedMenuButton" : ""), id = "menuMyProfile" })</li>
-                    <li class="menuButton">
-                        @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm" }))
-                        {
-                            @Html.AntiForgeryToken()
 
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()" id="menuLogout">Logout</a></li>
-                            </ul>
-                        }
-                    </li>
-                </ul>
-                <footer id="sideBarFooter">
-                    <a href="@Url.Action("UserProfile", "UserPage")" id="footerUserDetails">
-                        <div id="footerUserDetailsProfilePicture" style='background-image: url(@ViewBag.PhotoPath);'></div>
-                        <div id="footerUsername">@ViewBag.Name</div>
-                </a>
-            </footer>
-        </div>
+                    @using (Ajax.BeginForm("SearchResult", "Ajax",
+                     new AjaxOptions
+                     {
+                         HttpMethod = "POST",
+                         UpdateTargetId = "ajax",
+                         InsertionMode = InsertionMode.Replace,
+                     }))
+                    {
+                        <input type="hidden" name="search" id="ajaxContent">
+                        <input type="submit" id="ajaxSearch" hidden>
+                    }
+                </div>
+
+                <div id="ajax" class="searchDrop dropShow">
+
+                </div>
+
+                    <ul id="sideBarMenu">
+                        <li class="menuButton">@Html.ActionLink("My Events", "UserProfile", "UserPage", new { }, new { @class = (ViewBag.Page == "UserProfile" ? "selectedMenuButton" : ""), id = "menuMyEvents" })</li>
+                        <li class="menuButton">@Html.ActionLink("Create Event", "CreateEvent", "Event", new { }, new { @class = (ViewBag.Page == "CreateEvent" ? "selectedMenuButton" : ""), id = "menuCreateEvent" })</li>
+                        <li class="menuButton">@Html.ActionLink("Events", "EventList", "UserPage", new { }, new { @class = (ViewBag.Page == "EventList" ? "selectedMenuButton" : ""), id = "menuEvents" })</li>
+                        <li class="menuUnderline">
+                            <div class="menuUnderlineContent"></div>
+                        </li>
+                        <li class="menuButton">@Html.ActionLink("Friends", "FriendList", "UserPage", new { }, new { @class = (ViewBag.Page == "FriendList" ? "selectedMenuButton" : ""), id = "menuFriends" })</li>
+                        <li class="menuButton">@Html.ActionLink("My Profile", "ChangeUserInfo", "UserPage", new { }, new { @class = (ViewBag.Page == "MyProfile" ? "selectedMenuButton" : ""), id = "menuMyProfile" })</li>
+                        <li class="menuButton">
+                            @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()" id="menuLogout">Logout</a></li>
+                                </ul>
+                            }
+                        </li>
+                    </ul>
+                    <footer id="sideBarFooter">
+                        <a href="@Url.Action("UserProfile", "UserPage")" id="footerUserDetails">
+                            <div id="footerUserDetailsProfilePicture" style='background-image: url(@ViewBag.PhotoPath);'></div>
+                            <div id="footerUsername">@ViewBag.Name</div>
+                        </a>
+                    </footer>
+                </div>
     </header>
 
     @RenderBody()

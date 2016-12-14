@@ -24,6 +24,10 @@
 
         public IDbSet<Comment> Comments { get; set; }
 
+        public IDbSet<Friends> Friends { get; set; }
+
+        public IDbSet<UserEvent> UsersEvents { get; set; }
+
         //public IDbSet<ApplicationUser> User { get; set; }
 
         public static ApplicationDbContext Create()
@@ -41,14 +45,6 @@
         {
             Database.SetInitializer(
                 new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
-
-            modelBuilder.Entity<ApplicationUser>()
-            .HasMany(up => up.Friends)
-            .WithMany();
-
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(up => up.Events)
-                .WithMany(ev => ev.Users);
 
             base.OnModelCreating(modelBuilder);
         }

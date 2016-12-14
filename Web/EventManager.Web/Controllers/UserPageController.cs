@@ -1,4 +1,5 @@
-﻿using EventManager.Services.Data;
+﻿using AutoMapper;
+using EventManager.Services.Data;
 using EventManager.Web.Infrastructure.Mapping;
 using EventManager.Web.ViewModels.UserPage;
 using Microsoft.AspNet.Identity;
@@ -16,6 +17,7 @@ namespace EventManager.Web.Controllers
     {
         private readonly IEventService events;
         private readonly IUserService user;
+
         public UserPageController(IEventService events, IUserService user)
         {
             this.events = events;
@@ -34,8 +36,21 @@ namespace EventManager.Web.Controllers
                 System.IO.File.Copy(this.Server.MapPath("~/Images/ApplicationImages/UserImages/NoPhoto.png"), this.Server.MapPath("~/Images/ApplicationImages/UserImages/" + User.Identity.GetUserId().ToString() + "/Photo.png"));
             }
 
-            var ownedEvents = this.events.OwnedEvents();
-            var ownedEventsView = this.Mapper.Map<IList<EventViewModel>>(ownedEvents);
+            var ownedEvents = this.events.OwnedEvents(this.user.CurrentUserId());
+            //var ownedEventsView = this.Mapper.Map<IList<EventViewModel>>(ownedEvents);
+
+            IList<EventViewModel> ownedEventsView = new List<EventViewModel>();
+
+            foreach (var item in ownedEvents)
+            {
+                ownedEventsView.Add(new EventViewModel
+                {
+                    Id = item.Id,
+                    Destination = item.Destination,
+                    Content = item.Content,
+                    StartEventDate = (DateTime)item.StartEventDate
+                });
+            }
 
             foreach (var item in ownedEventsView)
             {
@@ -67,9 +82,9 @@ namespace EventManager.Web.Controllers
 
 
             userDetails.BannerFileName = photoPath;
-            userDetails.CreatedEvents = this.events.OwnedEvents().Count;
-            userDetails.AttendedEvents = this.events.NotOwnedEvents().Count;
-            userDetails.FriendsCount = this.user.FriendsByName().Count;
+            userDetails.CreatedEvents = this.events.OwnedEvents(this.user.CurrentUserId()).Count;
+            userDetails.AttendedEvents = this.events.NotOwnedEvents(this.user.CurrentUserId()).Count;
+            userDetails.FriendsCount = this.user.FriendsByName(User.Identity.GetUserId().ToString()).Count;
 
             var model = new UserPageViewModel
             {
@@ -120,7 +135,7 @@ namespace EventManager.Web.Controllers
         {
             var model = new FriendListViewModel();
 
-            var friends = this.user.FriendsByName();
+            var friends = this.user.FriendsByName(User.Identity.GetUserId());
 
             model.Friends = new List<Friend>();
             foreach (var item in friends)
@@ -130,9 +145,9 @@ namespace EventManager.Web.Controllers
                     Id = item.Id,
                     UserName = item.Name,
                     PhotoFileName = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png",
-                    AttendedEvents = item.Events.Where(x => x.Creator != item).Count(),
-                    CreatedEvents = item.Events.Where(x => x.Creator == item).Count(),
-                    FriendsCount = item.Friends.Count
+                    AttendedEvents = this.events.NotOwnedEvents(item.Id).Count(),
+                    CreatedEvents = this.events.OwnedEvents(item.Id).Count(),
+                    FriendsCount = this.user.FriendsByName(item.Id).Count()
                 });
             }
 
@@ -142,7 +157,7 @@ namespace EventManager.Web.Controllers
         [HttpGet]
         public ActionResult EventList()
         {
-            var ownedEvents = this.events.OwnedEvents();
+            var ownedEvents = this.events.OwnedEvents(this.user.CurrentUserId());
             var ownedEventsView = this.Mapper.Map<IList<EventViewModel>>(ownedEvents);
 
             foreach (var item in ownedEventsView)
@@ -159,7 +174,7 @@ namespace EventManager.Web.Controllers
                 }
             }
 
-            var notOwnedEvents = this.events.NotOwnedEvents();
+            var notOwnedEvents = this.events.NotOwnedEvents(this.user.CurrentUserId());
             var notOwnedEventsView = this.Mapper.Map<IList<EventViewModel>>(notOwnedEvents);
 
             foreach (var item in notOwnedEventsView)
@@ -189,7 +204,7 @@ namespace EventManager.Web.Controllers
         {
             var model = new SearchViewModel();
 
-            var users = this.user.FindUserByName(search).Where(x => x.Id != this.user.CurrentUserId() && !this.user.FriendsByName().Where(y => x.Id == y.Id).Any()).ToList();
+            var users = this.user.FindUserByName(search).Where(x => x.Id != this.user.CurrentUserId() && !this.user.FriendsByName(this.user.CurrentUserId()).Where(y => x.Id == y.Id).Any()).ToList();
 
             model.Users = new List<Friend>();
             foreach (var item in users)
@@ -199,9 +214,9 @@ namespace EventManager.Web.Controllers
                     Id = item.Id,
                     UserName = item.Name,
                     PhotoFileName = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png",
-                    AttendedEvents = item.Events.Where(x => x.Creator != item).Count(),
-                    CreatedEvents = item.Events.Where(x => x.Creator == item).Count(),
-                    FriendsCount = item.Friends.Count
+                    AttendedEvents = this.events.NotOwnedEvents(item.Id).Count(),
+                    CreatedEvents = this.events.OwnedEvents(item.Id).Count(),
+                    FriendsCount = this.user.FriendsByName(this.user.CurrentUserId()).Count()
                 });
             }
 
@@ -215,14 +230,14 @@ namespace EventManager.Web.Controllers
                     Id = item.Id,
                     UserName = item.Name,
                     PhotoFileName = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png",
-                    AttendedEvents = item.Events.Where(x => x.Creator != item).Count(),
-                    CreatedEvents = item.Events.Where(x => x.Creator == item).Count(),
-                    FriendsCount = item.Friends.Count
+                    AttendedEvents = this.events.NotOwnedEvents(item.Id).Count(),
+                    CreatedEvents = this.events.OwnedEvents(item.Id).Count(),
+                    FriendsCount = this.user.FriendsByName(item.Id).Count()
                 });
             }
 
             var userId = this.user.CurrentUserId();
-            var events = this.events.FindEventByDestination(search).Where(x => x.Creator.Id == userId || (x.Users.Any() == true ? x.Users.Where(y => y.Id == userId).Any() : false)).ToList();
+            var events = this.events.FindEventByDestination(search, userId);
 
             var eventsView = this.Mapper.Map<IList<EventViewModel>>(events);
 
@@ -282,11 +297,10 @@ namespace EventManager.Web.Controllers
                 photoPath = null;
             }
 
-
             model.BannerFileName = photoPath;
-            model.CreatedEvents = user.Events.Where(x => x.Creator != user).Count();
-            model.AttendedEvents = user.Events.Where(x => x.Creator == user).Count();
-            model.FriendsCount = user.Friends.Count;
+            model.CreatedEvents = this.events.OwnedEvents(user.Id).Count();
+            model.AttendedEvents = this.events.NotOwnedEvents(user.Id).Count();
+            model.FriendsCount = this.user.FriendsByName(user.Id).Count();
 
             return this.View(model);
         }

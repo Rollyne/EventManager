@@ -77,11 +77,43 @@ $(function () {
 
     $('#searchContent').focus(function () {
         $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.9)');
+        var keyword = $("#searchContent").val();
+        if (keyword.length >= 3) {
+            $("#ajaxContent").val(keyword);
+            $("#ajaxSearch").click();
+        }
+        else {
+            $("#ajax").children().remove();
+        }
     });
     $('#searchContent').blur(function () {
         $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.4)');
+        $('#ajax').children().remove();
     });
 });
+//AJAX ON KEYUP
+$(function () {
+    $("#searchContent").keyup(function () {
+        var keyword = $("#searchContent").val();
+        if (keyword.length >= 3) {
+            $("#ajaxContent").val(keyword);
+            $("#ajaxSearch").click();
+        }
+        else {
+            $("#ajax").children().remove();
+        }
+    });
+});
+
+//USELESS HEADERS
+//$(function () {
+//    if ($('#searchUser').length == 0) {
+//        $('#searchUserHead').hide();
+//    }
+//    if ($('#searchEvent').length == 0) {
+//        $('#searchEventHead').hide();
+//    }
+//});
 /*NOTIFICATION DISPLAY*/
 $(function () {
     let $icon = $('#notificationIcon'),

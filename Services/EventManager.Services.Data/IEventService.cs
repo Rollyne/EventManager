@@ -13,7 +13,7 @@ namespace EventManager.Services.Data
     {
         void CreateEvent(string destination, string content, DateTime? startDate, DateTime? endDate, int? length, IList<ImageAndTitle> images, HttpPostedFileBase bannerImage);
 
-        void EditEvent(int eventId, string content, string destination);
+        void EditEvent(int eventId, string destination, string content, DateTime? startDate, DateTime? endDate, int? length, IList<ImageAndTitle> images, HttpPostedFileBase bannerImage);
 
         void DeleteEvent(Event _event);
 
@@ -23,21 +23,24 @@ namespace EventManager.Services.Data
 
         IList<string> ImageFilePaths(int eventId);
 
-        IList<Event> AllEvents();
+        IList<Event> AllEvents(string userId);
 
-        IList<Event> OwnedEvents();
+        IList<Event> OwnedEvents(string userId);
 
-        IList<Event> NotOwnedEvents();
+        IList<Event> NotOwnedEvents(string userId);
 
-        IList<Event> FindEventByDestination(string destination);
+        IList<Event> FindEventByDestination(string destination, string userId);
 
         Event FindEventById(int id);
 
         void AddUser(int eventId, ApplicationUser user);
 
+        void UserAccept(int eventId, ApplicationUser user);
+
         void RemoveUser(int eventId, ApplicationUser user);
 
         void CalculateEventTime(int eventId);
 
+        IList<UserEvent> PendingEvents();
     }
 }
