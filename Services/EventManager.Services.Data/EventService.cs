@@ -49,15 +49,15 @@ namespace EventManager.Services.Data
             var _event = this.events.GetById(eventId);
             if (!usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id).Any())
             {
-                usersEvents.Add(new UserEvent { User = user, Event = _event, Status = true });
+                usersEvents.Add(new UserEvent { User = user, Event = _event });
                 usersEvents.Save();
             }
         }
 
-        public void UserAccept(int eventId, ApplicationUser user)
+        public void UserAccept(int eventId, string userId)
         {
 
-            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id && x.Status == false).FirstOrDefault();
+            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == userId && x.Status == false).FirstOrDefault();
             if (userEvent != null)
             {
                 userEvent.Status = true;
@@ -70,7 +70,7 @@ namespace EventManager.Services.Data
         public IList<Event> AllEvents(string userId)
         {
             //var allEvents = this.users.GetCurrentUser().Events.ToList();
-            var allEvents = this.usersEvents.All().Where(x => x.User.Id == userId).Select(x => x.Event).ToList();
+            var allEvents = this.usersEvents.All().Where(x => x.User.Id == userId && x.Status == true).Select(x => x.Event).ToList();
 
             return allEvents;
         }
@@ -216,12 +216,12 @@ namespace EventManager.Services.Data
             var user = this.users.GetCurrentUser();
             this.AddUser(_event.Id, user);
 
-            //var connection = this.usersEvents.All().Where(x => x.Event.Creator.Id == user.Id && x.User.Id == user.Id && x.Status == false).FirstOrDefault();
+            var connection = this.usersEvents.All().Where(x => x.Event.Creator.Id == user.Id && x.User.Id == user.Id && x.Status == false).FirstOrDefault();
 
-            //connection.Status = true;
+            connection.Status = true;
 
-            //this.usersEvents.Edit(connection);
-            //this.usersEvents.Save();
+            this.usersEvents.Edit(connection);
+            this.usersEvents.Save();
         }
 
         public void DeleteEvent(Event _event)
@@ -300,7 +300,7 @@ namespace EventManager.Services.Data
         public IList<Event> FindEventByDestination(string destination, string userId)
         {
             // x => x.Destination.Contains(destination)
-            var eventsByDest = this.AllEvents(userId).Where(x => x.Destination == destination).ToList();
+            var eventsByDest = this.AllEvents(userId).Where(x => x.Destination.ToLower().Contains(destination.ToLower())).ToList();
 
             return eventsByDest;
         }
@@ -330,14 +330,14 @@ namespace EventManager.Services.Data
 
         public IList<Event> OwnedEvents(string userId)
         {
-            var ownedEvents = this.usersEvents.All().Where(x => x.Event.Creator.Id == userId);
+            var ownedEvents = this.events.All().Where(x => x.Creator.Id == userId);
 
-            return ownedEvents.Select(x => x.Event).ToList();
+            return ownedEvents.ToList();
         }
 
-        public void RemoveUser(int eventId, ApplicationUser user)
+        public void RemoveUser(int eventId, string userId)
         {
-            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == user.Id).FirstOrDefault();
+            var userEvent = usersEvents.All().Where(x => x.Event.Id == eventId && x.User.Id == userId).FirstOrDefault();
             if (userEvent != null)
             {
                 usersEvents.Delete(userEvent);
@@ -352,6 +352,13 @@ namespace EventManager.Services.Data
             var pendingEvents = this.usersEvents.All().Where(x => x.User.Id == currentUser.Id && x.Status == false);
 
             return pendingEvents.ToList();
+        }
+
+        public IList<ApplicationUser> EventAttenders(int eventId)
+        {
+            var allAttenders = this.usersEvents.All().Where(x => x.Event.Id == eventId && x.Status == true).Select(x => x.User).ToList();
+
+            return allAttenders;
         }
     }
 }

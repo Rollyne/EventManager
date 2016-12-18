@@ -25,7 +25,11 @@ namespace EventManager.Web.Controllers
         {
             var model = new SearchViewModel();
 
-            var users = this.user.FindUserByName(search).Where(x => x.Id != this.user.CurrentUserId() && !this.user.FriendsByName(this.user.CurrentUserId()).Where(y => x.Id == y.Id).Any()).ToList();
+            var users = this.user.
+                FindUserByName(search).
+                Where(x => x.Id != this.user.CurrentUserId() && !this.user.FriendsByName(this.user.CurrentUserId()).
+                Where(y => x.Id == y.Id).Any()).ToList().
+                Take(3);
 
             model.Users = new List<Friend>();
             foreach (var item in users)
@@ -38,7 +42,7 @@ namespace EventManager.Web.Controllers
                 });
             }
 
-            var friends = this.user.FindFriendByName(search).Where(x => x.Id != this.user.CurrentUserId()).ToList();
+            var friends = this.user.FindFriendByName(search).Where(x => x.Id != this.user.CurrentUserId()).ToList().Take(3);
 
             model.Friends = new List<Friend>();
             foreach (var item in friends)
@@ -52,9 +56,21 @@ namespace EventManager.Web.Controllers
             }
 
             var userId = this.user.CurrentUserId();
-            var events = this.events.FindEventByDestination(search, userId);
+            var events = this.events.FindEventByDestination(search, userId).Take(3);
 
-            var eventsView = this.Mapper.Map<IList<EventViewModel>>(events);
+            //var eventsView = this.Mapper.Map<IList<EventViewModel>>(events);
+            IList<EventViewModel> eventsView = new List<EventViewModel>();
+
+            foreach (var item in events)
+            {
+                eventsView.Add(new EventViewModel
+                {
+                    Id = item.Id,
+                    Destination = item.Destination,
+                    Content = item.Content,
+                    StartEventDate = (DateTime)item.StartEventDate
+                });
+            }
 
             foreach (var item in eventsView)
             {
@@ -81,6 +97,7 @@ namespace EventManager.Web.Controllers
 
             model.PendingsCount = this.events.PendingEvents().Count() + this.user.PendingUsers().Count();
 
+            model.PendingEvents = new List<Event>();
             foreach (var item in this.events.PendingEvents())
             {
                 var imagePath = this.events.ImageFilePaths(item.Event.Id).Where(x => !x.Contains("Banner123.jpg")).FirstOrDefault();
@@ -98,13 +115,15 @@ namespace EventManager.Web.Controllers
                 model.PendingEvents.Add(new Event
                 {
                     ConnectionId = item.Id,
-                    InvitorName = item.User.Name,
+                    InvitorName = item.Event.Creator.Name,
+                    InvitorId = item.Event.Creator.Id,
                     Id = item.Event.Id,
                     Name = item.Event.Destination,
                     ImagePath = imagePath
                 });
             }
 
+            model.PendingUsers = new List<User>();
             foreach (var item in this.user.PendingUsers())
             {
                 var user = item.Receiver.Id == this.user.CurrentUserId() ? item.Sender : item.Receiver;

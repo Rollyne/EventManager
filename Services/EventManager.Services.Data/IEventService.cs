@@ -35,12 +35,14 @@ namespace EventManager.Services.Data
 
         void AddUser(int eventId, ApplicationUser user);
 
-        void UserAccept(int eventId, ApplicationUser user);
+        void UserAccept(int eventId, string userId);
 
-        void RemoveUser(int eventId, ApplicationUser user);
+        void RemoveUser(int eventId, string userId);
 
         void CalculateEventTime(int eventId);
 
         IList<UserEvent> PendingEvents();
+
+        IList<ApplicationUser> EventAttenders(int eventId);
     }
 }

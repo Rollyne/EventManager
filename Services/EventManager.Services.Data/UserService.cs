@@ -25,7 +25,7 @@ namespace EventManager.Services.Data
         {
             var newUser = this.users.GetAllUsers().Where(x => x.Id == userId).FirstOrDefault();
             var currentUser = this.users.GetCurrentUser();
-            this.friends.Add(new Friends { Sender = currentUser, Receiver = newUser, Status = true });
+            this.friends.Add(new Friends { Sender = currentUser, Receiver = newUser });
             this.friends.Save();
         }
 
@@ -210,11 +210,8 @@ namespace EventManager.Services.Data
             var currentUser = this.users.GetCurrentUser();
 
             var recFriends = this.friends.All().Where(x => x.Receiver.Id == currentUser.Id && x.Status == false);
-            var sendFriends = this.friends.All().Where(x => x.Sender.Id == currentUser.Id && x.Status == false);
 
-            var userFriends = recFriends.Concat(sendFriends).ToList();
-
-            return userFriends;
+            return recFriends.ToList();
         }
     }
 }

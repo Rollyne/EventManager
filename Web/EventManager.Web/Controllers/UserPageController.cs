@@ -158,7 +158,20 @@ namespace EventManager.Web.Controllers
         public ActionResult EventList()
         {
             var ownedEvents = this.events.OwnedEvents(this.user.CurrentUserId());
-            var ownedEventsView = this.Mapper.Map<IList<EventViewModel>>(ownedEvents);
+            //var ownedEventsView = this.Mapper.Map<IList<EventViewModel>>(ownedEvents);
+
+            IList<EventViewModel> ownedEventsView = new List<EventViewModel>();
+
+            foreach (var item in ownedEvents)
+            {
+                ownedEventsView.Add(new EventViewModel
+                {
+                    Id = item.Id,
+                    Destination = item.Destination,
+                    Content = item.Content,
+                    StartEventDate = (DateTime)item.StartEventDate
+                });
+            }
 
             foreach (var item in ownedEventsView)
             {
@@ -175,7 +188,20 @@ namespace EventManager.Web.Controllers
             }
 
             var notOwnedEvents = this.events.NotOwnedEvents(this.user.CurrentUserId());
-            var notOwnedEventsView = this.Mapper.Map<IList<EventViewModel>>(notOwnedEvents);
+            //var notOwnedEventsView = this.Mapper.Map<IList<EventViewModel>>(notOwnedEvents);
+
+            IList<EventViewModel> notOwnedEventsView = new List<EventViewModel>();
+
+            foreach (var item in notOwnedEvents)
+            {
+                notOwnedEventsView.Add(new EventViewModel
+                {
+                    Id = item.Id,
+                    Destination = item.Destination,
+                    Content = item.Content,
+                    StartEventDate = (DateTime)item.StartEventDate
+                });
+            }
 
             foreach (var item in notOwnedEventsView)
             {
@@ -239,7 +265,20 @@ namespace EventManager.Web.Controllers
             var userId = this.user.CurrentUserId();
             var events = this.events.FindEventByDestination(search, userId);
 
-            var eventsView = this.Mapper.Map<IList<EventViewModel>>(events);
+            //var eventsView = this.Mapper.Map<IList<EventViewModel>>(events);
+
+            IList<EventViewModel> eventsView = new List<EventViewModel>();
+
+            foreach (var item in events)
+            {
+                eventsView.Add(new EventViewModel
+                {
+                    Id = item.Id,
+                    Destination = item.Destination,
+                    Content = item.Content,
+                    StartEventDate = (DateTime)item.StartEventDate
+                });
+            }
 
             foreach (var item in eventsView)
             {
@@ -264,6 +303,14 @@ namespace EventManager.Web.Controllers
         public ActionResult AddFriend(string userId)
         {
             this.user.AddFriend(userId);
+
+            return this.RedirectToAction("UserProfile");
+        }
+
+        [HttpPost]
+        public ActionResult AcceptFriend(string userId)
+        {
+            this.user.AcceptFriend(userId);
 
             return this.RedirectToAction("UserProfile");
         }

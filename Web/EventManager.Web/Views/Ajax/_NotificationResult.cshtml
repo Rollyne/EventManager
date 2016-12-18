@@ -7,23 +7,23 @@
     @foreach (var item in Model.PendingEvents)
     {
         <div class="notifTitle">
-            <a class="notifLink" href="">@item.InvitorName</a> invited you to an event
+            <a class="notifLink" href="@Url.Action("UserDetails", "UserPage", new { userId = item.InvitorId })">@item.InvitorName</a> invited you to an event
         </div>
         <div class="notifEventDetails">
-            <a href="">
+            <a href="@Url.Action("Event", "Event", new { id = item.Id })">
                 <div class="notifEventPic" style="background-image: url(@item.ImagePath)"></div>
             </a>
 
             <div class="notifEventName">
-                <a class="notifLink" href="">@item.Name</a>
+                <a class="notifLink" href="@Url.Action("Event", "Event", new { id = item.Id })">@item.Name</a>
             </div>
         </div>
         <div class="notifOptions">
-            <form>
-                <input type="submit" value="Accept" class="inviteAccept" />
+            <form action="@Url.Action("AcceptEvent", "Event")" method="post">
+                <button type="submit" name="eventId" value="@item.Id" class="inviteAccept">Accept</button>
             </form>
-            <form>
-                <input type="submit" value="Decline" class="inviteDecline" />
+            <form action="@Url.Action("DeclineEvent", "Event")" method="post">
+                <button type="submit" name="eventId" value="@item.Id" class="inviteDecline">Decline</button>
             </form>
         </div>
     }
@@ -32,18 +32,18 @@
     @foreach (var item in Model.PendingUsers)
     {
         <div class="friendDetails">
-            <a href="">
+            <a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">
                 <div class="notifUserPic" style="background-image: url(@item.PhotoPath)"></div>
             </a>
 
-            <div><a class="notifLink" href="">@item.Name</a> requested a friendship</div>
+            <div><a class="notifLink" href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">@item.Name</a> requested a friendship</div>
         </div>
         <div class="notifOptions">
-            <form>
-                <input type="submit" value="Accept" class="inviteAccept" />
+            <form action="@Url.Action("AcceptFriend", "UserPage")" method="post">
+                <button type="submit" name="userId" value="@item.Id" class="inviteAccept">Accept</button>
             </form>
-            <form>
-                <input type="submit" value="Decline" class="inviteDecline" />
+            <form action="@Url.Action("RemoveFriend", "UserPage")" method="post">
+                <button type="submit" name="userId" value="@item.Id" class="inviteDecline">Decline</button>
             </form>
         </div>
     }

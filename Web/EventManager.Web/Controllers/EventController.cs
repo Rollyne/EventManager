@@ -111,9 +111,9 @@ namespace EventManager.Web.Controllers
                 model.IsDateAdded = false;
             }
 
-            model.AttendersCount = this.user.FriendsByName(this.user.CurrentUserId()).Count();
+            model.AttendersCount = this._event.EventAttenders(id).Count();
             model.Attenders = new List<Attenders>();
-            foreach (var item in this.user.FriendsByName(this.user.CurrentUserId()))
+            foreach (var item in this._event.EventAttenders(id))
             {
                 model.Attenders.Add(new Attenders { Name = item.Name, PhotoPath = "../../Images/ApplicationImages/UserImages/" + item.Id + "/Photo.png" });
             }
@@ -182,10 +182,35 @@ namespace EventManager.Web.Controllers
             if (user != null)
             {
                 _event.AddUser(id, user);
-                _event.CalculateEventTime(id);
             }
 
             return this.RedirectToAction("Event", new { id = id });
+        }
+
+        [HttpPost]
+        public ActionResult AcceptEvent(int eventId)
+        {
+            var userId = this.user.CurrentUserId();
+            if (!string.IsNullOrEmpty(userId))
+            {
+                _event.UserAccept(eventId, userId);
+                _event.CalculateEventTime(eventId);
+            }
+
+            return this.RedirectToAction("Event", new { id = eventId });
+        }
+
+        [HttpPost]
+        public ActionResult DeclineEvent(int eventId)
+        {
+            var userId = this.user.CurrentUserId();
+            if (!string.IsNullOrEmpty(userId))
+            {
+                _event.RemoveUser(eventId, userId);
+                _event.CalculateEventTime(eventId);
+            }
+
+            return this.RedirectToAction("UserProfile", "UserPage");
         }
 
         [HttpGet]
@@ -233,8 +258,8 @@ namespace EventManager.Web.Controllers
                 }
             }
 
-            model.StartEventDate = ((DateTime)currentEvent.StartEventDate).ToString("M/d/yyyy", CultureInfo.InvariantCulture);
-            model.EndEventDate = ((DateTime)currentEvent.EndEventDate).ToString("M/d/yyyy", CultureInfo.InvariantCulture);
+            model.StartEventDate = ((DateTime)currentEvent.StartEventDate).ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+            model.EndEventDate = ((DateTime)currentEvent.EndEventDate).ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
             model.EventLength = currentEvent.EventLength;
 
             return this.View(model);

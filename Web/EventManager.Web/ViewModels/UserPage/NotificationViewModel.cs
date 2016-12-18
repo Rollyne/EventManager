@@ -33,6 +33,8 @@ namespace EventManager.Web.ViewModels.UserPage
 
         public string InvitorName { get; set; }
 
+        public string InvitorId { get; set; }
+
         public string Name { get; set; }
 
         public string ImagePath { get; set; }

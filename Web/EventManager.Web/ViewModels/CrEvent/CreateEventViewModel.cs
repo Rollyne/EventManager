@@ -31,7 +31,12 @@ namespace EventManager.Web.ViewModels.CrEvent
         {
             get
             {
-                return startEventDate.ToString();
+                if (startEventDate == null)
+                {
+                    return string.Empty;
+                }
+
+                return ((DateTime)this.startEventDate).ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
             }
             set
             {
@@ -60,7 +65,12 @@ namespace EventManager.Web.ViewModels.CrEvent
         {
             get
             {
-                return endEventDate.ToString();
+                if (endEventDate == null)
+                {
+                    return string.Empty;
+                }
+
+                return ((DateTime)this.endEventDate).ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
             }
             set
             {

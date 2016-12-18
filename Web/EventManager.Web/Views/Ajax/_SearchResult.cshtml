@@ -6,7 +6,7 @@
 <div  id="searchUser" class="searchUser">
     @foreach (var item in Model.Users)
     {
-        <a>
+        <a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">
             <div class="searchUserPic" style="background-image: url(@item.PhotoFileName)"></div>
             <div class="searchUserName">@item.UserName</div>
         </a>
@@ -19,7 +19,7 @@
 <div id="searchEvent" class="searchUser">
     @foreach (var item in Model.Events)
     {
-        <a>
+        <a href="@Url.Action("Event", "Event", new { id = item.Id })">
             <div class="searchEventPic" style="background-image: url(@item.ImagesFilePath)"></div>
             <div class="searchEventTitle">@item.Destination</div>
         </a>
@@ -32,7 +32,7 @@
 <div  id="searchFriend" class="searchUser">
     @foreach (var item in Model.Friends)
     {
-        <a>
+        <a href="@Url.Action("UserDetails", "UserPage", new { userId = item.Id })">
             <div class="searchUserPic" style="background-image: url(@item.PhotoFileName)"></div>
             <div class="searchUserName">@item.UserName</div>
         </a>
