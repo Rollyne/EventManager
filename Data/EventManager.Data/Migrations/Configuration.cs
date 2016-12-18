@@ -24,7 +24,7 @@
 
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
-            var user = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName, Name = "User" };
+            var user = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName, Name = "User", Id = "c977f032-4a71-48d3-bb4e-aacf93e3e120" };
             userManager.Create(user, AdministratorPassword);
 
             //if (!context.Roles.Any())

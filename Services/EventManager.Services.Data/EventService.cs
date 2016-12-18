@@ -274,7 +274,7 @@ namespace EventManager.Services.Data
                 {
                     if (!string.IsNullOrEmpty(item.ImagePath))
                     {
-                        string oldTitle = string.IsNullOrEmpty(item.OldTitle) ? item.ImagePath.Substring(item.OldTitle.LastIndexOf('/')) : string.Format("{0}.png", item.OldTitle.Replace(" ", "_"));
+                        string oldTitle = string.IsNullOrEmpty(item.OldTitle) ? item.ImagePath.Substring(item.ImagePath.LastIndexOf('/') + 1) : string.Format("{0}.png", item.OldTitle.Replace(" ", "_"));
                         this.DeleteImage(eventId, oldTitle);
                     }
 
@@ -289,10 +289,34 @@ namespace EventManager.Services.Data
                     }
 
                     var imageFullPath = Path.Combine(_event.ImagesFilePath, imageName);
-                    if (item.Image != null)
+
+                    item.Image.SaveAs(imageFullPath);
+                }
+                else if (!(item.OldTitle ?? string.Empty).Equals(item.Title ?? string.Empty))
+                {
+                    string oldImageName;
+                    if (string.IsNullOrEmpty(item.OldTitle))
                     {
-                        item.Image.SaveAs(imageFullPath);
+                        oldImageName = item.ImagePath.Substring(item.ImagePath.LastIndexOf('/') + 1);
                     }
+                    else
+                    {
+                        oldImageName = string.Format("{0}.png", item.OldTitle.Replace(" ", "_"));
+                    }
+                    var oldFullPath = Path.Combine(_event.ImagesFilePath, oldImageName);
+
+                    string newImageName;
+                    if (string.IsNullOrEmpty(item.Title))
+                    {
+                        newImageName = string.Format("{0}.png", Guid.NewGuid().ToString());
+                    }
+                    else
+                    {
+                        newImageName = string.Format("{0}.png", item.Title.Replace(" ", "_"));
+                    }
+                    var newFullPath = Path.Combine(_event.ImagesFilePath, newImageName);
+
+                    File.Move(oldFullPath, newFullPath);
                 }
             }
         }

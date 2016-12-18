@@ -269,6 +269,39 @@ namespace EventManager.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditEvent(CreateEventViewModel model)
         {
+            var images = this._event.ImageFilePaths(model.Id);
+
+            for (int i = 0; i < model.Images.Count(); i++)
+            {
+                if (i < images.Count())
+                {
+                    var imagePath = images[i].Replace('\\', '/');
+                    imagePath = "../.." + imagePath.Remove(0, imagePath.IndexOf(@"/Images/"));
+
+                    if (images[i].Contains("\\Banner123.png"))
+                    {
+                        model.BannerPath = imagePath;
+                        images.RemoveAt(i);
+                    }
+
+                    var slashIndex = images[i].LastIndexOf("\\");
+                    var dotIndex = images[i].LastIndexOf(".");
+                    var length = dotIndex - slashIndex;
+
+                    var imageName = images[i].Substring(slashIndex + 1, length - 1);
+                    Guid newGuid;
+                    if (Guid.TryParse(imageName, out newGuid))
+                    {
+                        imageName = string.Empty;
+                    }
+
+                    var image = model.Images[i];
+
+                    image.OldTitle = imageName.Replace("_", " ");
+                    image.ImagePath = imagePath;
+                }
+            }
+
             this._event.EditEvent(model.Id, model.Destination, model.Content, model.GetStartEventDate, model.GetEndEventDate, model.EventLength, model.Images, model.BannerImage);
 
             return this.RedirectToAction("Event", new { id = model.Id });
