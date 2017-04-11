@@ -86,9 +86,27 @@ $(function () {
             $("#ajax").children().remove();
         }
     });
-    $('#searchContent').blur(function () {
+    //$(document).mouseup(function (e) {
+    //    var container = $("#searchWrapper");
+
+    //    if (!container.is(e.target) // if the target of the click isn't the container...
+    //        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    //    {
+    //        container.hide();
+    //    }
+    //});
+
+    //$('#searchContent').blur(function () {
+    //    $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.4)');
+    //    $('#ajax').children().remove();
+    //});
+
+    $('html').click(function () {
         $('#searchWrapper').css('background-color', 'rgba(0,0,0,0.4)');
         $('#ajax').children().remove();
+    });
+    $('#searchWrapper').click(function (event) {
+        event.stopPropagation();
     });
 });
 //AJAX ON KEYUP
@@ -122,11 +140,11 @@ $(function () {
     $icon.on('click', function () {
         if ($icon.hasClass('notificationClicked')) {
             $icon.removeClass('notificationClicked');
-            $content.animate({opacity: 0},'slow', function (){$wrapper.slideUp('fast');});
+            $wrapper.slideUp('fast');
 
         } else {
-            if($('.searchDrop').hasClass('dropShow')){
-                $('.searchDrop').fadeOut();
+            if ($('.searchDrop').hasClass('dropShow')) {
+                $('#ajax').children().remove();
             }
             $icon.addClass('notificationClicked');
             $.when($wrapper.slideDown('slow')).done(function(){

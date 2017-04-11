@@ -1,0 +1,9 @@
+C:\Users\Jivko\Desktop\Programi\EventManager\EventManager.Common\bin\Release\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\EventManager.Common\bin\Release\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\EventManager.Common\obj\Release\EventManager.Common.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\EventManager.Common\obj\Release\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\EventManager.Common\obj\Release\EventManager.Common.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\EventManager.Common\bin\Release\EventManager.Common.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\EventManager.Common\bin\Release\EventManager.Common.pdb
+C:\Users\Jivko\Desktop\others\Programi\EventManager\EventManager.Common\obj\Release\EventManager.Common.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\EventManager.Common\obj\Release\EventManager.Common.pdb

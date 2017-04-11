@@ -1,0 +1,34 @@
+{
+  "MaxPeople": 2,
+  "DateAfter": {
+    "Day": 5,
+    "Month": 1,
+    "Year": 2017
+  },
+  "DateBefore": {
+    "Day": 23,
+    "Month": 1,
+    "Year": 2017
+  },
+  "EventLength": 3,
+  "Dates": [
+    {
+      "Day": 7,
+      "Month": 1,
+      "Year": 2017,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 8,
+      "Month": 1,
+      "Year": 2017,
+      "FreePeopleCount": 1
+    },
+    {
+      "Day": 9,
+      "Month": 1,
+      "Year": 2017,
+      "FreePeopleCount": 1
+    }
+  ]
+}

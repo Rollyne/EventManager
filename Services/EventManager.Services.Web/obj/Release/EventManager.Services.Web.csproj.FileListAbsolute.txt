@@ -1,0 +1,10 @@
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\bin\Release\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\bin\Release\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Services\EventManager.Services.Web\bin\Release\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Services\EventManager.Services.Web\bin\Release\EventManager.Services.Web.pdb
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Services\EventManager.Services.Web\obj\Release\EventManager.Services.Web.pdb

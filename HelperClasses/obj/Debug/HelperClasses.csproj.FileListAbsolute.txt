@@ -25,6 +25,5 @@ C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\obj\Debug\HelperClasses.dll
 C:\Users\princ\Desktop\Apps\git\Argus\HelperClasses\obj\Debug\HelperClasses.pdb
 C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\bin\Debug\HelperClasses.dll
 C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\bin\Debug\HelperClasses.pdb
-C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Debug\HelperClasses.csprojResolveAssemblyReference.cache
 C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Debug\HelperClasses.dll
 C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Debug\HelperClasses.pdb

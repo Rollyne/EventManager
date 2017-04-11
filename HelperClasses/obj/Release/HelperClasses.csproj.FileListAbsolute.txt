@@ -1,0 +1,10 @@
+C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\bin\Release\HelperClasses.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\bin\Release\HelperClasses.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\HelperClasses\bin\Release\HelperClasses.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\HelperClasses\bin\Release\HelperClasses.pdb
+C:\Users\Jivko\Desktop\others\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\HelperClasses\obj\Release\HelperClasses.pdb

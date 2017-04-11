@@ -138,3 +138,7 @@ C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\obj\Debug\EventManager.Services.Data.csprojResolveAssemblyReference.cache
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\obj\Debug\EventManager.Services.Data.dll
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\obj\Debug\EventManager.Services.Data.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

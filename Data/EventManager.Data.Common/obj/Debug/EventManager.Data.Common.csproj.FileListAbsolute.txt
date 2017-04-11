@@ -80,4 +80,3 @@ C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data.Common\bin\D
 C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data.Common\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.dll
 C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.pdb
-C:\Users\Jivko\Desktop\Programi\EventManager\Data\EventManager.Data.Common\obj\Debug\EventManager.Data.Common.csprojResolveAssemblyReference.cache

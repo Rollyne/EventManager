@@ -1,0 +1,14 @@
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\EventManager.Web.Infrastructure.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\AutoMapper.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\AutoMapper.xml
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.pdb
+C:\Users\Jivko\Desktop\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\EventManager.Web.Infrastructure.pdb
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\AutoMapper.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\bin\Release\AutoMapper.xml
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.dll
+C:\Users\Jivko\Desktop\others\Programi\EventManager\Web\EventManager.Web.Infrastructure\obj\Release\EventManager.Web.Infrastructure.pdb

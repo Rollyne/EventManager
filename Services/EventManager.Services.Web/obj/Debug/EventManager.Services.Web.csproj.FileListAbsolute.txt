@@ -21,4 +21,3 @@ C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\bin\Debug\EventManager.Services.Web.pdb
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.dll
 C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.pdb
-C:\Users\Jivko\Desktop\Programi\EventManager\Services\EventManager.Services.Web\obj\Debug\EventManager.Services.Web.csprojResolveAssemblyReference.cache
